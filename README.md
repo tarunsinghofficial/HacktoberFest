@@ -26,4 +26,21 @@ Example:
 4. Now Commit your changes by pressing the green Commit new file button.
 5. Create a new pull request from your forked repository (Button located at the top of your repo)
 8. Star this repository!
+
+### Show some love 😄 
+<a href="https://github.com/tarunsinghofficial" aria-label="Follow @tarunsinghofficial on GitHub"><img  src="https://img.shields.io/badge/Follow👉-@tarunsinghofficial-green?style=for-the-badge"  />
+</a>
+<br>
+## What is Hacktoberfest?
+A month-long celebration from October 1st - 31st sponsored by [Digital Ocean](https://hacktoberfest.digitalocean.com/) and GitHub to get people involved in [Open Source](https://github.com/open-source). Create your very first pull request to any public repository on GitHub and contribute to the open source developer community.
+
+[https://hacktoberfest.digitalocean.com/](https://hacktoberfest.digitalocean.com/)
+
 ***
+
+## Our Awesome contributors 🤩:
+<a href="https://github.com/tarunsinghofficial/HacktoberFest/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=tarunsinghofficial/HacktoberFest" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
