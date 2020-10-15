@@ -1,7 +1,18 @@
-import java.io.*; 
+import java.io.*;
+java.util.Random;
   
 class GFG { 
   
+    static void initMatrix(int arr[][],int m,int n){
+       for(int i=0;i<m;i++)
+       {
+        for(int j=0;j<n;j++)
+        {
+        arr[i][j]=rand.nextInt(20);
+        }
+       }
+    }
+    
     static void printMatrix(int M[][], 
                             int rowSize, 
                             int colSize) 
@@ -53,18 +64,16 @@ class GFG {
     // Driver code 
     public static void main(String[] args) 
     { 
-  
+        Random rand=new Random()
         int row1 = 4, col1 = 3, row2 = 3, col2 = 4; 
   
-        int A[][] = { { 1, 1, 1 }, 
-                      { 2, 2, 2 }, 
-                      { 3, 3, 3 }, 
-                      { 4, 4, 4 } }; 
+        int A[][] = new int[4][3];
   
-        int B[][] = { { 1, 1, 1, 1 }, 
-                      { 2, 2, 2, 2 }, 
-                      { 3, 3, 3, 3 } }; 
-  
+        int B[][] = new int[3][4];
+        
+        initMatrix(A,4,3);
+        initMatrix(B,3,4);
+        
         multiplyMatrix(row1, col1, A, 
                        row2, col2, B); 
     } 
