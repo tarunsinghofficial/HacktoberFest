@@ -2,6 +2,9 @@
 
 Create your first Pull Request 🔥(PR).
 
+FOLLOWING WILL TELL YOU HOW TO GET YOUR AWESOME T-SHIRT
+
+
 # 👍 Awesome! How Can I Contribute? 
 It's very easy. Don't need to be an expert in coding. Follow the below steps you need to create your -(maybe)- EXAMPLE first pull request.
 1. Fork this repository by click the Fork button in the top right of this page or simply [click here](https://github.com/tarunsinghofficial/HacktoberFest/fork).
