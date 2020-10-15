@@ -1,0 +1,4 @@
+Import cv2
+
+Frame = CV.read frame()
+closewindow()
