@@ -1,5 +1,5 @@
 ### YOUR FULL NAME
-- Photo: YOUR PHOTO URL
-- Location: COUNTRY
-- Github: YOUR GITHUB URL
+- Photo: https://raw.githubusercontent.com/khush3211/HacktoberFest/main/KhushSachdeva.jpg.jpg
+- Location: Panipat, Haryana, India
+- Github: https://github.com/khush3211
 ***
