@@ -4,6 +4,6 @@
    
    location- Jaitaran pali rajasthan
    
-   github url- https://github.com/sanwarkode11
+   github url https://github.com/sanwarkode11
    
    
