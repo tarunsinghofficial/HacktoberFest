@@ -1,5 +1,9 @@
+
+
 class Test{
 public static void main(String ags[]){
-ArrayList l = new ArrayList();
+ArrayList object = new ArrayList();
+	object.add("HacktoberFest2020");
+	
 }
 }
