@@ -9,7 +9,7 @@
     height:80%;
     min-width: 300px;
     min-height: 400px;
-    background-color: #e2e0e0;
+    background-color: #949494;
     margin:auto;
     margin-top:80px;
     border:2px solid #e2e0e0;
@@ -19,7 +19,7 @@
 
 #calculator h1
 {
-    background-color: black;
+    background-color: #ccbaba;
     color:white;
     text-transform: uppercase;
     text-align: center;
