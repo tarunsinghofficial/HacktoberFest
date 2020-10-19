@@ -19,3 +19,11 @@
 
               getch();
        }
+
+Output : 
+
+              Enter 1st number : 115
+              Enter 2nd number : 228
+              2nd number is greatest.
+       
+   
