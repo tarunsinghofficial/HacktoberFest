@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h>  //preprocessordirective
 #include<conio.h>
 #include<string.h>
 void main()
