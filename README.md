@@ -9,7 +9,7 @@ It's very easy. Don't need to be an expert in coding. Follow the below steps you
 3. Set the file name with `Your-Full-Name.md` and make your short profile with the following:
 ```
 ### YOUR FULL NAME
-- Photo: YOUR PHOTO URL
+- Photo: YOUR PHOTO URL(You can submit a dumy Image from Internet)
 - Location: COUNTRY
 - Github: YOUR GITHUB URL
 ***
