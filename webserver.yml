@@ -1,0 +1,12 @@
+- hosts: web
+  tasks:
+    - package:
+        name: httpd
+        state: present
+    - copy:
+        content: "This is made by cgi"
+        dest: '/var/www/html/myserver.html'
+    - service:
+        name: httpd
+        state: started
+        enabled: yes
