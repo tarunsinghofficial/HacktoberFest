@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<math.h>
+void insertionsort(int a[], int n)
+{
+    int i,j,tmp;
+    for(i=1;i<n;i++)
+    {
+        tmp=a[i];
+        j=i-1;
+        while(j>=0&&a[j]>tmp)
+        {
+            a[j+1]=a[j];
+            j--;
+        }
+        a[j+1]=tmp;
+    }
+}
+void printArray(int a[], int n)
+{
+    int i;
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+}
+int main()
+{
+    int a[30];
+    int k,n;
+    printf("Enter total no. of elements to be inserted:");
+    scanf("%d",&n);
+    printf("Enter elements:");
+    for(k=0;k<n;k++)
+    {
+        scanf("%d",&a[k]);
+    }
+    insertionsort(a,n);
+    printArray(a,n);
+    return 0;
+}
