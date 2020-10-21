@@ -1,7 +1,0 @@
-Ayush Garg
-
-Photo:2wCEAAkGBxIQEhUREhMVFhUVFhYVFxUWFRoVFRYXFhYXFxcVFhYYHiggGBolHRYWITEhJSkrLi4uGB8zODMsNygtLisBCgoKDg0OGBAQGi0lHyUtLS0tKy0tLystListLS0tLS4tLS0tLTUtLS0vLS0tLS0tLS01LS0tLS0tLS0tLS0tLf
-
-location:India
-
-gitub:https://github.com/ayushgarg2002/

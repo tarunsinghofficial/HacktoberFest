@@ -1,6 +1,0 @@
-x=input("Enter text")
-print(x.find("e"))
-print(x.lower())
-print(x.upper())
-print(x.capitalize())
-print(x.title())
