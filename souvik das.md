@@ -1,3 +1,0 @@
-- Photo: https://www.freeimages.com/photo/horse-1393073
-- Location: India
-- Github: https://github.com/akhenaten8080
