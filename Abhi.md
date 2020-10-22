@@ -1,7 +1,7 @@
 # Profile
 
-  name : Khushi
+  Photo: abhi.jpeg
   
   Location: INDIA
   
-  Github: https://github.com/khushi067
+  Github: https://github.com/abhi0504
