@@ -1,21 +1,13 @@
-num1 = int(input('Enter First Number: '))
-num2 = int(input('Enter Second Number: '))
+num1 = input('Enter First Number: ')
+num2 = input('Enter Second Number: ')
 
 print("Value of num1 before swapping: ", num1)
 print("Value of num2 before swapping: ", num2)
 
-print("for swapping with using a temp variable enter number greater than 1 otherwise swapped without third variable")
-choice = int(input("enter the choice: "))
-if choice > 1:
-    #swapping two numbers using temporary variable
-    temp = num1
-    num1 = num2
-    num2 = temp
-    print("Value of num1 after swapping using the third variable: ", num1)
-    print("Value of num2 after swapping using the third variable: ", num2)
+# swapping two numbers using temporary variable
+temp = num1
+num1 = num2
+num2 = temp
 
-else:
-  # swapping two number not using the third variable
-    num1,num2 = num2,num1
-    print("Value of num1 after swapping not using the third variable: ", num1)
-    print("Value of num2 after swapping not using the third variable: ", num2)
+print("Value of num1 after swapping: ", num1)
+print("Value of num2 after swapping: ", num2)
