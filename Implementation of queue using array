@@ -1,0 +1,83 @@
+/* SOMASHRI RASTOGI 8/9/20 */
+#include<stdio.H>
+#include<conio.h>
+
+#define MAX 10
+int arr[MAX];
+int front,rear;
+void enqueue();
+void dequeue();
+void display();
+void main()
+{
+   int choice;
+    while (1)
+    {
+        printf("1.Insert element to queue \n");
+        printf("2.Delete element from queue \n");
+        printf("3.Display all elements of queue \n");
+        printf("4.Quit \n");
+        printf("Enter your choice : ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+            case 1:
+            enqueue();
+            break;
+            case 2:
+            dequeue();
+            break;
+            case 3:
+            display();
+            break;
+            case 4:
+            exit(1);
+            default:
+            printf("Wrong choice \n");
+        }
+    }
+}
+void enqueue()
+{
+    int data;
+
+    if (rear==MAX)
+    {
+        printf("Full");
+        return;
+    }
+     else{
+    printf("Enter data");
+    scanf("%d",&data);
+    arr[rear++]=data;
+}
+}
+void dequeue()
+{
+    int data;
+    if (front==rear)
+    {
+
+        printf("\nQueue is empty");
+        return;
+    }
+    data=arr[front];
+    front++;
+    printf("\ndeleted element from queue is %d",data);
+}
+void display()
+{
+    int i;
+    if (front==rear){
+        printf("Queue is empty");
+        return;
+    }
+    for (i=front;i<rear;i++)
+    {
+
+        printf("%d\t",arr[i]);
+    }
+
+
+}
+
