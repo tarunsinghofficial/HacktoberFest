@@ -11,6 +11,8 @@ complexNumber addComplexNumbers(complex, complex);
 int main() {
     complexNumber num1, num2, complexSum;
     char signOfImag;
+    
+    cout << "This is for HacktoberFest"<< endl;
 
     cout << "For 1st complex number," << endl;
     cout << "Enter real and imaginary parts respectively:" << endl;
