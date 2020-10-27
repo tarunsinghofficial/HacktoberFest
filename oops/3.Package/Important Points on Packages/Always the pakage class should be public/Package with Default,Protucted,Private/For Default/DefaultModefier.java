@@ -1,4 +1,0 @@
-package Default;
-
-class DefaultModefier{
-}
