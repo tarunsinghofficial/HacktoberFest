@@ -36,7 +36,7 @@
     width: 100%;
     height: 20%;
     min-height: 100px;
-    background-color: whitesmoke;
+    background-color: #e8e8e8;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -71,11 +71,12 @@
     background-color: white;
     font-size: 1.8rem;
     cursor:pointer;
-    transition-duration: 1s;
+    transition-duration: 3s;
 }
 
 .button:hover{
     background-color: #ffc877;
+    cursor:pointer;
 }
 
 .red
@@ -85,5 +86,5 @@
 
 #button-zero
 {
-    width: 50%;
+    width: 70%;
 }
