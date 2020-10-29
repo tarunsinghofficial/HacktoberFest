@@ -1,10 +1,5 @@
-# This program adds two numbers
-
-num1 = 1.5
-num2 = 6.3
-
-# Add two numbers
-sum = num1 + num2
-
-# Display the sum
-print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
+a=int(input("Enter the first number"))
+b=int(input("Enter the second number"))
+c=a+b
+print("the sum is",c)
+      
