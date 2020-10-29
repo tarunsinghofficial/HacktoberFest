@@ -2,6 +2,8 @@
 
 Create your first Pull Request 🔥(PR).
 
+Before Contributing to the Repository, Please Subscribe my channel and help me reach 1K Subscribers. Subscribe here- https://www.youtube.com/channel/UCOykz3Ssp3Q1SHPG8Mqj7PA
+
 FOLLOWING WILL TELL YOU HOW TO GET YOUR AWESOME T-SHIRT
 
 
