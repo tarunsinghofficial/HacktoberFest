@@ -1,20 +1,18 @@
 #include<stdio.h>
-#include<conio.h>
-
 int main()
 {
-	int m,n,q,sum=0;
+	int r,n,q,s=0;
 	printf("Enter a no\n");
 	scanf("%d",&n);
 	printf("decimal to binary\n");
 	printf("1");
 	while(n>1)
 	{
-		m=n%2;
+		r=n%2;
 		q=n/2;
 		n=q;
-		sum=sum*10+r;
+		s=s*10+r;
 	}
-	printf("%d",sum);
+	printf("%d",s);
 	return 0;
 }
