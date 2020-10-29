@@ -1,7 +1,5 @@
-Aman Goyal
-
-Photo: https://media.gettyimages.com/photos/woman-lifts-her-arms-in-victory-mount-everest-national-park-picture-id507910624?s=612x612
-
-Location : India
-
-Github URL:https://github.com/amngoyal
+### Aman Goyal
+- Photo: https://codersera.com/blog/wp-content/uploads/2019/07/BLOG-23-L-3.jpg
+- Location: India
+- Github: https://github.com/amngoyal
+***

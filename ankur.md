@@ -1,7 +1,4 @@
-name:- Ankur 
-
-photo:- https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.ctfassets.net%2Fhrltx12pl8hq%2FVZW7M82mrxByGHjvze4wu%2F216d9ff35b6980d850d108a50ae387bf%2FCarousel_01_FreeTrial.jpg%3Ffit%3Dfill%26w%3D800%26h%3D450&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2F&tbnid=0ozf03h3mpzutM&vet=12ahUKEwjZ5p-1hKLsAhWh_TgGHXa2AK8QMygBegUIARDSAQ..i&docid=7T8fKkixbRnWvM&w=800&h=450&q=photo%20free&ved=2ahUKEwjZ5p-1hKLsAhWh_TgGHXa2AK8QMygBegUIARDSAQ
-
-location:- India
-
-github url:- https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.ctfassets.net%2Fhrltx12pl8hq%2FVZW7M82mrxByGHjvze4wu%2F216d9ff35b6980d850d108a50ae387bf%2FCarousel_01_FreeTrial.jpg%3Ffit%3Dfill%26w%3D800%26h%3D450&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2F&tbnid=0ozf03h3mpzutM&vet=12ahUKEwjZ5p-1hKLsAhWh_TgGHXa2AK8QMygBegUIARDSAQ..i&docid=7T8fKkixbRnWvM&w=800&h=450&q=photo%20free&ved=2ahUKEwjZ5p-1hKLsAhWh_TgGHXa2AK8QMygBegUIARDSAQ
+Name :- Shreyash Shandilya
+Photo :- https://www.google.com/search?q=boy+pic&sxsrf=ALeKk02KnDCJQIRnZBeQEY4Zt_wNAt_wqQ:1603366509574&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_pv3ZjcjsAhVWwjgGHafDCtQQ_AUoAXoECAQQAw&biw=1536&bih=754#imgrc=lddHhrS61cayLM
+Location :- India
+Github :- https://github.com/Lucifer184
