@@ -6,7 +6,7 @@ int fact(int n)
             while(n>0)
             {
              f=f*n;
-             n=n-1;
+             n=n+1;
             }
   return f;
  }
@@ -14,7 +14,6 @@ int fact(int n)
 void main()
  {
             int n,nCr,r;
-            clrscr();
             printf("\n\n\t\t\t nCr FACTOR\n");
             printf("\n\t\t\t*************\n");
             printf("\n\t\t Enter the n value:");
