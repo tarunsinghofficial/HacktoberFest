@@ -1,7 +1,7 @@
-Ayush Garg
+Ayush
 
-Photo: https://imgd.aeplcdn.com/0X0/cw/brands/logos/renault.png?v=10&q=85
+Photo:https://images.app.goo.gl/SrgBfZgKifhKtTbA8
 
-Locatio:India
+Location:India
 
-Github: https://github.com/ayushgarg2002/
+Github:https://github.com/Satvik-Sinha/
