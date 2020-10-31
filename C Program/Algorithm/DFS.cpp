@@ -2,13 +2,11 @@
 #include <list> 
 
 using namespace std; 
-
 // This class represents a directed graph using 
 // adjacency list representation 
 class Graph 
 { 
     int V;    // No. of vertices 
-
     // Pointer to an array containing adjacency 
     // lists 
     list<int> *adj;    
@@ -90,7 +88,6 @@ int main()
 
     return 0; 
 } 
-
 //Output:
 //Following is Breadth First Traversal (starting from vertex 2)
 //2 0 3 1
