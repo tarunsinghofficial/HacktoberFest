@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <title> The Age Calculator</title>
+    </head>
+<body>
+    <script language="JavaScript">
+function CalculateAge()
+{
+var birthyear = document.form1.txt.value;
+var currentyear  = new Date();
+var age   = currentyear.getFullYear();
+document.write('They are either ' + (age-birthyear)+ ' or ' + (age-birthyear - 1));
+ }
+    </script>
+        <form name=form1>
+            Enter the Birth Year
+           <input type="text" name="txt" size=10>
+           <br>
+           <input type="button" value="Calculate" onClick='CalculateAge();'>  
+        </form> 
+</body>
+</html>
