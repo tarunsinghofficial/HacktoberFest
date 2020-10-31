@@ -1,4 +1,4 @@
-Pavan Kumar
+PavanKumar
 
 Photo: https://imgur.com/t/hacktoberfest/JaBX8jM
 
