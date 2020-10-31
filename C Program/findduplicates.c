@@ -2,7 +2,7 @@
 #include<stdio.h>
 int main()
 {
-	int n,a[10],i,temp[a[10]]={0};
+	int n,a[10],i,temp[]={0};
 	printf("Enter how many you want to enter ");
 	scanf("%d",&n);
 	printf("Enter the elements");

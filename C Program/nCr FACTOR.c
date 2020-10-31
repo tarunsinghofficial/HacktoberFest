@@ -14,7 +14,6 @@ int fact(int n)
 void main()
  {
             int n,nCr,r;
-            clrscr();
             printf("\n\n\t\t\t nCr FACTOR\n");
             printf("\n\t\t\t*************\n");
             printf("\n\t\t Enter the n value:");
