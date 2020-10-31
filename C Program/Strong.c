@@ -40,11 +40,11 @@ int main()
  
  if(sum==temp)
  
-  printf("\nThe number %d is a strong number",temp);
+  printf("\nThe number %d is a strong number.",temp);
  
  else
  
-  printf("\nThe number %d is not a strong number",temp);
+  printf("\nThe number %d is not a strong number.",temp);
  
  return 0;
  
