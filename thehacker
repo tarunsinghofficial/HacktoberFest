@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class good{
+    public static void main(String args [])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter any number");
+        int n=sc.nextInt();
+        int s=n%10;
+        n=n/10;
+        boolean ch=true;
+        while(n>0){
+            int d=n%10;
+            if (d<=s){
+                ch=false;
+                break;
+            }
+            s=s+d;
+            n/=10;
+        }
+        if(ch)
+        System.out.println("good number");
+        else 
+        System.out.println("not a good number");
+    }
+}
+        
+        
