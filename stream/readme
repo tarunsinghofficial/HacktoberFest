@@ -1,0 +1,6 @@
+Add this start up line to autorun at boot
+
+nano /etc/rc.local
+
+### where ever the script is saved to
+/root/stream/stream.sh & >/dev/null 2>&1
