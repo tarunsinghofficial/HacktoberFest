@@ -1,4 +1,4 @@
-# HacktoberFest- Get your Free T-shirt Now.
+# HacktoberFest
 
 Create your first Pull Request 🔥(PR).
 
