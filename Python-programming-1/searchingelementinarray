@@ -1,0 +1,13 @@
+a=int(input("Enter number of elements you want to insert in array : "))
+arr=[]
+for i in range(a):
+ b=int(input("Enter element : "))
+ arr.append(b)
+search=int(input("Enter element you want to search in array : "))
+x=0
+if search in arr:
+ x=1
+if x==1:
+ print("Element is present in array.")
+else:
+ print("Element is not present in array.")
