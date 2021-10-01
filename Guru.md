@@ -19,7 +19,7 @@ It's very easy. Don't need to be an expert in coding. Follow the below steps you
 - Github: YOUR GITHUB URL
 ***
 ```
-Example:
+Ex:
 
 ```
 ### Tarun Singh
