@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Java_Programs_for_beginners/|Java Print/src/|Java Input Scanner and Buffered/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="Java Input Scanner and Buffered/src"/>
+	<classpathentry kind="src" path="Java Print/src"/>
+	<classpathentry kind="src" path="Java_Programs_for_beginners"/>
+	<classpathentry kind="output" path="Java Input Scanner and Buffered/out/production/Pertemuan2"/>
+</classpath>

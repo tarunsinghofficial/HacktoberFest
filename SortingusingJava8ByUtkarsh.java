@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.*;
 import java.lang.*;  
-public class SortExample 
+class SortExample 
 { 
     public static void main(String[] args) 
     { 
