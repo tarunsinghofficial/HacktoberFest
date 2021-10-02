@@ -1,1 +1,5 @@
-# This is a simple C program to find the sum of numbers from 1 to N.
+### Rituparna Padira
+- Photo: https://github.com/RituparnaPadira.png
+- Location: India
+- Github: https://github.com/RituparnaPadira
+***
