@@ -23,7 +23,7 @@ void isPalindrome(char str[])
 // Driver program to test above function 
 int main() 
 { 
-    isPalindrome("abba"); 
+    isPalindrome("abbbba"); 
     isPalindrome("abbccbba"); 
     isPalindrome("geeks"); 
     return 0; 
