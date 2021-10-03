@@ -2,6 +2,6 @@
 
 - Photo: https://pngimg.com/uploads/deadpool/deadpool_PNG4.png
 
-- Location: SRI  LANKA
+- Location: SRI LANKA
 
 - Github: https://github.com/Kavindu-Tharak

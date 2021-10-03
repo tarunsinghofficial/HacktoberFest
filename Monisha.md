@@ -1,5 +1,4 @@
-Hey, There this is first time I am participating in HactoberFest.
-Lets get connected.
+Hey, There this is first time I am participating in HactoberFest. Lets get connected.
 
 Name : Monisha Dubey
 

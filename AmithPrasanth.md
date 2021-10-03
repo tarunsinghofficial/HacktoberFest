@@ -1,4 +1,4 @@
-Amith Prasanth K 
+Amith Prasanth K
 
 Photo - https://www.instagram.com/p/B13-eePgYpT/
 Location - India

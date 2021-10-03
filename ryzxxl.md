@@ -1,4 +1,4 @@
-Rakshit Khajuria 
+Rakshit Khajuria
 
 Photo : https://i.ytimg.com/vi/Lbe-Q0EOSoo/maxresdefault.jpg
 

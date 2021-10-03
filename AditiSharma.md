@@ -1,3 +1,1 @@
-Aditi Sharma
-Location : India
-Github Profile : https://github.com/imaditisharma
+Aditi Sharma Location : India Github Profile : https://github.com/imaditisharma

@@ -1,10 +1,8 @@
 Q. Remove Nth Node From End of List
 
-class Solution {
-public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode* temp=head;
-         
+class Solution { public:
+ListNode* removeNthFromEnd(ListNode* head, int n) { ListNode* temp=head;
+
        int count=0;
         while(temp->next != NULL)
         {
@@ -28,5 +26,5 @@ public:
         }
         return head;
     }
-    
+
 };

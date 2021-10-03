@@ -89,34 +89,46 @@
 <details>
   <summary>📃 Other Details</summary>
 
-
 ## Education
 
 - **Holy Home English High School Balaghat M.P.**\
-📆 2010 - 2018
+  📆 2010 - 2018
 - **Balaghat English Higher Secondary School Balaghat M.P.**\
-📆 2018 - 2002
+  📆 2018 - 2002
 
 ## Passion
 
 - Coding and Programming\
-📆 2018 - Moment
+  📆 2018 - Moment
 - **Self Taught** Android Developer.\
-📆 2018 - Moment
+  📆 2018 - Moment
 - Competitive Programming\
-📆 2019 - Moment
+  📆 2019 - Moment
 
 [linkedin]: https://www.linkedin.com/in/sobhan-bera-82a435197/
+
 [twitter]: https://twitter.com/BeraSobhan
+
 [instagram]: https://www.instagram.com/sobhanbera_/
+
 [facebook]: https://www.facebook.com/sobhan.b.90/
+
 [codeforces]: https://codeforces.com/profile/sobhanbera
+
 [codechef]: https://www.codechef.com/users/sobhanbera
+
 [hackerrank]: https://www.hackerrank.com/lastwarrior436
+
 [hackerearth]: https://www.hackerearth.com/@Sobhan_Bera
+
 [vim]: https://www.vim.org/download.php
+
 [atom]: https://atom.io/
+
 [sublime]: https://www.sublimetext.com/
+
 [android]: https://developer.android.com/studio/
+
 [vsc]: https://code.visualstudio.com/
+
 [git]: https://git-scm.com/downloads

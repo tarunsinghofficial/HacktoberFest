@@ -1,2 +1,1 @@
-author: sunil challa
-theme: get a tshirt 
+author: sunil challa theme: get a tshirt 

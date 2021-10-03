@@ -1,4 +1,2 @@
-Prayas Drolia 
-photo: https://ibb.co/SsDwDcx
-Location: IND
-Github: prayasdrolia
+Prayas Drolia photo: https://ibb.co/SsDwDcx
+Location: IND Github: prayasdrolia

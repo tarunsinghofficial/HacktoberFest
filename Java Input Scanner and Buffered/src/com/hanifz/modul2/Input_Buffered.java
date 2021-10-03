@@ -13,10 +13,10 @@ public class Input_Buffered {
         int angka;
 
         /*
-        * variable kalimat -> amplop
-        * bufferedReader -> kertas
-        * terminal -> pulpen
-        */
+         * variable kalimat -> amplop
+         * bufferedReader -> kertas
+         * terminal -> pulpen
+         */
 
         System.out.print("Inputkan kata\t\t: ");
         kata = bufferedReader.readLine();
@@ -28,9 +28,9 @@ public class Input_Buffered {
         angka = Integer.parseInt(bufferedReader.readLine());
 
 
-        System.out.println("\nOutput kata\t: " +kata);
-        System.out.println("Output kalimat\t: " +kalimat);
-        System.out.println("Output angka\t: " +angka);
+        System.out.println("\nOutput kata\t: " + kata);
+        System.out.println("Output kalimat\t: " + kalimat);
+        System.out.println("Output angka\t: " + angka);
 
     }
 }

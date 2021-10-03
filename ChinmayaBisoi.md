@@ -1,8 +1,8 @@
-  Chinmaya Bisoi
-  
-  Photo: https://unsplash.com/photos/CoNsEK5iHug
+Chinmaya Bisoi
 
-  Location: India
+Photo: https://unsplash.com/photos/CoNsEK5iHug
 
-  Github: https://github.com/Blaim1
+Location: India
+
+Github: https://github.com/Blaim1
 

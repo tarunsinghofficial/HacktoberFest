@@ -1,2 +1,1 @@
-Name: Sanskar Tibrewal
-Country: India
+Name: Sanskar Tibrewal Country: India

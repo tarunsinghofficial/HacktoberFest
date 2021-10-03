@@ -1,3 +1,1 @@
-Anish Kumar
-anish.jpeg
-Patna
+Anish Kumar anish.jpeg Patna

@@ -263,14 +263,14 @@ public class ADFGVX {
             } else {
 
                 if (encode.charAt(i) == 'B' || encode.charAt(i) == 'C' || encode.charAt(i) == 'E' || ('H' <= encode.charAt(i) && encode.charAt(i) <= 'U') || encode.charAt(i) == 'W' || encode.charAt(i) == 'Y' || encode.charAt(i) == 'Z' || encode.charAt(i) == 'b' || encode.charAt(i) == 'c' || encode.charAt(i) == 'e' || ('h' <= encode.charAt(i) && encode.charAt(i) <= 'u') || encode.charAt(i) == 'w' || encode.charAt(i) == 'y' || encode.charAt(i) == 'z' || ('0' <= encode.charAt(i) && encode.charAt(i) <= '9')) {
-                    
+
                     return "";
                 }
 
                 noSpclChar = 0;
                 if (plainText != null) {
 
-                    if (plainText.length() % 2 != 0){
+                    if (plainText.length() % 2 != 0) {
                         return "";
                     }
 
@@ -286,9 +286,9 @@ public class ADFGVX {
 
         }
 
-        if (noSpclChar == 1 & plainText !=null) {
+        if (noSpclChar == 1 & plainText != null) {
 
-            if (plainText.length() % 2 != 0){
+            if (plainText.length() % 2 != 0) {
                 return "";
             }
 

@@ -1,7 +1,7 @@
 # Profile
 
-  Photo: ankit.jpeg
-  
-  Location: INDIA
-  
-  Github: https://github.com/ankitsri1998
+Photo: ankit.jpeg
+
+Location: INDIA
+
+Github: https://github.com/ankitsri1998

@@ -3,7 +3,6 @@ package Cipher;
 import java.util.Scanner;
 
 /**
- *
  * It has 7 cipher conversion algorithm.
  * Both encoding and decoding feature is added.
  * The actual input message can be retrieved after decoding in each algorithm.
@@ -107,7 +106,6 @@ public class MAIN {
         assert encode != null;
 
 
-
     }
 
     private static void ATBASH() {
@@ -194,9 +192,6 @@ public class MAIN {
             return a;
         }
     }
-
-
-
 
 
 }

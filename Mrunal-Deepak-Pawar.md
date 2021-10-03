@@ -1,3 +1,2 @@
-Hey bro this is for Hatoberfest and my last PR . Do merge Pawar-Deepak-Arjun pull request also.
-THanks for this bro 
+Hey bro this is for Hatoberfest and my last PR . Do merge Pawar-Deepak-Arjun pull request also. THanks for this bro
 Subscribed your channel too...
