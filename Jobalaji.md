@@ -1,6 +1,4 @@
-layout: haiku
-title: alwayspr(o)ot
-author: jobalaji
+layout: haiku title: alwayspr(o)ot author: jobalaji
 ---
 
 always start with this "$" <br>

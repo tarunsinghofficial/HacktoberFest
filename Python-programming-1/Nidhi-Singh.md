@@ -1,4 +1,4 @@
-##program to swap two variables
+## program to swap two variables
 
 x = 5
 
@@ -7,7 +7,6 @@ y = 1
 x = input('Enter value of x: ')
 
 y = input('Enter value of y: ')
-
 
 temp = x
 

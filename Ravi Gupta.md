@@ -1,5 +1,7 @@
 ### Ravi Gupta
-- Photo: 
+
+- Photo:
 - Location: India
 - Github: https://github.com/guptaravi540
+
 ***

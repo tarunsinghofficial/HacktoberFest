@@ -1,5 +1,5 @@
 hardeep panth
 
-location : India 
+location : India
 
 github: https://github.com/panthji

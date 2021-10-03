@@ -1,7 +1,7 @@
 # Profile
 
-  Photo: abhi.jpeg
-  
-  Location: INDIA
-  
-  Github: https://github.com/abhi0504
+Photo: abhi.jpeg
+
+Location: INDIA
+
+Github: https://github.com/abhi0504

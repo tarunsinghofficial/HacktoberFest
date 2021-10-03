@@ -1,16 +1,12 @@
-// C++ program to check whether two strings are anagrams
-// of each other
-#include <bits/stdc++.h>
+// C++ program to check whether two strings are anagrams // of each other
+
+# include <bits/stdc++.h>
+
 using namespace std;
- 
-/* function to check whether two strings are anagram of
-each other */
-bool areAnagram(string str1, string str2)
-{
-    // Get lengths of both strings
-    int n1 = str1.length();
-    int n2 = str2.length();
- 
+
+/* function to check whether two strings are anagram of each other */ bool areAnagram(string str1, string str2)
+{ // Get lengths of both strings int n1 = str1.length(); int n2 = str2.length();
+
     // If length of both strings is not same, then they
     // cannot be anagram
     if (n1 != n2)
@@ -26,14 +22,12 @@ bool areAnagram(string str1, string str2)
             return false;
  
     return true;
+
 }
- 
-// Driver code
-int main()
-{
-    string str1 = "test";
-    string str2 = "ttew";
- 
+
+// Driver code int main()
+{ string str1 = "test"; string str2 = "ttew";
+
     // Function Call
     if (areAnagram(str1, str2))
         cout << "The two strings are anagram of each other";
@@ -42,4 +36,5 @@ int main()
                 "other";
  
     return 0;
+
 }

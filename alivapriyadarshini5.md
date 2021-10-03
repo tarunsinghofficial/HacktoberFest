@@ -15,7 +15,7 @@ github : https://github.com/alivapriyadarshini5
     <style>
         li{
             list-style-type:none;
-            
+
         }
         li a{
             float: left;
@@ -32,6 +32,7 @@ github : https://github.com/alivapriyadarshini5
             background-color: black;
         }
     </style>
+
 </head>
 <body>
     <ul>
@@ -39,8 +40,8 @@ github : https://github.com/alivapriyadarshini5
         <li><a href="#about">About</a> </li>
         <li><a href="#services">Services</a> </li>
         <li><a href="#contact us">Contact us</a> </li>
-        
+
     </ul>
-    
+
 </body>
 </html>

@@ -1,38 +1,34 @@
-*
-{
+* {
     box-sizing: border-box;
 }
 
-#calculator
-{
-    width:45%;
-    height:80%;
+#calculator {
+    width: 45%;
+    height: 80%;
     min-width: 500px;
     min-height: 400px;
     background-color: #949494;
-    margin:auto;
-    margin-top:80px;
-    border:2px solid #e2e0e0;
+    margin: auto;
+    margin-top: 80px;
+    border: 2px solid #e2e0e0;
     border-radius: 5px;
     padding: 10px;
 }
 
-#calculator h1
-{
+#calculator h1 {
     background-color: #ccbaba;
-    color:white;
+    color: white;
     text-transform: uppercase;
     text-align: center;
     padding: 10px;
 }
 
-#display-container
-{
+#display-container {
     font-size: 2.8rem;
     display: flex;
     align-content: flex-end;
     justify-content: flex-end;
-    color:#7f6cfc;
+    color: #7f6cfc;
     width: 100%;
     height: 20%;
     min-height: 100px;
@@ -41,17 +37,16 @@
     margin-bottom: 10px;
 }
 
-#display-container p{
+#display-container p {
     font-size: 2.5rem;
     vertical-align: text-bottom;
 }
 
-#buttons-container
-{
-    width:100%;
+#buttons-container {
+    width: 100%;
     height: 80%;
     min-height: 300px;
-    border: 1px solid #e2e0e0 ;
+    border: 1px solid #e2e0e0;
     border-radius: 5px;
     background-color: #e2e0e0;
     display: flex;
@@ -59,32 +54,29 @@
     justify-content: space-around;
 }
 
-.button
-{
-    width:25%;
+.button {
+    width: 25%;
     height: 15%;
     min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #e2e0e0 ;
+    border: 1px solid #e2e0e0;
     background-color: white;
     font-size: 1.8rem;
-    cursor:pointer;
+    cursor: pointer;
     transition-duration: 3s;
 }
 
-.button:hover{
+.button:hover {
     background-color: #ffc877;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.red
-{
+.red {
     background-color: #c14444;
 }
 
-#button-zero
-{
+#button-zero {
     width: 70%;
 }
