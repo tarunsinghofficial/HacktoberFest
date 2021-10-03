@@ -1,4 +1,4 @@
-//A c program that simply takes elements of the array from the user and finds the sum of these elements.
+//A c program that simply takes size of array and individual element of the array from the user and finds the sum of these elements.
 
 #include<stdio.h>
 void main()
