@@ -49,4 +49,12 @@ public class CardService {
     public void deleteCard(final String number) {
         cardRepository.deleteById(number);
     }
+
+    public List<Card> retrieveCardsByHolder(final String holder) {
+        return cardRepository.findAllByHolder(holder);
+    }
+
+    public List<Card> retrieveCardsByExpiration(final Integer expirationMonth, final Integer expirationYear) {
+        return cardRepository.findAllByExpirationMonthAndExpirationYear(expirationMonth, expirationYear);
+    }
 }

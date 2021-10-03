@@ -37,4 +37,15 @@ public class CardController {
         cardService.deleteCard(number);
         return ResponseEntity.ok("ok");
     }
+
+    @GetMapping("/holder/{holder}")
+    public ResponseEntity<CardsResponse> retrieveCardsByHolder(@PathVariable("holder") final String holder) {
+        return ResponseEntity.ok(CardsResponse.builder().cards(cardService.retrieveCardsByHolder(holder)).build());
+    }
+
+    @GetMapping("/{expirationMonth}/{expirationYear}")
+    public ResponseEntity<CardsResponse> retrieveCardsByExpiration(@PathVariable("expirationMonth") final Integer expirationMonth,
+                                                                   @PathVariable("expirationYear") final Integer expirationYear) {
+        return ResponseEntity.ok(CardsResponse.builder().cards(cardService.retrieveCardsByExpiration(expirationMonth, expirationYear)).build());
+    }
 }
