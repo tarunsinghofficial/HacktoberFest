@@ -15,7 +15,7 @@ class CheckEvenOdd
      * else odd number*/
     if (num<0)
         System.out.println("Entered number is neither even nor odd");
-     else if( num % 2 == 0 )
+     else if( num % 2 != 1 )
         System.out.println("Entered number is even");
        else
         System.out.println("Entered number is odd");
