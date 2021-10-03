@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Binance Postion Size Calculator</title>
+  </head>
+
+  <script  src="js\jquery-3.3.1.js" ></script>
+  <script  src="js\jquery-3.3.1.slim.min.js"></script>
+  <script src="js\bootstrap.js"></script>
+
+  <link rel="stylesheet" href="css\bootstrap.min.css">
+  <link rel="stylesheet" href="css\bootstrap.css">
+
+  <body>
+    <div class="container">
+      <center><h1>Binance Postion Size Calculator</h1></center>
+      <div class="container long" id="long">
+        <table class="table table-borderless table-b">
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="size">SIZE</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="size" type="number" name="" value="400" onchange="calculateLong()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">RISK PERCENT</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="risk" type="number" name="" value="2" onchange="calculateLong()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">ENTRY</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="entry" type="number" name="" value="33300" onchange="calculateLong()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">STOPLOSS</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="stoploss" type="number" name="" value="32400" onchange="calculateLong()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">TARGET_1</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="target1" type="number" name="" value="36000" onchange="calculateLong()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">TARGET_2</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="target2" type="number" name="" value="0" onchange="calculateLong()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">TARGET_3</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="target3" type="number" name="" value="0" onchange="calculateLong()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">AMOUNT ON RISK</label>
+            </td>
+            <td colspan="2" class="text-center text-danger">
+              <label class="font-weight-bold" id="amtOnRisk" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">OPTIMUM POSITION SIZE</label>
+            </td>
+            <td colspan="2" class="text-center">
+              <label class="font-weight-bold text-primary" id="optimumPositionSize" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">POSITION AMOUNT</label>
+            </td>
+            <td colspan="2" class="text-center">
+              <label id="positionAmt" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">SIZE AFTER STOPLOSS</label>
+            </td>
+            <td colspan="2" class="text-center">
+              <label class="font-weight-bold text-danger" id="amtAftStoploss" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="font-weight-bold" for="">AMOUNT AFTER TARGET_1</label>
+            </td>
+            <td class="text-center">
+              <label id="amtAftTarget1" for=""></label>
+            </td>
+            <td>
+              <label class="font-weight-bold" for="">NET PROFIT</label>
+            </td>
+            <td class="text-center">
+              <label class="font-weight-bold text-success" id="NetAmtAftTarget1" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="font-weight-bold" for="">AMOUNT AFTER TARGET_2</label>
+            </td>
+            <td class="text-center">
+              <label id="amtAftTarget2" for=""></label>
+            </td>
+            <td>
+              <label class="font-weight-bold" for="">NET PROFIT</label>
+            </td>
+            <td class="text-center">
+              <label class="font-weight-bold text-success" id="NetAmtAftTarget2" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="font-weight-bold" for="">AMOUNT AFTER TARGET_3</label>
+            </td>
+            <td class="text-center">
+              <label id="amtAftTarget3" for=""></label>
+            </td>
+            <td>
+              <label class="font-weight-bold" for="">NET PROFIT</label>
+            </td>
+            <td class="text-center">
+              <label class="font-weight-bold text-success" id="NetAmtAftTarget3" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4">
+              <button class="font-weight-bold btn btn-block btn-lg btn-dark"  type="button" name="button" onclick="showShort();">
+                  Calculate SHORT
+              </button>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+
+      <!-- SHORT TABLE START FROM HERE -->
+
+      <div class="container short" id="short">
+        <table class="table table-borderless">
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">SIZE</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="size_short" type="number" name="" value="400" onchange="calculateShort()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">RISK PERCENT</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="risk_short" type="number" name="" value="2" onchange="calculateShort()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">ENTRY</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="entry_short" type="number" name="" value="33300" onchange="calculateShort()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">STOPLOSS</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="stoploss_short" type="number" name="" value="34400" onchange="calculateShort()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">TARGET_1</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="target1_short" type="number" name="" value="33100" onchange="calculateShort()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">TARGET_2</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="target2_short" type="number" name="" value="0" onchange="calculateShort()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label class="font-weight-bold" for="">TARGET_3</label>
+            </td>
+            <td colspan="3">
+              <input class="form-control" id="target3_short" type="number" name="" value="0" onchange="calculateShort()">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">AMOUNT ON RISK</label>
+            </td>
+            <td colspan="2" class="text-center">
+              <label class="font-weight-bold text-danger" id="amtOnRisk_short" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">OPTIMUM POSITION SIZE</label>
+            </td>
+            <td colspan="2" class="text-center">
+              <label class="font-weight-bold text-primary" id="optimumPositionSize_short" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">POSITION AMOUNT</label>
+            </td>
+            <td colspan="2" class="text-center">
+              <label id="positionAmt_short" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <label class="font-weight-bold" for="">SIZE AFTER STOPLOSS</label>
+            </td>
+            <td colspan="2" class="text-center">
+              <label class="font-weight-bold text-danger" id="amtAftStoploss_short" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="font-weight-bold" for="">AMOUNT AFTER TARGET_1</label>
+            </td>
+            <td class="text-center">
+              <label class="" id="amtAftTarget1_short" for=""></label>
+            </td>
+            <td>
+              <label class="font-weight-bold" class="font-weight-bold" for="">NET PROFIT</label>
+            </td>
+            <td class="text-center">
+              <label class="font-weight-bold text-success" id="NetAmtAftTarget1_short" for=""></label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="font-weight-bold" for="">AMOUNT AFTER TARGET_2</label>
+            </td>
+            <td class="text-center">
+              <label class="" id="amtAftTarget2_short" for="">0</label>
+            </td>
+            <td>
+              <label class="font-weight-bold" for="">NET PROFIT</label>
+            </td>
+            <td class="text-center">
+              <label class="font-weight-bold text-success" id="NetAmtAftTarget2_short" for="">0</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="font-weight-bold" for="">AMOUNT AFTER TARGET_3</label>
+            </td>
+            <td class="text-center">
+              <label class="" id="amtAftTarget3_short" for="">0</label>
+            </td>
+            <td>
+              <label class="font-weight-bold" for="">NET PROFIT</label>
+            </td>
+            <td class="text-center">
+              <label class="font-weight-bold text-success" id="NetAmtAftTarget3_short" for="">0</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4">
+              <button class="font-weight-bold btn btn-block btn-lg btn-dark"  type="button" name="button" onclick="showLong();">
+                Calculate LONG
+              </button>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="./js/calc.js"></script>
+</html>
