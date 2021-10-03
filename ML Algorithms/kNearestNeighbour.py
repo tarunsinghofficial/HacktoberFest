@@ -6,6 +6,7 @@ l=['good','good','bad','bad']
 x=[]
 y=[]
 s=len(set(l)) #shows all categories present
+
 for i in range(len(f)):
     f1=f[i][0]
     x=np.append(x,f1)
@@ -17,6 +18,7 @@ for i in range(len(f)):
         plt.plot(x[i],y[i],'r*')
     else:
         plt.plot(x[i],y[i],"y^")
+        
 p = int(input("Enter saving%"))
 q = int(input("Enter no. of good habit"))
 k=int(input("Enter k"))
