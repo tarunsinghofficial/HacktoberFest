@@ -1,0 +1,112 @@
+.skill {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  width: 100vw;
+  height: 100%;
+  padding-left: 5vw;
+}
+/* Skill top */
+.skill_top {
+  padding-top: 5vh;
+
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 3vw;
+    font-size: 18px;
+  }
+}
+.skill_top p:nth-child(2) {
+  margin-left: 5vw;
+}
+// SKills mid
+.skill_mid {
+  display: flex;
+  flex-direction: row;
+  padding-left: 7vw;
+}
+.skill_content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15vh;
+  width: 50vw;
+
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 2vw;
+    font-size: 18px;
+  }
+  h1 {
+    color: #cd5244;
+    font-family: "Oswald", sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    margin-left: 3vw;
+  }
+  h4 {
+    color: white;
+    margin-left: 3vw;
+    font-family: "Open Sans", sans-serif;
+
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 3px;
+  }
+}
+.skill_svg {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 15vh;
+  width: 100vw;
+  height: 100vh;
+}
+
+// Skill bottom
+.skill_bottom {
+  margin-top: 15vh;
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 5vw;
+    font-size: 18px;
+  }
+}
+.skill_bottom p:nth-child(2) {
+  margin-left: 3vw;
+}
+@media (max-width:768px){
+
+  /* skill mobile */
+
+  .skill{
+    margin-left: 0px;
+  }
+  .skill_top{
+    padding-top: 2vh;
+  }
+  .skill_content{
+    margin-top: 5vh;
+    width: 90vw;
+    padding-left: 2vw;
+    h1 {
+      font-size: 2rem;
+    }
+    h4{
+      font-size: .8rem;
+    }
+
+  }
+
+  .skill_bottom{
+    margin-top: 10vh;
+  }
+  
+}
