@@ -1,0 +1,27 @@
+def encrypt(message, key):
+    encryptMessage = ""
+
+    for char in message:
+
+        # Checking Upper Case.
+        if (char.isupper()):
+            encryptCharacter = chr(((((ord(char)+key)-65) % 26) + 65))
+            encryptMessage += encryptCharacter
+
+        # Checking Lower Case.
+        elif (char.islower()):
+            encryptCharacter = chr((((ord(char)+key-97) % 26) + 97))
+            encryptMessage += encryptCharacter
+
+        # Checking special symbols.
+        else:
+            encryptCharacter = chr((((ord(char)+key-32) % 33) + 32))
+            encryptMessage += encryptCharacter
+
+    return encryptMessage
+
+
+
+message = input("Enter the string to encrypt: ")
+
+print("Ceaser Aplications.java.Cipher text: ", encrypt(message, 3))
