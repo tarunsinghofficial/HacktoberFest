@@ -1,10 +1,12 @@
 #include <iostream>
 #include <bits/stdc++.h>
+#define MAX 20
+
 
 using namespace std;
 
 int main() {
-	//code
+	//code for knapsack problem (0 1).
 	int T;
 	cin>>T;
 	while(T--)
