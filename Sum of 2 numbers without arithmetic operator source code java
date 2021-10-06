@@ -1,0 +1,10 @@
+class Add
+{
+static int sum(int a , int  b)
+{
+if (b == 0)
+return a;
+else
+return sum(a ^  b,(a & b)<<1);
+}
+}
