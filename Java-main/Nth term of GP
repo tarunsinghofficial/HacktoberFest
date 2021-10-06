@@ -1,0 +1,15 @@
+import java.util.*;
+class test{
+    public static int find_gp(int a,int d,int n)
+    {
+        int ans=a*(int)Math.pow(d,n-1);
+        return ans;
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int d=sc.nextInt();
+        int n=sc.nextInt();
+        System.out.println(find_gp(a,d,n));
+    }
+}

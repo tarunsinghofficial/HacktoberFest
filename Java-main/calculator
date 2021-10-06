@@ -1,0 +1,27 @@
+import java.util.*;
+class findGreatest{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter 1. Multiplication\n2.Addition\n3.Subtraction");
+        int choice=sc.nextInt();
+        System.out.println("Enter the two numbers");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        if(choice==1)
+        {
+            System.out.println(a*b);
+        }
+        else if(choice==2)
+        {
+            System.out.println(a+b);
+        }
+         else if(choice==3)
+        {
+            System.out.println(a-b);
+        }
+        else
+        {
+            System.out.println("Invalid Choice Entered");
+        }
+    }
+}

@@ -1,0 +1,9 @@
+import java.util.*;
+class test{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int y=Math.abs(a);
+        System.out.println("Last digit of the number is "+y%10);
+    }
+}

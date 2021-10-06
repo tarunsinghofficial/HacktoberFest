@@ -1,0 +1,31 @@
+import java.util.*;
+class firstDigit{
+    public static void main(String[]args){
+         Scanner sc=new Scanner(System.in);
+         int num=sc.nextInt();
+         System.out.println(printFirstDigit(num));
+        }
+    public static int printFirstDigit(int num)
+    {
+        while(num>10)
+        {
+            num=num/10;
+        }
+        return num;
+    }
+}
+//using log
+import java.util.*;
+class firstDigit{
+    public static void main(String[]args){
+         Scanner sc=new Scanner(System.in);
+         int num=sc.nextInt();
+         System.out.println(printFirstDigit(num));
+        }
+    public static int printFirstDigit(int num)
+    {
+        int power=(int)Math.log10(num);
+        int temp=(int)Math.pow(10,power);
+        return num/temp;
+    }
+}

@@ -1,0 +1,17 @@
+
+import java.io.*;
+import java.util.*;
+
+class reverseString{
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		String b=" ";
+		int p=s.length()-1;
+		while(p>=0){
+		    b+=s.charAt(p);
+		    p--;
+		}
+		System.out.println(b);
+	}
+}

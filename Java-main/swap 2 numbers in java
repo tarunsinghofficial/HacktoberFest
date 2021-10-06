@@ -1,0 +1,22 @@
+class swapNum{
+    int x;
+    int y;
+    public static void swap(swapNum z)
+    {
+        int temp;
+        temp=z.x;
+        z.x=z.y;
+        z.y=temp;
+    }
+}
+class Test{
+    public static void main(String [] args)
+    {
+    swapNum ex=new swapNum();
+    ex.x=10;
+    ex.y=20;
+    ex.swap(ex);
+    System.out.println(ex.x);
+    System.out.println(ex.y);
+    }
+}
