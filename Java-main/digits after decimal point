@@ -1,0 +1,17 @@
+
+import java.io.*;
+import java.util.*;
+
+class digitsAfterDecimalPoint{
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		int pos=s.indexOf('.');
+		if(pos<0){
+		    System.out.println("String Not Found");
+		}
+		else{
+		    System.out.println(s.substring(pos+1));
+		}
+	}
+}

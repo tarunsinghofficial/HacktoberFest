@@ -1,0 +1,15 @@
+
+import java.io.*;
+import java.util.*;
+
+class findPattern{
+	public static void main (String[] args) {
+		String S1="GeeksforGeeks";
+		String S2="Geeks";
+		int pos=S1.indexOf(S2);
+		while(pos>=0){
+		    System.out.println(pos+" ");
+		    pos=S1.indexOf(S2,pos+1);
+		}
+	}
+}

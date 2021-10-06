@@ -1,0 +1,16 @@
+
+import java.io.*;
+import java.util.*;
+
+class decToBinary{
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=" ";
+		int n=sc.nextInt();
+		while(n>0){
+		    s=(n%2)+s;
+		    n=n/2;
+		}
+	  System.out.println(s);
+	}
+}
