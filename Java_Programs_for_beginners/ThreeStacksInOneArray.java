@@ -34,7 +34,7 @@ public class ThreeStacksInOneArray {
                     shiftStack3ToLeft();
                     dataArray[--topTwo] = data;
                 } else {
-                    throw new StackOverflowException("Stack one has reached limit");
+                    throw new StackOverflowException("Stack two has reached limit");
                 }
 
             } else {
@@ -44,6 +44,7 @@ public class ThreeStacksInOneArray {
             if (topTwo - 1 == topThree) {
                 if (stack3IsLeftShiftable()) {
                     shiftStack3ToLeft();
+                    dataArray[++topThree]=data;
                 } else {
                     throw new StackOverflowException("Stack three has reaced limit");
                 }
@@ -66,11 +67,11 @@ public class ThreeStacksInOneArray {
         } else if (stackId == 2) {
             if (topTwo == this.size)
                 throw new EmptyStackException("Second Stack Is Empty");
-            int toPop = dataArray[topOne];
+            int toPop = dataArray[topTwo];
             dataArray[topTwo++] = null;
             return toPop;
         } else if (stackId == 3) {
-            if (topThree == this.size && dataArray[topThree] == 0)
+            if (topThree == this.size && dataArray[topThree] == null)
                 throw new EmptyStackException("third Stack Is Empty");
             int toPop = dataArray[topThree];
             if (topThree > baseThree)
@@ -93,7 +94,7 @@ public class ThreeStacksInOneArray {
                 throw new EmptyStackException("Second Stack Is Empty");
             return dataArray[topTwo];
         } else if (stackId == 3) {
-            if (topThree == baseThree && dataArray[baseThree] == 0)
+            if (topThree == baseThree && dataArray[baseThree] == null)
                 throw new EmptyStackException("Third Stack Is Empty");
             return dataArray[topTwo];
         } else {
@@ -107,7 +108,7 @@ public class ThreeStacksInOneArray {
         } else if (stackId == 2) {
             return topTwo == this.size;
         } else if (stackId == 3) {
-            return (topThree == baseThree) && (dataArray[baseThree] == 0);
+            return (topThree == baseThree) && (dataArray[baseThree] == null);
         } else {
             return true;
         }
