@@ -21,7 +21,7 @@ class BinarySearchExample
       item = input.nextInt();
       first = 0;
       last = num - 1;
-      middle = (first + last)/2;
+      middle = first + (last - first) / 2;
 
       while( first <= last )
       {
