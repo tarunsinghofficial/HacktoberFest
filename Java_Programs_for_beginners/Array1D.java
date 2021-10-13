@@ -1,5 +1,5 @@
 
-package java_Programs_for_beginners;
+package Java_Programs_for_beginners;
 
 /**
  *
