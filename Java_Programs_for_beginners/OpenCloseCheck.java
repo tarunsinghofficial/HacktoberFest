@@ -40,7 +40,11 @@ public class OpenCloseCheck {
   // Regex holder
   private static String symbolMapRegex;
 
-  /* If parentheses are not set default parentheses set will be used*/
+  /**
+   * Program for check if open-close symbol relationship is met.
+   *
+   * @param argv Program arguments -s,-f,-l,-r,-e ...
+   */
   public static void main(String... argv) {
     // Create a Scanner object
     final Scanner myObj = new Scanner(System.in);
