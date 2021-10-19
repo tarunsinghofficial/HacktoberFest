@@ -1,5 +1,5 @@
 #include<stdio.h>
-//Function to calculate the maximum sum of a sub-array of a given array
+//Function to calculate the maximum sum of a sub-array of a given array easily
 int maxSumarray(int a[], int size){
         int i;
         int max_sum_so_far=0;
