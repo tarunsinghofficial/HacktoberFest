@@ -225,8 +225,8 @@ int checkover(int a[4][4])
 int main()
 {
 	cout<<"\n\n\n\n\t\t\t2048 GAME\n\n\n\t\tPress any key to continue";
-	getch();
-	system("cls");
+	getch(); // It will take an input from the keyboard.
+	system("cls"); // It will clear the screen.
 	int i1,i2,i3,i4,i,j;
 	int a[4][4]={0},tmp[4][4]={0};
 	srand(time(0));
@@ -245,8 +245,8 @@ int main()
 	int ch;
 	while (1)
     {
-    	for(i=0;i<4;i++)
-    		for(j=0;j<4;j++)
+    	for(i=0;i<4;i++) //Outer for loop.
+    		for(j=0;j<4;j++) //Inner for loop.
     			tmp[i][j]=a[i][j];
     	ch=getch();
     	system("cls");
