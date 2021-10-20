@@ -1,6 +1,6 @@
 #include<stdio.h>
  
-int main()
+int main(void)
  
 {
  
@@ -10,7 +10,7 @@ int main()
  
  scanf("%d",&num);
  
- temp=num;
+ temp=num; //temp variable will not reflect the actual value of num.
  
  while(num)
  

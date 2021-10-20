@@ -32,7 +32,7 @@ Example:
 5. Create a new pull request from your forked repository (Button located at the top of your repo)
 8. Star this repository!
 
-### Show some love 😄 
+### Please show some love 😄 
 <a href="https://github.com/tarunsinghofficial" aria-label="Follow @tarunsinghofficial on GitHub"><img  src="https://img.shields.io/badge/Follow👉-@tarunsinghofficial-green?style=for-the-badge"  />
 </a>
 <br>

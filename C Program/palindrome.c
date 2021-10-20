@@ -9,11 +9,11 @@ int isPal(int );
 */
 int n;
 
-int main()
+int main(void)
 {
     printf("\n\n\t\tStudytonight - Best place to learn\n\n\n");
     int palindrome;
-    printf("\n\nEnter a number to check for Palindrome: ");
+    printf("\n\nPlease enter a number to check for Palindrome: ");
     scanf("%d", &n);
     palindrome = isPal(n);
     if(palindrome == 1)
@@ -21,7 +21,7 @@ int main()
     else
         printf("\n\n\n%d is not palindrome\n\n", n);
 
-    printf("\n\n\t\t\tCoding is Fun !\n\n\n");
+    printf("\n\n\t\t\t<<< Coding is Fun ! >>>\n\n\n");
     return 0;
 }
 
