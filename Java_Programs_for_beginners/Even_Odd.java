@@ -13,9 +13,10 @@ class CheckEvenOdd
 
     /* If number is divisible by 2 then it's an even number
      * else odd number*/
+    int r=num%10;
     if (num<0)
         System.out.println("Entered number is neither even nor odd");
-     else if( num % 2 == 0 )
+     else if( r==0||r==2||r==4||r==6||r==8 )
         System.out.println("Entered number is even");
        else
         System.out.println("Entered number is odd");
