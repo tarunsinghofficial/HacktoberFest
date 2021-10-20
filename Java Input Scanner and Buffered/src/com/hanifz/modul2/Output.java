@@ -1,6 +1,6 @@
-package com.hanifz.modul2;
+//package com.hanifz.modul2;
 
-public class Output {
+public class Main {
     public static void main(String[] args) {
         String teks = "ini sebuah kalimat";
         int angka = 100;
