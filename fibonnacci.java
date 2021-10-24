@@ -1,0 +1,2 @@
+class fibonacci{public static void main(String[] a1){System.out.println(" Name-Shashank RawatSap ID-1000014024");int n = 25, firstTerm = 0, secondTerm = 1;System.out.println("Fibonacci Series till " + n + " terms:");for (int i = 1; i <= n; ++i) {System.out.print(firstTerm + ", ");int nextTerm = firstTerm + secondTerm;firstTerm = secondTerm;secondTerm = nextTerm;if(firstTerm%5==0){nextTerm = firstTerm + secondTerm;firstTerm = secondTerm;secondTerm = nextTerm;}}
+}}
