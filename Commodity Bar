@@ -1,0 +1,278 @@
+<?php
+/*
+Plugin Name: Commodity Bar
+Plugin URI: https://unicornpoint.net
+Description: Very basic plugin to list the price of commodities.
+Author: Dawn
+Version: 1.0
+Author URI: https://unicornpoint.net
+*/
+
+//security checks
+if (! defined('ABSPATH')){
+	die;
+}
+
+// Hook the 'admin_menu' action hook, run the function named 'commodity_admin_link()'
+add_action( 'admin_menu', 'commodity_admin_link' );
+
+// Add a new top level menu link to the ACP
+function commodity_admin_link()
+{
+	add_menu_page(
+'Commodity Bar Settings Page', // Title of the page
+'Commodity Bar', // Text to show on the menu link
+'manage_options', // Capability requirement to see the link
+'commodity-bar-settings-page', // menu slug
+'commodity_admin_page', // callback function
+'dashicons-admin-generic', // icon
+null // position on side menu
+);
+}
+
+/**
+* Registers a text field setting for Wordpress 4.7 and higher.
+**/
+function register_commodity_settings() {
+	$args = array(
+		'type' => 'string',
+		'sanitize_callback' => 'sanitize_text_field',
+		'default' => NULL,
+	);
+
+	register_setting( 'commodity_options_group', 'commodity_api_key');
+
+	add_settings_section(
+'commodity_section_settings', // the id of the section
+'Customize Settings Page', // the heading of the section
+'commodity_callback_section_settings', // the callback for the section
+'commodity-bar-settings-page' // the menu slug page
+);
+
+	add_settings_field(
+'commodity_api_key', // setting ID in the database
+'Metals-api.com API Key', // setting name displayed next to field
+'commodity_api_field_text', // callback function for processing text field
+'commodity-bar-settings-page', // menu page slug page
+'commodity_section_settings' // settings field callbacks
+);
+}
+
+// initiate the register settings
+add_action( 'admin_init', 'register_commodity_settings' );
+
+// callback: settings section
+function commodity_callback_section_settings() {
+
+	echo '<p>These settings enable you to customize Commodity Bar.</p>';
+
+}
+
+// callback: add api settings field
+function commodity_api_field_text() {
+//id and name of form element should be same as the setting name.
+	?>
+	<input type="text" name="commodity_api_key" placeholder="Enter your API key" id="commodity_api_key" value="<?php echo get_option('commodity_api_key'); ?>" />
+	<p>This plugin works with a metals-api.com API key.</p>
+	<?php
+}
+
+function commodity_print_api_key(){
+	$api_key = get_option( 'commodity_api_key');
+	echo $api_key;
+}
+
+// Create a basic admin page
+function commodity_admin_page(){
+	?>
+	<div class="wrap">
+		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+		<form method="post" action="options.php">
+			<?php settings_fields( 'commodity_options_group' ); ?>
+			<?php do_settings_sections( 'commodity-bar-settings-page' ); ?>
+			<?php submit_button(); ?>
+		</form>
+	</div>
+	<?php
+}
+// Prints out the prices of the metals
+function print_commodities() {
+	if ( (! is_admin()) && (! is_admin_bar_showing()) ) {
+		if ( 'wp-login.php' != $GLOBALS['pagenow'] ) {
+
+			echo '<div class="marquee">
+			<div class="styles">
+			<div class="marquee-item">
+			<span class="printouts">Gold - ', update_price($metal = "gold"),'</span>
+			<span class="printouts">Silver - ', update_price($metal = "silver"),'</span>
+			<span class="printouts">Platinum - ', update_price($metal = "platinum"),'</span>
+			<span class="printouts">Palladium - ', update_price($metal = "palladium"),'</span>
+			<span class="date">Date retrieved: ', update_price($metal = "date"),'</span>
+			</div>
+			</div>
+			</div>';
+		}
+	}
+}
+
+function check_databases(){
+	$path_latest = ABSPATH.'wp-content/plugins/commodity-bar/latest.json';
+	$path_flucuation = ABSPATH.'wp-content/plugins/commodity-bar/fluctuation.json';
+	$t = time();
+
+	if ($t-filemtime($path_latest) > 900) {
+
+			// building the current price url
+			$access_key = 'insert-your-key-from-metalsapi.com';
+			$endpoint1 = 'latest';
+			$url1 = 'http://metals-api.com/api/'.$endpoint1.'?access_key='.$access_key.'&base=USD&symbols=XAG,XAU,XPT,XPD';
+			$json1 = file_get_contents($url1);
+			file_put_contents($path_latest, $json1);
+
+			// building the fluctuation url
+			$endpoint2 = 'fluctuation';
+			// the start and end time variables
+			$dateStart = new DateTime();
+			$dateStart->sub(new DateInterval('P1D'));
+			
+			$dateEnd = new DateTime();
+			
+			$url2 = 'http://metals-api.com/api/'.$endpoint2.'?access_key='.$access_key.'&base=USD&symbols=XAG,XAU,XPT,XPD&start_date='.$dateStart->format('Y-m-d').'&end_date='.$dateEnd->format('Y-m-d').'';
+			$json2 = file_get_contents($url2);
+			file_put_contents($path_flucuation, $json2);
+		}
+	}
+
+
+function update_price($metal = ""){
+
+	// get the data from the locally saved json files
+	$json_latest = file_get_contents (ABSPATH.'wp-content/plugins/commodity-bar/latest.json');
+	$result1 = json_decode($json_latest, true);
+
+	$json_fluc = file_get_contents (ABSPATH.'wp-content/plugins/commodity-bar/fluctuation.json');
+	$result2 = json_decode($json_fluc, true);
+
+	
+	switch ($metal) {
+		case 'gold':
+		$current_price = 1 / $result1['rates']['XAU'];
+		$start_price = 1 / $result2['rates']['XAU']['start_rate'];
+		$end_price = 1 / $result2['rates']['XAU']['end_rate'];
+		$change = $result2['rates']['XAU']['change_pct'];
+		break;
+
+		case 'silver':
+		$current_price = 1 / $result1['rates']['XAG'];
+		$start_price = 1 / $result2['rates']['XAG']['start_rate'];
+		$end_price = 1 / $result2['rates']['XAG']['end_rate'];
+		$change = $result2['rates']['XAG']['change_pct'];
+		break;
+
+		case 'platinum':
+		$current_price = 1 / $result1['rates']['XPT'];
+		$start_price = 1 / $result2['rates']['XPT']['start_rate'];
+		$end_price = 1 / $result2['rates']['XPT']['end_rate'];
+		$change = $result2['rates']['XPT']['change_pct'];
+		break;
+
+		case 'palladium':
+		$current_price = 1 / $result1['rates']['XPD'];
+		$start_price = 1 / $result2['rates']['XPD']['start_rate'];
+		$end_price = 1 / $result2['rates']['XPD']['end_rate'];
+		$change = $result2['rates']['XPD']['change_pct'];
+		break;
+
+		case 'date':
+		echo $result1['date'];
+		break;
+	}
+	if ($end_price < $start_price){
+		echo number_format((float)$current_price, 2, '.','').'<span class="down-text">  '.number_format((float)$change, 2, '.','').'%</span>';
+	} else if ($end_price > $start_price){
+		echo number_format((float)$current_price, 2, '.','').'<span class="up-text">  '.number_format((float)$change, 2, '.','').'%</span>';
+	} else {
+
+	}
+}
+
+// Styles the ticker
+function commodity_add_css() {
+	echo "
+	<style type='text/css'>
+	.styles {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		padding: 5px 10px;
+		background-color: black;
+		width: 100%;
+		height: 50px;
+		align-items: center;
+		position: fixed;
+		top: 0;
+		z-index: 10000;
+	}
+	@-webkit-keyframes scroll {
+		0%{
+			-webkit-transform: translate(50%, 0);
+		}
+		100%{
+			-webkit-transform: translate(-100%, 0);
+		}
+	}
+	.marquee {
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+		overflower: hidden;
+	}
+	.marquee-item {
+		display: inline-block;
+		padding-left: 100%;
+		-webkit-animation: scroll 20s infinite linear;
+	}
+	.arrow-up{
+		padding-left: 5px;
+		margin-top: 5px;
+		height: 16px;
+		width: 18px;
+		vertical-align: sub;
+	}
+	.arrow-down{
+		padding-left: 5px;
+		margin-top: 5px;
+		height: 16px;
+		width: 18px;
+		vertical-align: top;
+	}
+	.printouts{
+		font-family: Arial, Helvetica, sans-serif;
+		color: white;
+		font-size: 16px;
+		font-weight: bold;
+		padding-right: 30px;
+	}
+	.date{
+		font-family: Arial, Helvetica, sans-serif;
+		color: grey;
+		font-size: 12px;
+		align-items: center;
+	}
+	.up-text{
+		padding-left: 5px;
+		color: #35CB67;
+	}
+	.down-text{
+		padding-left: 5px;
+		color: #C8371C;
+	}
+	/* 1150px and down */
+	@media only screen and (max-width: 1150px) {
+	}
+	</style>";}
+
+// add actions
+	add_action( 'template_redirect', 'commodity_add_css' );
+	add_action( 'wp', 'check_databases' );// add action commodity print
+	add_action( 'wp', 'print_commodities' );
