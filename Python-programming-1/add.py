@@ -1,5 +1,5 @@
 a=int(input("Enter the first number"))
 b=int(input("Enter the second number"))
 c=a+b
-print("the sum is",c)
+print("the sum is",a+b)
       
