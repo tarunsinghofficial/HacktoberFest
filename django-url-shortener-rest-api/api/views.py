@@ -12,6 +12,8 @@ def home(request):
     return JsonResponse(response_status, status=200)
 
 
+
+
 @csrf_exempt
 def shortenedURL_list(request):
     """List all shortenedURLs, or create a new shortenedURL."""

@@ -10,4 +10,6 @@ urlpatterns = [
     path(route='<str:short_url>',
          view=views.redirect_view,
          name='URL Redirect')
+
+         
 ]
