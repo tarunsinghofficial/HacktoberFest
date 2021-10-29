@@ -1,0 +1,5 @@
+__pycache__/
+venv/
+*.sql
+*$py.class
+*.py[cod]
