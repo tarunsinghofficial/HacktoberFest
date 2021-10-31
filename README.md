@@ -34,3 +34,5 @@ A month-long celebration from October 1st - 31st sponsored by [Digital Ocean](ht
 Made with [contributors-img](https://contributors-img.web.app).
 
 -Happy programming:D
+
+Hacktoberfest is open to everyone in our global community! Maintainers determine if their open-source projects participate by adding the 'hacktoberfest' topic. Quality pull requests submitted on GitHub and GitLab are rewarded. Engaged maintenance of Hacktoberfest tagged repositories are rewarded.
