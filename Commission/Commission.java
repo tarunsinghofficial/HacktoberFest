@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CommissionProgram {
+public class Commission {
     public static void main(String[] args) {
 
 //      Calculate Commission Percentage
