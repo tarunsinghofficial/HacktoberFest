@@ -1,0 +1,67 @@
+
+<body background="C:\Users\Lenovo\OneDrive\Desktop\webdev\new\img.jpg" style="background-repeat:no-repeat;background-size: 100% 100%">
+<div class="section">
+
+    <h1>REGISTERATION</h1>
+
+    <div class="video-container">
+        <div class="color-overlay"></div>
+        <video autoplay loop muted>
+            <source src="C:\Users\Lenovo\OneDrive\Desktop\webdev\new\Starfield_Fly_Through.mov" type="video/mov">
+        </video>
+    </div>
+</div>
+    <div class="full-page">
+        <div>
+		 <form id='register' class='input-group-register'><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		     <input type='text'class='input-field'placeholder='First Name' required>
+		     <input type='text'class='input-field'placeholder='Last Name ' required>
+		     <input type='email'class='input-field'placeholder='Email Id' required>
+		     <input type='number'class='input-field'placeholder='Roll No.' required>
+		     <input type='number'class='input-field'placeholder='How Excited Are You?(1 to 5)'  required>
+		     <input type='checkbox'class='check-box'><span class="span">I agree to the terms and conditions</span>                                             
+                    <button type='submit'class='submit-btn'>Register</button>
+	         </form>
+        </div>
+    </div>
+</body>
+
+
+<style>
+.section {
+position: relative;
+width: 100%;
+height: 25vh;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow:hidden;
+}
+
+.section h1 {
+text-align: center;
+font-size: 6rem;
+font-family: "Cookie";
+padding: 20px;
+margin: 15px;
+z-index: 1;
+opacity: 0.5;
+color: whitesmoke ;
+}
+
+.video-container {
+position: absolute;
+left: 10%;
+height: 100vh;
+width: 100%;
+}
+
+.color-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+opacity: 0.5;
+}
+</style>
