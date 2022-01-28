@@ -1,0 +1,99 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  width: 100vw;
+  height: 100%;
+  padding-left: 5vw;
+}
+/* Home top portion */
+.home_top {
+  padding-top: 5vh;
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 3vw;
+    font-size: 18px;
+  }
+}
+.home_top p:nth-child(2) {
+  margin-left: 5vw;
+}
+
+/* Home middle portion */
+.home_mid {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+  width: 90vw;
+  padding-left: 7vw;
+
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 2vw;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  h1 {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    margin-left: 3vw;
+  }
+  h4 {
+    color: rgb(160, 152, 139);
+    margin-left: 3vw;
+    font-family: "Open Sans", sans-serif;
+
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 3px;
+  }
+}
+.home_mid_logo {
+  height: 4.5rem;
+  padding-left: 6px;
+  padding-right: 2px;
+}
+.home_mid_contactButton {
+  color: #ff0000;
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid #ff0000;
+  margin-top: 25px;
+  float: left;
+  background-color: transparent;
+  white-space: nowrap;
+  font-weight: 400;
+
+  margin-left: 3vw;
+}
+/* Home bottom */
+
+.home_bottom {
+  padding-top: 5vh;
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 5vw;
+    font-size: 18px;
+  }
+}
+.home_bottom p:nth-child(2) {
+  margin-left: 3vw;
+}
+.home_mid_logo:hover {
+  animation: shakeY;
+  animation-duration: 3s;
+}
