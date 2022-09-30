@@ -122,7 +122,7 @@ AllRounder_data['FiveWickets_AllRounder'].unique()
 AllRounder_data['FiveWickets_AllRounder'].value_counts()
 
 
-#We can see that almost 91% of the players didn't score a Half Century. So we can drop this feature as it does not provide any value
+#We can see that almost 91% of the players did not score a Half Century. So we can drop this feature as it does not provide any value
 
 AllRounder_data.drop(['FiveWickets_AllRounder'],axis=1,inplace=True)
 AllRounder_data
