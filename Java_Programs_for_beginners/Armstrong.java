@@ -24,6 +24,7 @@ public class random1 {
 		System.out.println("Random Doubles: "+rand_dub2); 
 
 	}
+	System.out.println("This was armstrong number"); 
 
 }
 
