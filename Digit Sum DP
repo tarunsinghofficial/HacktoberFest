@@ -1,0 +1,103 @@
+Problem link - https://atcoder.jp/contests/dp/tasks/dp_s
+
+Solution
+
+import java.io.*;
+import java.util.*;
+
+class Main {
+    static PrintWriter out = new PrintWriter(System.out);
+    static final int mod = 1_000_000_007;
+    static int max = (int)(1e8);
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new
+                    InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        int[] readIntArray(int n) {
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextInt();
+            return a;
+        }
+
+        long[] readLongArray(int n) {
+            long[] a = new long[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextLong();
+            return a;
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+
+    /*--------------------------------------------------------------------------*/
+    static Integer[][][] memo;
+    public static void main(String[] args) {
+        FastReader s = new FastReader();
+        String str = s.nextLine();
+        int D = s.nextInt();
+        int n = str.length();
+        memo = new Integer[n+1][D][2];
+        out.println((find(0, n, str, D,0, 1)-1+mod)%mod);//-1 so that 0 not included.
+
+        out.close();
+    }
+
+    public static int find(int i, int n, String str, int D, int sum, int flag)
+    {
+        if(i == n)
+            return sum%D == 0 ? 1 : 0;
+
+        if(memo[i][sum][flag] != null)
+            return memo[i][sum][flag];
+
+        int res = 0;
+        int digit = str.charAt(i) - '0';
+        for(int d=0; d<=(flag == 1?digit:9); d++)
+        {
+            int currFlag = 0;
+            if(d == digit && flag == 1)//Passing the restriction
+                currFlag = 1;
+
+            res = (res + find(i+1, n, str, D,(sum+d)%D, currFlag)) % mod;
+        }
+        return memo[i][sum][flag] = res;
+    }
+}
