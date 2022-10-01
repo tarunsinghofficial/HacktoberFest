@@ -1,27 +1,32 @@
 #include<stdio.h>
 #include<conio.h>
-int fact(int n)
- {
-            int f=1;
-            while(n>0)
-            {
-             f=f*n;
-             n=n-1;
-            }
-  return f;
+typedef long long ll;
+
+ll fact(ll n)
+{
+       ll f=1;
+       for(ll i=1;i<=n/2;i++)
+       {
+        f*=i*(n+1-i);
+       }
+       if(n&1) f*=(n/2+1);
+       return f;
  }
 
 void main()
  {
-            int n,nCr,r;
-            clrscr();
-            printf("\n\n\t\t\t nCr FACTOR\n");
-            printf("\n\t\t\t*************\n");
-            printf("\n\t\t Enter the n value:");
-            scanf("%d",&n);
-            printf("\n\t\t Enter the r value:");
-            scanf("%d",&r);
-            nCr=fact(n)/(fact(r)*fact(n-r));
-            printf("\n\t\t nCr Factor=%d",nCr);
-   getch();
+       ll n,nCr,r;
+       clrscr();
+       
+       printf("\n\n\t\t\t nCr FACTOR\n");
+       printf("\n\t\t\t*************\n");
+       printf("\n\t\t Enter the n value:");
+       scanf("ll%d",&n);
+       printf("\n\t\t Enter the r value:");
+       scanf("ll%d",&r);
+       
+       nCr=fact(n)/(fact(r)*fact(n-r));
+       printf("\n\t\t nCr Factor=%lld",nCr);
+ 
+       getch();
  }
