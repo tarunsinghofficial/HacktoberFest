@@ -1,0 +1,23 @@
+import java.io.*;
+
+ 
+class Reverse
+{
+    public static void main(String args[]) throws IOException
+    {
+       
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+ 
+        System.out.println("Enter Number: ");
+        int num=Integer.parseInt(br.readLine());
+ 
+        int remainder, result=0;
+        while(num>0)
+        {
+            remainder = num%10;
+            result = result * 10 + remainder;
+            num = num/10;
+        }
+        System.out.println("Reverse number is : "+result);
+    }
+}
