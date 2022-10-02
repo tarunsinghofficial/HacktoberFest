@@ -1,0 +1,34 @@
+#include<stdio.h> //header file
+//to display the sorted array
+void printArray(int* Array, int size){
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", Array[i]);
+    }
+    printf("\size");
+}
+//function to do the sorting
+void insertionSort(int *Array, int size){
+    int key, j;
+    // Loop for passes
+    for (int i = 1; i <= size-1; i++)
+    {
+        key = Array[i];
+        j = i-1;
+        // Loop for each pass
+        while(j>=0 && Array[j] > key){
+            Array[j+1] = Array[j];
+            j--;
+        }
+        Array[j+1] = key;
+    }
+}
+//driver code
+int main(){
+    int Array[] = {1, 7, 9, 3, 2, 4, 6, 5};
+    int size = 8;
+    printArray(Array, size);
+    insertionSort(Array, size);
+    printArray(Array, size);
+    return 0;
+}
