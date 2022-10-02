@@ -1,0 +1,18 @@
+/* armstrong number finder*/
+#include <stdio.h>
+
+int main()
+{
+    int r,num,temp,sum = 0;
+    printf("enter a number : ");
+    scanf("%d",&num);
+for(r=num; num!=0; num=num/10){
+    temp = num%10;
+    sum = (temp*temp*temp);}
+    if (temp==sum)
+     printf("the number is armstrong number");
+    else
+     printf("the number is not armstrong number");
+
+    return 0;
+}
