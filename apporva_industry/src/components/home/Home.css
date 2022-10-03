@@ -1,0 +1,26 @@
+.bgImg {
+    background-image: url(../../images/Hero-bg1.jpeg);
+    object-fit: fill;
+    /* filter: blur(5px);
+    -webkit-filter: blur(5px); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homeSec3 {
+    background-color: rgba(118, 149, 216, 0.637);
+}
+
+.btn1 {
+    cursor: pointer;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    transition-duration: 1s;
+}
+
+.btn1:hover {
+    border: 1.5px solid green;
+}
