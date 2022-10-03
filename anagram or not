@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s1[100],s2[100];
+    int i,j,c=0;
+    printf("\t\t\t******INPUT******");
+    printf("\nEnter the string 1: ");
+    gets(s1);
+    printf("Enter the string 2: ");
+    gets(s2);
+    for(i=0;i<strlen(s1);i++)
+    {
+        c=0;
+        for(j=0;j<strlen(s2);j++)
+        {
+        
+            if(s1[i]==s2[j])
+            {
+                c=1;
+                break;
+            }
+        }
+        if(c==0)
+        break;
+    }
+    printf("\t\t\t******OUTPUT******");
+    printf("\n");
+    if(c==0)
+    {
+        printf("%s and %s are not anagram of each other",s1,s2);
+    }
+    else
+    {
+        printf("%s and %s are anagram of each other",s1,s2);
+    }
+
+}
