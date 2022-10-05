@@ -1,47 +1,39 @@
-#include<stdio.h>
-//Function to calculate the maximum sum of a sub-array of a given array.
-int maxSumarray(int a[], int size){
-        int i;
-        int max_sum_so_far=0;
-        int max_ending_here = 0;
+class Solution {
+public:
+    int msd(vector<int> &v,int left,int right )
+    {
+        int mid=(left+right)/2;
         
-        for(i=0;i<size;i++){
-        	max_ending_here = max_ending_here + a[i];
-        	
-        	if(max_ending_here < 0){
-        		max_ending_here =0;
-			}
-		    if(max_sum_so_far < max_ending_here){
-			  
-			  max_sum_so_far = max_ending_here;
-			
-			}
-			
-		}
-
-return max_sum_so_far;
-}
-
-
-int main(){
-	
-	int i,size;
-	
-	printf("Enter the size of the array ");
-	scanf("%d",&size);
-	
-	int a[size];
-	printf("\n Enter the elements of the array");
-	for(i=0; i<size; i++){
-		
-		scanf("%d",&a[i]);		
-	}
-	 
-	
-	int max_sum = maxSumarray(a,size); //function call.
-	
-    printf("\n\n The Maximum Sum of the Sub Array is : %d",max_sum);
-	
-	
-	return 0;
-}
+        if(left==right)
+            return v[left];
+        int leftans=msd(v,left,mid);
+        int rightans=msd(v,mid+1,right);
+        int temp=0;
+        int leftmax=v[mid];
+        int rightmax=v[mid+1];
+        for(int i=mid;i>=left;i--)
+        {
+            temp+=v[i];
+            if(temp>leftmax)
+                leftmax=temp;
+            
+        }
+        temp=0;
+     for(int i=mid+1;i<=right;i++)
+        {
+            temp+=v[i];
+            if(temp>rightmax)
+                rightmax=temp;
+            
+        }
+       return max((leftans,rightans),leftmax+rightmax);
+        
+        
+        
+    }
+    int maxSubArray(vector<int>& nums) {
+        return msd(nums,0,nums.size()-1);
+        
+        
+    }
+};
