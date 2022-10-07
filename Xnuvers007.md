@@ -1,0 +1,3 @@
+- Photo: https://avatars.githubusercontent.com/u/62522733?v=4
+- Location: Indonesia
+- Github: https://github.com/Xnuvers007
