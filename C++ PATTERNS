@@ -1,0 +1,352 @@
+//A A A
+//B B B
+//C C C
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+
+    int row = 1;
+
+    while(row<=n){
+        int col=1;
+
+        while(col<=n){
+            char ch = 'A'+row-1;
+            cout << ch ;
+            col++;
+        }
+        cout<<endl;
+        row++;
+    }
+    
+}
+
+----------------------------------------------------------
+    //A B C
+    //A B C
+    //A B C
+
+#include<iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cin >> n;
+
+    int row = 1;
+
+    while(row<=n){
+        int col=1;
+
+        while(col<=n){
+            char ch = 'A' + col - 1;
+            cout << ch ;
+            col++;
+        }
+        cout<<endl;
+        row++;
+    }
+    
+}
+----------------------------------------------------------
+    //a b c
+    //d e f
+    //g h i
+
+#include<iostream>
+using namespace std;
+
+int main(){
+  
+    int n;
+    cin >> n;
+
+    int row = 1;
+    char start = 'A';
+    while(row<=n){
+        int col=1;
+
+        while(col<=n){
+            
+            cout << start ;
+            start = start + 1;
+            col++;
+        }
+        cout<<endl;
+        row++;
+    }
+    
+}
+----------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+int main(){
+    //A b c
+    //B c d              //note  i + j -1 = 1 for (1,1)
+    //C d e              // so we add A-1 to both sides
+
+    int n;
+    cin >> n;
+
+    int row = 1;
+
+    while(row<=n){
+        int col=1;
+
+        while(col<=n){
+            char a = 'A' + row + col - 2;
+            cout << a;
+            col++;
+        }
+        cout<<endl;
+        row++;
+    }
+    
+}
+----------------------------------------------------------
+//A
+//BB
+//CCC
+
+#include<iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cin >> n;
+
+    int row = 1;
+
+    while(row<=n){
+        int col=1;
+
+        while(col<=row){
+            char ch = 'A'+row-1;
+            cout << ch ;
+            col++;
+        }
+        cout<<endl;
+        row++;
+    }
+    
+}
+----------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+int main(){
+     //    *
+     //  * *
+     //* * *
+
+    int n;
+    cin >> n;
+
+    int row = 1;
+
+    while(row<=n){
+        
+        //spaces print krlo
+        int spaces = n - row ;
+         while(spaces){
+
+            cout <<" ";
+            spaces--;
+
+         }
+
+        //stars prnt krlo
+        int col = 1;
+        while(col<=row){
+            
+            cout <<"*";
+            col++;
+        }       
+        cout<<endl;
+        row++;
+
+    }
+}
+----------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+int main(){
+     //****
+     //***
+     //**
+     //*
+
+    int n;
+    cin >> n;
+
+    int row = 1;
+
+    while(row<=n){
+
+        //stars prnt krlo
+        int col = 1;
+        while(col<=(n-row+1)){
+            
+            cout <<"*";
+            col++;
+        }       
+        cout<<endl;
+        row++;
+
+    }
+}
+----------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+int main(){
+     //***
+     // **
+     //  *
+
+    int n;
+    cin >> n;
+
+    int row = 1;
+
+    while(row<=n){
+        
+        //spaces print krlo
+        int spaces = row - 1 ;
+         while(spaces){
+
+            cout <<" ";
+            spaces--;
+
+         }
+
+        //stars prnt krlo
+        int col = 1;
+        while(col<=(n - row + 1)){
+            
+            cout <<"*";
+            col++;
+        }       
+        cout<<endl;
+        row++;
+
+    }
+}
+----------------------------------------------------------
+//1 2 3 4 5 5 4 3 2 1
+//1 2 3 4 * * 4 3 2 1
+//1 2 3 * * * * 3 2 1
+//1 2 * * * * * * 2 1
+//1 * * * * * * * * 1
+
+#include<iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cin >> n;
+
+    int i = 1 ;
+    while(i<=n){
+         
+        int j = 1;
+
+        while(j<=(n-i+1)){
+        cout <<j<<" ";
+        j++;
+        }
+        
+        
+       
+
+        //no prnt krlo
+        int col = 1;
+        int start = n;
+        while(col<=(n - i + 1)){
+            
+            cout << start <<" ";
+            col++;
+            start--;
+        }       
+        cout<<endl;
+        i++;
+    }
+    
+}
+----------------------------------------------------------
+#include<iostream>
+using namespace std;
+   //   1
+   //  121
+   // 12321
+   //1234321
+   
+int main(){
+
+    int n;
+    cin >> n;
+
+    int r = 1;
+    while(r<=n){
+        int space = n-r;
+        while(space){
+            cout <<" ";
+            space--;
+        }
+
+        int col = 1;
+        while(col<=r){
+            cout << col;
+            col++;
+        }
+        
+         col = 1;
+        int start = r - 1;
+        while(start and (col <= r)){
+            cout << start;
+            start--;
+            col++;
+        } 
+        cout<<endl;
+        r++;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
