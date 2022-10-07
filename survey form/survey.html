@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            survey-form
+        </title>
+        <link rel="stylesheet" href="survey.css">
+    </head>
+    <body>
+        <img class="background"src="https://s19.postimg.cc/gnig75jgz/shutterstock_627650747.jpg">
+       <div class="d1">
+         <h2 class="heading">Survey Form</h2>
+        <p class="para1"><i>Thank you for taking the time to help us improve the platform</i></p>
+        <div class="box">
+            
+            <p class="Name">Name</p>
+            <input class="input" type="text" placeholder="Enter your name">
+            <p class="Name">Email</p>
+            <input class="input" type="text" placeholder="Enter your Email">
+            <p class="Name">Age(optional)</p>
+            <input class="input" type="text" placeholder="Age">
+            <label for="role" class="Name">Which option best describes your current role?</label><br>
+           
+            <select id="role" class="input" >
+                <option value="Student">Student</option>
+                <option value="Full Time Job">Full Time Job</option>
+                <option value="Full Time Learner">Full Time Learner</option>
+                <option value="Prefer not to say">Prefer Not To Say</option>
+                <option value="Other">Other</option>
+            </select>
+            <p class="Name">Would you recommend freeCodeCamp to a friend?</p>
+            <label for="Definitely" class="check"><input id="Definitely"type="checkbox" name="recommend">Definitely</label> <br>
+            <label for="Maybe"class="check"><input id="Maybe"type="checkbox" name="recommend">Maybe</label><br>
+            <label for="Not sure"class="check"><input id="Not sure"type="checkbox" name="recommend">Not sure</label>  
+            <p class="para2">What would you like to see improved? (Check all that apply)</p>
+            <label for="Front-end Projects"class="check"><input id="Front-end Projects"type="checkbox" name="improved">Front-end Projects</label><br>
+            <label for="Back-end Projects"class="check"><input id="Back-end Projects"type="checkbox" name="improved">Back-end Projects</label><br>
+            <label for="Challenges"class="check"><input id="Challenges"type="checkbox" name="improved">Challenges</label><br>
+            <label for="Open Source Community"class="check"><input id="Open Source Community"type="checkbox" name="improved">Open Source Community</label><br>
+            <label for="Forum"class="check"><input id="Forum"type="checkbox" name="improved">Forum</label><br>
+            <p class="para2">Any comments or suggestions?</p>
+            <input class="comment" type="text" placeholder="Enter your comments here...">
+            <button class="button">Submit</button>
+        </div>
+        </div>
+
+    </body>
+</html>
