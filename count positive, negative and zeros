@@ -1,0 +1,29 @@
+import java.util.*;
+public class prctc2 {
+
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int pv=0;
+        int nv=0;
+        int zeros=0;
+        int num;
+        
+        for(int i=1; i<=Integer.MAX_VALUE; i++){
+            System.out.print("enter number :");
+            num=sc.nextInt();
+            if(num<0){
+                nv++;
+            }else if(num>0){
+                pv++;
+            }else if(num==0){
+                zeros++;
+            }else
+                break;
+            }
+            System.out.println("total positive integers are "+ pv);
+            System.out.println("total negative integers are "+ nv);
+            System.out.println("total zeros are "+ zeros);
+        }
+        
+
+    }
