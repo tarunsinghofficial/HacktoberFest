@@ -2,7 +2,7 @@
 #include <string.h> 
   
 // A function to check if a string str is palindrome 
-void isPalindrome(char str[]) 
+int isPalindrome(char str[]) 
 { 
     // Start from leftmost and rightmost corners of str 
     int l = 0; 
@@ -12,19 +12,19 @@ void isPalindrome(char str[])
     while (h > l) 
     { 
         if (str[l++] != str[h--]) 
-        { 
-            printf("%s is Not Palindrome", str); 
-            return; 
-        } 
+            return 0; 
+     
     } 
-    printf("%s is palindrome", str); 
+    return 1;
 } 
   
-// Driver program to test above function 
+// Main function to check if entered string is palindrome or not
 int main() 
-{ 
-    isPalindrome("abba"); 
-    isPalindrome("abbccbba"); 
-    isPalindrome("geeks"); 
-    return 0; 
+{   //Taking input from user
+    printf("Enter a string to check if it's palindrome or not\n");
+    char str[100];
+    scanf("%s",str);
+    if(!isPalindrome(str))
+      printf("%s is Not Palindrome",str);
+  else printf("%s is Palindrome",str);
 }
