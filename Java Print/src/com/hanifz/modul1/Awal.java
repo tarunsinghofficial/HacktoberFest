@@ -1,9 +1,9 @@
-package com.hanifz.modul1;
-
-public class Awal
+//package com.hanifz.modul1;
+class Main
 {
     public static void main(String[] args)
     {
         System.out.println("Hello World!");
+        System.out.println("This is Pabak Kundu, editing it.My age is "+19);
     }
 }

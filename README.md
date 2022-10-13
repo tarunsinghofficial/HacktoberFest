@@ -1,38 +1,21 @@
-# HacktoberFest- Get your Free T-shirt Now.
+# HacktoberFest- Contribute to Open-Source.
 
-Create your first Pull Request 🔥(PR).
+Create your first Pull Request 🔥(PR) and help contributing to open-source and help everyone with this repository.
 
 Before Contributing to the Repository, Please Subscribe my channel and help me reach 1K Subscribers. Subscribe here- https://www.youtube.com/channel/UCOykz3Ssp3Q1SHPG8Mqj7PA
 
-FOLLOWING WILL TELL YOU HOW TO GET YOUR AWESOME T-SHIRT
+FOLLOWING WILL TELL YOU HOW TO CONTRIBUTE TO HACKTOBERFEST
 
 
-# 👍 Awesome! How Can I Contribute? 
-It's very easy. Don't need to be an expert in coding. Follow the below steps you need to create your -(maybe)- EXAMPLE first pull request.
+# 👍 Awesome! How and What can I Contribute? 
+It's very easy. Follow the below steps you need to create your -(maybe)- EXAMPLE first pull request.
 1. Fork this repository by click the Fork button in the top right of this page or simply [click here](https://github.com/tarunsinghofficial/HacktoberFest/fork).
-2. Click on Add File button and select Create new file button.
-3. Set the file name with `Your-Full-Name.md` and make your short profile with the following:
-```
-### YOUR FULL NAME
-- Photo: YOUR PHOTO URL(You can submit a dumy Image from Internet)
-- Location: COUNTRY
-- Github: YOUR GITHUB URL
-***
-```
-Example:
-
-```
-### Tarun Singh
-- Photo: https://your_image_url
-- Location: India
-- Github: https://github.com/tarunsinghofficial
-***
-```
-4. Now Commit your changes by pressing the green Commit new file button.
+2. Create a new file and **add** a new Program code(like C++ program to implement Binary Search, etc.) in any programming language like C++, Java, Python, etc. (Note: Program must not be exist already in this repository)
+4. After adding the code, Commit your changes.
 5. Create a new pull request from your forked repository (Button located at the top of your repo)
 8. Star this repository!
 
-### Show some love 😄 
+### Please show some love 😄 
 <a href="https://github.com/tarunsinghofficial" aria-label="Follow @tarunsinghofficial on GitHub"><img  src="https://img.shields.io/badge/Follow👉-@tarunsinghofficial-green?style=for-the-badge"  />
 </a>
 <br>
