@@ -1,7 +1,5 @@
-Aditya
+Aditya Gaur
 
-Photo: https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg
-
-Location: India
-
-Github: https://github.com/ADITYA3600-RGB
+    Photo: https://images.unsplash.com/photo-1563170261-90260910461d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80
+    Location: India
+    Github: https://github.com/adityag200
