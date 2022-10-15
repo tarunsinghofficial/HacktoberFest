@@ -9,7 +9,7 @@ FOLLOWING WILL TELL YOU HOW TO CONTRIBUTE TO HACKTOBERFEST
 
 # 👍 Awesome! How and What can I Contribute? 
 It's very easy. Follow the below steps you need to create your -(maybe)- EXAMPLE first pull request.
-1. Fork this repository by click the Fork button in the top right of this page or simply [click here](https://github.com/tarunsinghofficial/HacktoberFest/fork).
+1. Fork this repository by clicking the <kbd>Fork</kbd> button in the top right of this page or simply [click here](https://github.com/tarunsinghofficial/HacktoberFest/fork).
 2. Create a new file and **add** a new Program code(like C++ program to implement Binary Search, etc.) in any programming language like C++, Java, Python, etc. (Note: Program must not be exist already in this repository)
 4. After adding the code, Commit your changes.
 5. Create a new pull request from your forked repository (Button located at the top of your repo)
