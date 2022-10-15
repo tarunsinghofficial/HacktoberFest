@@ -1,0 +1,63 @@
+import java.io.*;
+public class Time
+{
+    private int hh;
+    private int mm;
+    public Time()
+    {
+        hh=0;
+        mm=0;
+    }
+    public void readTime() throws IOException
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter Hours & Minutes in 24 Hrs. Format : ");
+        System.out.print("Hrs. : ");
+        hh=Integer.parseInt(br.readLine());
+        System.out.print("Min. ");
+        mm=Integer.parseInt(br.readLine());
+    }
+    public void dispResult()
+    {
+        System.out.println("Hrs. : "+hh);
+        System.out.println("Min. : "+mm);
+    }
+    public int TimeToMinutes(Time t1)
+    {
+        int m=t1.hh*60+t1.mm;
+        return m;
+    }
+    public Time minutesToTime(int m)
+    {
+        Time t2=new Time();
+        t2.hh=m/60;
+        t2.mm=m%60;
+        return t2;
+    }
+    public Time diff(Time starttime, Time endtime)
+    {
+        Time difftime=new Time();
+        int stm=TimeToMinutes(starttime);
+        int etm=TimeToMinutes(endtime);
+        int d=etm-stm;
+        difftime=minutesToTime(d);
+        return difftime;
+    }
+    public static void main(String args[]) throws IOException
+    {
+        Time t1=new Time();
+        Time t2=new Time();
+        Time t3=new Time();
+        System.out.print("Start Time ");
+        t1.readTime();
+        System.out.print("End Time ");
+        t2.readTime();
+        t3=t2.diff(t1,t2);
+        System.out.println("Start Time ");
+        t1.dispResult();
+        System.out.println("End Time ");
+        t2.dispResult();
+        System.out.println("Difference ");
+        t3.dispResult();
+    }
+}
