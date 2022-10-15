@@ -68,6 +68,3 @@ Provide the user with this board.
 Explore the Sudoku folder to read the source code and download the Sudoku zip file to use the application.<br>
 The application GUI is built with AWT/SWING.
 
-### How to Use
-
-Follow instructions in the Release section description.
