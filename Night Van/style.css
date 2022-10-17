@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins&family=Silkscreen&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    overflow-y: hidden;
+}
+.name{
+    font-family: 'Silkscreen';
+    font-weight: 900;
+    position:absolute;
+    top:2vh;
+
+    left:35rem;
+    font-size: 2rem;
+    -webkit-box-reflect: below 3px linear-gradient(transparent,black);
+    line-height:0.7em;
+    
+}
+.night{
+    height: 80vh;
+    width: 70vw;
+    box-shadow: 1px 2px 60px ;
+    margin:5rem auto;
+    position: relative;
+    background: url(media/altimg1.jpg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+.surface{ 
+    height: 30vh;
+    width:1000%;
+    background: url(media/Img_02.png);
+    background-size:contain;
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background-repeat: repeat-x ;
+    animation: moveRight 60s linear infinite; 
+}
+.car{
+    position: absolute;
+    left:10%;
+    bottom: 20%;
+    animation: suspenson 1s linear infinite;
+    
+}
+
+/*Animation*/
+
+@keyframes moveRight {
+    100%{
+        transform:translate(-2950px);
+    }
+}
+@keyframes suspenson{
+    100%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    0%{
+        transform: translateY(-1px);
+
+    }
+}
+.moveRight{
+    animation: moveRight 6s linear infinite; 
+}
+.headLight {
+
+
+}
