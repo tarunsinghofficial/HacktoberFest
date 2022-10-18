@@ -1,0 +1,380 @@
+.stack {
+    display: grid;
+    grid: [stack] / [stack];
+    perspective: 5000
+}
+
+.stack:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background 2s ease;
+    pointer-events: none;
+}
+
+.stack:hover:before,
+.stack:active:before {
+    background: rgb(37, 37, 37);
+}
+
+.stack:hover .card,
+.stack:active .card {
+    --bg-opacity: 5%;
+    transition-duration: 2s;
+    transition-timing-function: var(--easeInOutCirc);
+    transform:
+        rotateX(45deg) rotate(45deg) translateZ(var(--z-offset)) translateY(20vh) translateX(20vh)
+}
+
+.stack:hover .card:nth-child(1),
+.stack:active .card:nth-child(1) {
+    --z-offset: 75vh;
+}
+
+.stack:hover .card:nth-child(2),
+.stack:active .card:nth-child(2) {
+    --z-offset: 50vh;
+}
+
+.stack:hover .card:nth-child(3),
+.stack:active .card:nth-child(3) {
+    --z-offset: 25vh;
+}
+
+.stack:hover .card:nth-child(4),
+.stack:active .card:nth-child(4) {
+    --z-offset: 0vh;
+}
+
+.stack:hover .card:nth-child(5),
+.stack:active .card:nth-child(5) {
+    --z-offset: -25vh;
+}
+
+.stack:hover .card:nth-child(1)::after,
+.stack:active .card:nth-child(1)::after {
+    transition-delay: 1.5s;
+}
+
+.stack:hover .card:nth-child(2)::after,
+.stack:active .card:nth-child(2)::after {
+    transition-delay: 1.7s;
+}
+
+.stack:hover .card:nth-child(3)::after,
+.stack:active .card:nth-child(3)::after {
+    transition-delay: 1.9s;
+}
+
+.stack:hover .card:nth-child(4)::after,
+.stack:active .card:nth-child(4)::after {
+    transition-delay: 2.1s;
+}
+
+.stack:hover .card:nth-child(5)::after,
+.stack:active .card:nth-child(5)::after {
+    transition-delay: 2.3s;
+}
+
+.stack:hover .card::after,
+.stack:active .card::after {
+    opacity: 1;
+    transform: rotate(-45deg) rotateY(45deg) translateX(0px);
+}
+
+.stack:hover .card.content,
+.stack:active .card.content {
+    background: transparent;
+    color: white;
+    border-color: transparent;
+    transition:
+        border-color 1s var(--easeInOutCirc) 0s,
+        background-color 1s var(--easeInOutCirc) 0s,
+        color 1s var(--easeInOutCirc) 0s,
+        transform 2s var(--easeInOutCirc) 0s;
+}
+
+.stack:hover .card.padding,
+.stack:active .card.padding {
+    transition-delay: .1s;
+}
+
+.stack:hover .card.border,
+.stack:active .card.border {
+    transition-delay: .2s;
+}
+
+.stack:hover .card.background,
+.stack:active .card.background {
+    background: white;
+    transition:
+        background-color 2s var(--easeInOutCirc) .3s,
+        transform 2s var(--easeInOutCirc) .2s;
+}
+
+.stack:hover .card.box-shadow,
+.stack:active .card.box-shadow {
+    transition-delay: .4s;
+    box-shadow:
+        0 -1px 25px rgba(0, 0, 0, 0.4),
+        0 7.6px 6.1px rgba(0, 0, 0, 0.051),
+        0 14.3px 11.5px rgba(0, 0, 0, 0.059),
+        0 25.5px 20.5px rgba(0, 0, 0, 0.07),
+        0 47.6px 38.4px rgba(0, 0, 0, 0.094),
+        0 114px 92px rgba(0, 0, 0, 0.19);
+}
+
+.card {
+    grid-area: stack;
+
+    --z-offset: 0;
+    --easeInOutCirc: cubic-bezier(0.85, 0, 0.15, 1);
+    --bg-opacity: 0%;
+
+    transition: transform 4s ease;
+
+    width: 40vmin;
+    height: 40vmin;
+    box-sizing: border-box;
+    color: white;
+    box-siing: border-box;
+    background: rgba(255, 255, 254, 0.05);
+    position: relative
+}
+
+@media (orientation: landscape) {
+
+    .card {
+        width: 40vh;
+        height: 40vh
+    }
+}
+
+@media (max-width: 540px) {
+
+    .card {
+        width: 60vw;
+        height: 60vw
+    }
+}
+
+.card:nth-child(1) {
+    z-index: 3;
+}
+
+.card:nth-child(2) {
+    z-index: 2;
+}
+
+.card::after {
+    content: "Box";
+    position: absolute;
+    left: -45%;
+    top: 110%;
+    font-size: 1.25rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+    padding: 1ch 2ch;
+    border-radius: 4ch;
+    opacity: 0;
+    transition: opacity .5s ease 0s, transform .5s ease;
+    transform: rotate(-45deg) rotateY(45deg) translateX(20px);
+    background: rgba(0, 0, 0, 0.7)
+}
+
+@media (max-width: 540px) {
+
+    .card::after {
+        left: -20%;
+        top: 70%
+    }
+}
+
+.card.content {
+    z-index: 5;
+    transition:
+        border-color 4s ease,
+        background-color 5s ease 2s,
+        color 4s ease 0s,
+        transform 4s ease 0s;
+    padding: 5vmin;
+    font-size: max(2.5vmin, .9rem);
+    line-height: 1.5;
+    background: rgb(255, 255, 254);
+    border: 5px solid green;
+    color: black
+}
+
+.card.content::after {
+    content: "Content Box";
+    left: -50%
+}
+
+@media (max-width: 540px) {
+
+    .card.content::after {
+        left: -23%
+    }
+}
+
+.card.padding {
+    background: transparent;
+    z-index: 4;
+    transition-delay: .1s
+}
+
+.card.padding::after {
+    content: "Padding Box";
+}
+
+.card.padding::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-clip-path: polygon(0% 0%, 0% 100%,
+            5vmin 100%, 5vmin 5vmin,
+            calc(100% - 5vmin) 5vmin,
+            calc(100% - 5vmin) calc(100% - 5vmin),
+            5vmin calc(100% - 5vmin), 5vmin 100%,
+            100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%,
+            5vmin 100%, 5vmin 5vmin,
+            calc(100% - 5vmin) 5vmin,
+            calc(100% - 5vmin) calc(100% - 5vmin),
+            5vmin calc(100% - 5vmin), 5vmin 100%,
+            100% 100%, 100% 0%);
+    background: repeating-linear-gradient(-45deg,
+            cyan, cyan 1px,
+            rgba(255, 255, 254, 0.05) 1px, rgba(255, 255, 254, 0.05) 10px);
+}
+
+.card.border {
+    z-index: 3;
+    background: transparent;
+    transition-delay: .2s
+}
+
+.card.border::after {
+    content: "Border Box";
+}
+
+.card.border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-clip-path: polygon(0% 0%, 0% 100%,
+            5px 100%, 5px 5px,
+            calc(100% - 5px) 5px,
+            calc(100% - 5px) calc(100% - 5px),
+            5px calc(100% - 5px), 5px 100%,
+            100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%,
+            5px 100%, 5px 5px,
+            calc(100% - 5px) 5px,
+            calc(100% - 5px) calc(100% - 5px),
+            5px calc(100% - 5px), 5px 100%,
+            100% 100%, 100% 0%);
+    background: linear-gradient(hotpink, hotpink);
+}
+
+.card.background {
+    z-index: 2;
+    transition:
+        background-color 4s ease .3s,
+        transform 4s ease .3s
+}
+
+.card.background::after {
+    content: "Background Box";
+}
+
+.card.box-shadow {
+    z-index: 1;
+    background: transparent;
+    transition:
+        box-shadow 4s ease .4s,
+        transform 4s ease .4s;
+
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        0 12.5px 10px rgba(0, 0, 0, 0.035),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        0 100px 80px rgba(0, 0, 0, 0.07)
+}
+
+.card.box-shadow::after {
+    content: "Shadow Box";
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    background: #000000;
+}
+
+p:first-of-type {
+    margin-top: 0;
+}
+
+@media (hover:hover) {
+    #mobile-prompt {
+        display: none;
+    }
+}
+
+@media (hover:none) {
+    #desktop-prompt {
+        display: none;
+    }
+}
+
+.z {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: 300px;
+    text-align: center;
+    color: red;
+    font-weight: 999;
+    font-size: 4vw;
+    height: 35px;
+    font-size: 20px;
+    padding-top: 5px;
+    border-radius: 10px;
+    margin-bottom: 5vw;
+    animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+    0% {
+        border-top: 3px solid blueviolet;
+    }
+
+    25% {
+        border-left: 3px solid blueviolet;
+    }
+
+    50% {
+        border-bottom: 3px solid blueviolet;
+    }
+
+    75% {
+        border-right: 3px solid blueviolet;
+    }
+}
