@@ -1,0 +1,60 @@
+
+# Ignore main IDEs
+
+## Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.sts4-cache/
+
+## Intellij
+.idea/
+*.iml
+modules.xml
+*.ipr
+
+## Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+## NetBeans
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+## VisualStudioCode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+.history
+.ionide
+
+## Gradle
+.gradle
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+**/build/
