@@ -1,0 +1,12 @@
+A method is a collection of statements that perform some specific task and return the result to the caller. A method can perform some specific task without returning anything. Methods allow us to reuse the code without retyping the code. In Java, every method must be part of some class which is different from languages like C, C++, and Python. In this article, we will understand one type of functions named closures. 
+Before getting into the closures, lets first understand what a lambda expression is. A lambda expression basically expresses instances of the functional interfaces(An interface with a single abstract method is called a functional interface). An example is java.lang.Runnable. Lambda expressions implement the only abstract function and therefore implement functional interfaces. Lambda expressions are added in Java 8 and provide below functionalities: 
+ 
+
+Enable to treat functionality as a method argument, or code as data.
+A function that can be created without belonging to any class.
+A lambda expression can be passed around as if it was an object and executed on demand.
+The main limitation of the lambda expression is that the scope for the lambda expressions will only be final. That is, we cant change the value of the variables in the lambda expressions. Suppose we define a lambda expression in which we increment the value of a variable, it simply throws an error. In order to solve this error, the closures have been defined. 
+Closures are the inline-function valued expressions which means that they are the class functions with bounded variables. Closures can be passed to another function as a parameter. A closure gives us access to the outer function from an inner function. But as of Java 1.6, Java does not rely on closures or java does not have closures. Also, anonymous inner classes are not closures in Java. Using closures helps in data privacy and currying (currying means breaking a function with many parameters as a number of functions in a single argument). Though the concept of closure is much more well defined in Javascript, the closures can still be implemented using lambda expressions. The syntax to implement a closure is: 
+ 
+
+(argument_list) -> {func_body}
