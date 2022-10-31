@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <form>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" placeholder="Enter your name" required><br><br>
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" minlength="8" required><br><br>
+      Gender:
+      <input type="radio" name="sex" value="male">Male
+      <input type="radio" name="sex" value="female">Female<br><br>
+      Language:
+      <input type="checkbox" name="lang" value="hindi">Hindi
+      <input type="checkbox" name="lang" value="english">English
+      <input type="checkbox" name="lang" value="french">French
+      <input type="checkbox" name="lang" value="spanish">Spanish<br><br>
+      Select Age:
+      <select name="age">
+          <option value="10-15">10-15</option>
+          <option value="15-20">15-20</option>
+          <option value="20-25">20-25</option>
+      </select><br><br>
+      Upload your image:
+      <input type="file" name="image"><br><br>
+      <textarea name="msg" placeholder="Enter your message" rows="10" cols="20"></textarea><br><br>
+      <input type="submit">   
+  </form> 
+</body>
+</html>
