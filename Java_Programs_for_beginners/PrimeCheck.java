@@ -8,7 +8,7 @@ class PrimeCheck {
         System.out.println("Enter any number:");
         int num = scan.nextInt();
         scan.close();
-        for (int i = 2; i <= Math.sqrt(n); i++) {
+        for (int i = 2; i <= Math.sqrt(num); i++) {
             temp = num % i;
             if (temp == 0) {
                 isPrime = false;
