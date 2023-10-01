@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+nav {
+
+    color: rgb(180, 179, 219);
+    height: 70px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(66, 9, 238);
+}
+
+nav ul {
+    list-style-type: none;
+
+}
+
+nav:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.gamecontainer {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.box {
+    border: 1px solid rgb(78, 58, 228);
+    font-size: 7vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box:hover {
+    background-color: rgb(207, 239, 238);
+}
+
+.info {
+    font-size: 50px;
+    color: red;
+}
+
+.gameinfo {
+    padding: 0 34px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.gameinfo h1 {
+    color: rgb(18, 15, 210);
+    font-size: 30px;
+    padding-bottom: 25px;
+    text-decoration: underline;
+}
+
+.imagebox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+    margin-top: 25px;
+}
+
+.br0 {
+    border-right: 0;
+}
+
+.bl0 {
+    border-left: 0;
+}
+
+.bt0 {
+    border-top: 0;
+}
+
+.bb0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 23px;
+    padding: 5px 15px;
+    background-color: rgb(140, 84, 84);
+    cursor: pointer;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
+}
+
+#reset:hover {
+    background-color: red;
+    color: black;
+}
+
+.line {
+    background-color: rgb(232, 15, 15);
+    height: 3px;
+    width: 0;
+    position: absolute;
+    transition: width 1s ease-in-out;
+}
+
+.ftr {
+    text-align: center;
+}
+
+/* using @media quire */
+@media screen and (max-width: 1000px) {
+    .gamecontainer {
+        flex-wrap: wrap;
+    }
+
+    .gameinfo {
+        margin-top: 34px;
+
+    }
+
+    .gameinfo h1 {
+        font-size: 1.5rem;
+        padding-bottom: 300px;
+    }
+}
