@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Salary Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+        margin-left: 10px;
+    }
+
+    button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+    #results {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        width: 80%;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    #results div {
+        margin: 10px 0;
+    }
+
+    #results div:last-child {
+        margin-bottom: 0;
+    }
+</style>
+
+
+
+    <script type="text/javascript">
+        function calculateSalary() {
+            // Get user input for basic salary
+            var basicSalary = parseFloat(document.getElementById("basicSalary").value);
+
+            // Get user input for gender (assuming a checkbox for female)
+            var isFemale = document.getElementById("isFemale").checked;
+
+            // Calculate allowances
+            var da = 0.8 * basicSalary;
+            var hra = 0.3 * basicSalary;
+            var travelingAllowance = 0.1 * basicSalary;
+
+            // Calculate annual income
+            var annualIncome = basicSalary + da + hra + travelingAllowance;
+
+            // Calculate tax based on annual income
+            var taxRate = 0;
+            if (annualIncome >= 1000000) {
+                taxRate = isFemale ? 0.15 : 0.20;
+            } else if (annualIncome >= 500000) {
+                taxRate = isFemale ? 0.05 : 0.10;
+            } else {
+                taxRate = isFemale ? 0.00 : 0.05;
+            }
+
+            var taxAmount = annualIncome * taxRate;
+
+            // Calculate net salary
+            var netSalary = annualIncome - taxAmount;
+
+            // Display the result
+            document.getElementById("da").innerHTML = "DA: " + da.toFixed(2);
+            document.getElementById("hra").innerHTML = "HRA: " + hra.toFixed(2);
+            document.getElementById("travelingAllowance").innerHTML = "Traveling Allowance: " + travelingAllowance.toFixed(2);
+            document.getElementById("annualIncome").innerHTML = "Annual Income: " + annualIncome.toFixed(2);
+            document.getElementById("taxRate").innerHTML = "Tax Rate: " + (taxRate * 100).toFixed(2) + "%";
+            document.getElementById("taxAmount").innerHTML = "Tax Amount: " + taxAmount.toFixed(2);
+            document.getElementById("netSalary").innerHTML = "Net Salary: " + netSalary.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+<h1>Salary Calculator</h1>
+    </div>
+   
+    <label for="basicSalary">Basic Salary:</label>
+    <input type="number" id="basicSalary" required><br>
+
+    <label for="isFemale">Female Employee?</label>
+    <input type="checkbox" id="isFemale"><br>
+
+    <button onclick="calculateSalary()">Calculate Salary</button><br><br>
+
+    <div id="results">
+        <div id="da"></div>
+        <div id="hra"></div>
+        <div id="travelingAllowance"></div>
+        <div id="annualIncome"></div>
+        <div id="taxRate"></div>
+        <div id="taxAmount"></div>
+        <div id="netSalary"></div>
+    </div>
+</body>
+
+</html>
