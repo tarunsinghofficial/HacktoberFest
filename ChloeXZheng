@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+class new 
+{
+    public static void main(String[] args) 
+    {
+      Scanner scan = new Scanner(System.in);
+      System.out.println("Please enter a three digit number:");
+      int number = scan.nextInt();
+      int dig1 = number/1000;
+      int dig2 = (number/100)%10;
+      int dig3 = (number/10)%10;
+      int dig4 = number % 10;
+      System.out.println(); 
+      System.out.println("Here are the digits:");
+      System.out.println(dig4); 
+      System.out.println(dig3); 
+      System.out.println(dig2); 
+      System.out.println(dig1); 
+      
+    }
+}
