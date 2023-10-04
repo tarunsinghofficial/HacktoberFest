@@ -1,4 +1,5 @@
 # HacktoberFest- Contribute to Open-Source.
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/kanishkharde/HacktoberFest23">
 
 Create your first Pull Request 🔥(PR) and help contributing to open-source and help everyone with this repository.
 
