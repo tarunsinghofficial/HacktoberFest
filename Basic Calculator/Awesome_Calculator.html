@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Online</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  table {
+    border-collapse: collapse;
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    text-align: right;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  input[type="button"] {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #555;
+  }
+  
+  input[type="button"]:active {
+    background-color: #222;
+  }
+  
+  /* Additional styles for special buttons */
+  input[value="="] {
+    background-color: #38a832;
+  }
+  
+  input[value="="]:hover {
+    background-color: #43c13a;
+  }
+  
+  input[value="c"],
+  input[value="x"] {
+    background-color: #f44336;
+  }
+  
+  input[value="c"]:hover,
+  input[value="x"]:hover {
+    background-color: #ff5349;
+  }
+  
+  input[value="/"],
+  input[value="-"],
+  input[value="+"] {
+    background-color: #999;
+  }
+  
+  input[value="/"]:hover,
+  input[value="-"]:hover,
+  input[value="+"]:hover {
+    background-color: #bbb;
+  }
+</style>
+</head>
+<body>
+    <table border="0">
+    <tr>
+    <td colspan="3"><input type="text" id="result"></td>
+    <td><input type="button" value="c" onclick="clr()"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="1" onclick="display('1')"></td>
+        <td><input type="button" value="2" onclick="display('2')"></td>
+        <td><input type="button" value="3" onclick="display('3')"></td>
+        <td><input type="button" value="/" onclick="display('/')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="4" onclick="display('4')"></td>
+        <td><input type="button" value="5" onclick="display('5')"></td>
+        <td><input type="button" value="6" onclick="display('6')"></td>
+        <td><input type="button" value="-" onclick="display('-')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="7" onclick="display('7')"></td>
+        <td><input type="button" value="8" onclick="display('8')"></td>
+        <td><input type="button" value="9" onclick="display('9')"></td>
+        <td><input type="button" value="+" onclick="display('+')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="." onclick="display('.')"></td>
+        <td><input type="button" value="0" onclick="display('0')"></td>
+        <td><input type="button" value="=" onclick="equate()"></td>
+        <td><input type="button" value="x" onclick="display('*')"></td>
+    </tr>
+</table>
+
+  <script>
+    function clr(){
+    document.getElementById("result").value="";
+}
+
+function display(val){
+    document.getElementById("result").value+=val;
+}
+
+function equate(){
+    let equ=document.getElementById("result").value;
+    let y=eval(equ);
+    document.getElementById("result").value=y;
+}
+  </script>
+</body>
+</html>
