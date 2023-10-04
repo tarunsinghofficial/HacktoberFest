@@ -1,0 +1,157 @@
+body
+{
+    display:flex;
+    flex-direction: column;
+    padding:0;
+    margin:0;
+    flex: 1 1 auto;
+}
+.Header
+{
+    display:flex;
+    background-color:#181a1b;
+    padding:0;
+    margin-bottom:5px;
+    flex:.5 1 auto;
+}
+img.Donate
+{
+    height:30px;
+    width : 30px;
+    padding:5px;
+}
+h2.Top-Left
+{
+    flex:3 0 auto;
+    padding:20px;
+    margin:20px;
+    justify-content: center;
+    align-items: center;
+
+}
+div#Links
+{
+    display: flex;
+    flex:.5 1 auto;
+    justify-content: center;
+    align-items: center;
+}
+div#Links.Item   
+{
+    padding: 5px;
+    margin:5px;
+    justify-content: center;
+    align-items: center;
+}
+div.Item
+{   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    margin:2px;
+}
+a
+{
+    padding:2px;
+    margin:2px;
+}
+.Hero
+{
+    display:flex;
+    background-color:#181a1b;
+    padding:0;
+    margin:0;
+    flex:2 1 auto;
+}
+div.Text
+{
+    flex:1 0 0 ;
+    padding:20px;
+    margin:20px;
+}
+div.Image
+{
+    flex:1 1 .5;
+    height: fit-content;
+    width:fit-content;
+}
+img.Image-own
+{
+    height:250px;
+    width:auto;
+    padding:20px 50px 20px 50px;
+    margin:0px 50px 0px 50px;
+    
+}
+.Pics
+{
+    display:flex;
+    flex-direction: column;
+    background-color:#1e2021;
+    padding:0;
+    margin:5px 0 px 0;
+    flex:2 1 auto;
+
+}
+h3.pics
+{
+    flex:1 1 auto ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.Nedo_pics
+{
+    display:flex;
+    flex : 1 1 auto;
+}
+img.Nedo
+{
+    flex:1 0 auto;
+    height: 250px;
+    width: 200px;
+    padding:5px;
+    margin: 5px;
+}
+.placeholder
+{
+    display:flex;
+    flex-direction: column;
+    flex:2 1 auto;
+    padding:20px;
+    background-color:#73a0e9;
+    margin:20px 10% 20px 10%;
+}
+.Links
+{
+    flex:2 1 auto;
+    padding:20px;
+    background-color:#383d3f;
+}
+p.Donate
+{
+    text-align:center;
+}
+a.intertext
+{
+    color:white;
+}
+div.footer
+{  
+    flex:.5 .5 auto;
+    margin:0;
+    padding:0;
+    background-color: black;
+    display: flex   ;
+}
+h6.footer-left
+{
+    flex:1 0 auto;
+    text-align: left;
+}
+h6.footer-right
+{
+    flex:1 0 auto;
+    text-align: right;
+}
