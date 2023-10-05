@@ -28,7 +28,7 @@ def play_tic_tac_toe():
         col = int(input(f"Player {player}, choose a column (0, 1, 2): "))
 
         if board[row][col] == " ":
-            board[row][col] = player
+            board[row][col] = player 
 
             if check_winner(board, player):
                 print_board(board)
