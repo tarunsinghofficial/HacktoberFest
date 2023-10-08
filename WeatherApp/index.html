@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - CSI Task</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="heading">The Weather App</h1>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter The City Name" spellcheck="false">
+            <button><img src="images/search.png" alt=""></button>
+        </div>
+        <div class="error">
+            <p>Please Enter a Correct City Name</p>
+        </div>
+        <div class="weather">
+            <img src="images/rain.png" class="weather-icon">
+            <h1 class="temp">25°C</h1>
+            <h2 class="city">Mumbai</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png">
+                    <div>
+                        <p class="humidity">40%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png">
+                    <div>
+                        <p class="wind">20 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <img src="images/pressure.png">
+                    <div>
+                        <p class="pressure">1000mBar</p>
+                        <p>Pressure</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/temp.png">
+                    <div>
+                        <p class="mintemp">20°C</p>
+                        <p>Min Temp</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
