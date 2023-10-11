@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="weather" class="container">
+        <h2>Weather in your city</h2>
+        <div id="location">
+            <button id="getLocation">Use My Location</button>
+        </div>
+        <input type="text" id="city" placeholder="Enter city">
+        <button id="getWeather">Get Weather</button>
+        <div id="weather-details" class="hidden">
+            <img id="weather-icon" src="" alt="Weather Icon">
+            <h3 id="showWeather"></h3>
+            <div class="toggle">
+                <label for="unitToggle">Toggle Temperature Unit:</label>
+                <input type="checkbox" id="unitToggle">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
