@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/jaxb-impl-2.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/SparseBitSet-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/activation-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/commons-codec-1.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/jaxb-core-2.3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/commons-math3-3.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/commons-compress-1.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/jaxb-api-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/commons-collections4-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/junit-4.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
