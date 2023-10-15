@@ -1,0 +1,63 @@
+#include 
+#include 
+#include 
+#include 
+#include 
+
+using namespace std;
+int generateRandomNumber(int min, int max)
+{
+    return (rand() % (max - min + 1)) + min;
+}
+
+bool isPrime(int number)
+{
+    if (number == 1)
+    {
+        return false;
+    }
+    
+    for (int i = 2; i <= number / 2; ++i)
+    {
+        if (number % i == 0)
+        {
+            return false;
+        }
+    }
+    
+    return true;
+}
+int sumOfPrimes(int start, int end)
+{
+    int sum = 0;
+    for (int i = start; i <= end; ++i)
+    {
+        if (isPrime(i))
+        {
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+int main()
+{
+    srand(time(NULL));
+    int start = generateRandomNumber(1, 100);
+    int end = generateRandomNumber(start, 1000);
+    
+    int sum = sumOfPrimes(start, end);
+    
+    ofstream outputFile('output.txt');
+    if (outputFile.is_open())
+    {
+        outputFile << 'Sum of prime numbers between ' << start << ' and ' << end << ': ' << sum << endl;
+        outputFile.close();
+    }
+    else
+    {
+        cout << 'Error opening output file.' << endl;
+    }
+    
+    return 0;
+}
