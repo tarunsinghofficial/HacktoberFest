@@ -1,0 +1,134 @@
+OS Page Replacement Algorithms in C++ #2645
+
+1.FIFO (First-In-First-Out) Page Replacement Algorithm in C++
+#include <iostream>
+#include <queue>
+#include <unordered_set>
+
+using namespace std;
+
+class FIFOPageReplacement {
+public:
+    FIFOPageReplacement(int capacity) {
+        this->capacity = capacity;
+    }
+
+    void referencePage(int page) {
+        if (pageTable.find(page) == pageTable.end()) {
+            if (pageQueue.size() == capacity) {
+                int removedPage = pageQueue.front();
+                pageQueue.pop();
+                pageTable.erase(removedPage);
+            }
+            pageQueue.push(page);
+            pageTable.insert(page);
+        }
+    }
+
+    void printPageTable() {
+        cout << "Page Table: ";
+        while (!pageQueue.empty()) {
+            cout << pageQueue.front() << " ";
+            pageQueue.pop();
+        }
+        cout << endl;
+    }
+
+private:
+    int capacity;
+    queue<int> pageQueue;
+    unordered_set<int> pageTable;
+};
+
+int main() {
+    int capacity = 3; // Set the capacity of the page table
+    FIFOPageReplacement fifo(capacity);
+
+    int pages[] = {1, 2, 3, 4, 1, 2, 5};
+    int n = sizeof(pages) / sizeof(pages[0]);
+
+    for (int i = 0; i < n; i++) {
+        fifo.referencePage(pages[i]);
+        fifo.printPageTable();
+    }
+
+    return 0;
+}
+
+2.LRU (Least Recently Used) Page Replacement Algorithm in C++
+#include <iostream>
+#include <list>
+#include <unordered_map>
+
+using namespace std;
+
+class LRUCache {
+public:
+    LRUCache(int capacity) {
+        this->capacity = capacity;
+    }
+
+    int get(int key) {
+        if (cacheMap.find(key) != cacheMap.end()) {
+            // Move the accessed item to the front
+            cacheList.splice(cacheList.begin(), cacheList, cacheMap[key]);
+            return cacheMap[key]->second;
+        }
+        return -1;
+    }
+
+    void put(int key, int value) {
+        if (cacheMap.find(key) != cacheMap.end()) {
+            // If the key exists, update its value and move it to the front
+            cacheMap[key]->second = value;
+            cacheList.splice(cacheList.begin(), cacheList, cacheMap[key]);
+        } else {
+            // If the cache is full, remove the least recently used item
+            if (cacheList.size() >= capacity) {
+                int removedKey = cacheList.back().first;
+                cacheMap.erase(removedKey);
+                cacheList.pop_back();
+            }
+            // Add the new item to the front
+            cacheList.push_front({key, value});
+            cacheMap[key] = cacheList.begin();
+        }
+    }
+
+    void printCache() {
+        cout << "LRU Cache: ";
+        for (auto &entry : cacheList) {
+            cout << "(" << entry.first << "," << entry.second << ") ";
+        }
+        cout << endl;
+    }
+
+private:
+    int capacity;
+    list<pair<int, int>> cacheList; // List of key-value pairs
+    unordered_map<int, list<pair<int, int>>::iterator> cacheMap; // Map for quick access to list iterator
+};
+
+int main() {
+    int capacity = 3; // Set the capacity of the LRU cache
+    LRUCache lru(capacity);
+
+    lru.put(1, 1);
+    lru.printCache();
+    lru.put(2, 2);
+    lru.printCache();
+    cout << "Get 1: " << lru.get(1) << endl; // Should print 1
+    lru.printCache();
+    lru.put(3, 3);
+    lru.printCache();
+    cout << "Get 2: " << lru.get(2) << endl; // Should print 2
+    lru.printCache();
+    lru.put(4, 4);
+    lru.printCache();
+    cout << "Get 1: " << lru.get(1) << endl; // Should print 1
+    lru.printCache();
+
+    return 0;
+}
+
+PLease Merge My Pr. 

@@ -2,14 +2,12 @@
 // using java.util.Random; 
 import java.util.Random; 
 
-public class generateRandom{ 
+public class random1 {
 
-	public static void main(String args[]) 
-	{ 
-		// create instance of Random class 
-		Random rand = new Random(); 
-
-		// Generate random integers in range 0 to 999 
+	public static void main(String[] args) {
+		Random rand = new Random();
+		int ch = rand.nextInt(10);
+		System.out.println(ch);
 		int rand_int1 = rand.nextInt(1000); 
 		int rand_int2 = rand.nextInt(1000); 
 
@@ -24,5 +22,8 @@ public class generateRandom{
 		// Print random doubles 
 		System.out.println("Random Doubles: "+rand_dub1); 
 		System.out.println("Random Doubles: "+rand_dub2); 
-	} 
-} 
+
+	}
+
+}
+
