@@ -1,0 +1,56 @@
+*
+{
+    margin: 0px;
+    padding:0px;
+}
+body{
+    height: 50vw;
+    width:100vw;
+    background-image: url(./background.jpg);
+    background-size: 100% 100%;
+}
+.keys 
+{
+     
+    width:95%;
+    position:relative;
+    top:32vh;
+    height:20vh;
+    display: flex;
+    margin: 0 auto;
+    border:2px solid white;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+.key
+{
+    border-radius: 0.5rem;
+    border:0.3rem solid rgb(231, 223, 195);
+    height: 80%;
+    width:8%;
+    text-align: center;
+    color: bisque;
+    background-color: rgba(248, 248, 248, 0.4);
+    transition: all .07s ease;
+    text-shadow: 0 0 .5rem black;
+    
+}
+kbd
+ {
+    display: block;
+    font-size: 4rem;
+    color: rgba(241, 207, 14, 0.973);   
+}
+span
+{
+ font-size: 1rem;
+ color: rgb(209, 232, 235);
+ text-transform: uppercase;
+}
+.playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}
+

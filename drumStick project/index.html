@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="intex.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="keys">
+  <div class="key" data-key="65">
+      <kbd style="color: rgb(207, 17, 3);">A</kbd>
+      <span>CLAP</span>
+  </div>
+  <div class="key" data-key="83">
+      <kbd style="color: rgb(5, 74, 119);">S</kbd>
+      <span>HIHAT</span>
+  </div>
+  <div class="key" data-key="68">
+      <kbd style="color: rgb(18, 102, 22);">D</kbd>
+      <span>KICK</span>
+    </div>
+  <div class="key" data-key="70">
+    <kbd style="color: rgb(65, 4, 94);">F</kbd>
+    <span>OPENHAT</span>
+  </div>
+  <div class="key" data-key="71">
+    <kbd style="color: rgb(238, 233, 232);">G</kbd>
+    <span>BOOM</span>
+  </div>
+  <div class="key" data-key="72">
+    <kbd style="color: rgb(207, 221, 7);">H</kbd>
+    <span>RIDE</span>
+  </div>
+  <div class="key" data-key="74">
+    <kbd style="color: rgb(241, 26, 206);">J</kbd>
+    <span>SNARE</span>
+  </div>
+  <div class="key" data-key="75">
+    <kbd style="color: rgba(104, 228, 228, 0.877);">K</kbd>
+    <span>TOM</span>
+  </div>
+  <div class="key" data-key="76">
+    <kbd style="color: rgb(207, 17, 3);">L</kbd>
+    <span>TINK</span>
+  </div>
+   </div>
+   <audio data-key="65" src="sounds/clap.wav"></audio>
+   <audio data-key="83" src="sounds/hihat.wav"></audio>
+   <audio data-key="68" src="sounds/kick.wav"></audio>
+   <audio data-key="70" src="sounds/openhat.wav"></audio>
+   <audio data-key="71" src="sounds/boom.wav"></audio>
+   <audio data-key="72" src="sounds/ride.wav"></audio>
+   <audio data-key="74" src="sounds/snare.wav"></audio>
+   <audio data-key="75" src="sounds/tom.wav"></audio>
+   <audio data-key="76" src="sounds/tink.wav"></audio>
+
+   <script>
+       window.addEventListener("keydown",(e)=>
+       {
+           var audio=document.querySelector(`audio[data-key="${e.keyCode}"]`)
+           var key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+           if(audio)
+           {
+               audio.play()
+               audio.currentTime=0
+               key.classList.add("playing")
+           }
+           return
+       })
+
+       var kk=document.querySelectorAll(".key")
+       kk.forEach((e)=>
+       {
+           e.addEventListener('transitionend',remove)
+       })
+       function remove(k)
+       {
+           if(k.propertyName="transform")
+           {
+               this.classList.remove("playing")
+           }
+           return
+       }
+   </script>
+   
+</body>
+</html>
