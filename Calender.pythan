@@ -1,0 +1,31 @@
+import requests
+from bs4 import BeautifulSoup
+
+# URL of the HTML page containing the calendar
+url = 'https://example.com/calendar.html'
+
+# Send an HTTP GET request to the URL
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the HTML content using Beautiful Soup
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Locate the HTML elements that contain event information
+    event_elements = soup.find_all('div', class_='event')
+
+    # Loop through the event elements and extract the data
+    for event in event_elements:
+        event_date = event.find('span', class_='date').text
+        event_title = event.find('h3', class_='title').text
+        event_description = event.find('p', class_='description').text
+
+        # Print the extracted data
+        print(f"Date: {event_date}")
+        print(f"Title: {event_title}")
+        print(f"Description: {event_description}")
+        print("\n")
+
+else:
+    print("Failed to retrieve the web page. Status code:", response.status_code)
