@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class PS_StrPttrn {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter how much big u want your star pattern : ");
+        int input = sc.nextInt();
+
+        for (int i = input; i > 0; i--) {
+
+            for (int j = i; j > 0; j--) {
+
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+
+        for (int i = 1; i <= input; i++) {
+
+            for (int j = 1; j <= i; j++) {
+
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+}
