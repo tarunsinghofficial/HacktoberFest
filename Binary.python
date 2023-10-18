@@ -1,0 +1,37 @@
+def decimal_to_binary(decimal_num):
+    """Convert a decimal number to binary."""
+    if decimal_num < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    
+    if decimal_num == 0:
+        return "0"
+    
+    binary_str = ""
+    while decimal_num > 0:
+        binary_str = str(decimal_num % 2) + binary_str
+        decimal_num //= 2
+
+    return binary_str
+
+def binary_to_decimal(binary_str):
+    """Convert a binary string to a decimal number."""
+    if not all(bit in "01" for bit in binary_str):
+        raise ValueError("Input must be a binary string (0s and 1s only).")
+    
+    decimal_num = 0
+    binary_str = binary_str[::-1]  # Reverse the binary string
+    for i, bit in enumerate(binary_str):
+        if bit == '1':
+            decimal_num += 2 ** i
+
+    return decimal_num
+
+if __name__ == "__main__":
+    # Example usage:
+    decimal_num = 10
+    binary_str = decimal_to_binary(decimal_num)
+    print(f"Decimal {decimal_num} is equivalent to binary {binary_str}")
+
+    binary_str = "1101"
+    decimal_num = binary_to_decimal(binary_str)
+    print(f"Binary {binary_str} is equivalent to decimal {decimal_num}")
