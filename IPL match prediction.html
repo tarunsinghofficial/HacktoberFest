@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Match Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .prediction-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>IPL Match Prediction</h1>
+
+    <div class="prediction-form">
+        <form id="prediction-form">
+            <label for="team1">Select Team 1:</label>
+            <select id="team1" name="team1">
+                <option value="teamA">Team A</option>
+                <option value="teamB">Team B</option>
+            </select>
+
+            <label for="team2">Select Team 2:</label>
+            <select id="team2" name="team2">
+                <option value="teamB">Team B</option>
+                <option value="teamA">Team A</option>
+            </select>
+
+            <button type="button" id="predict-button">Predict Winner</button>
+        </form>
+
+        <p id="prediction-result"></p>
+    </div>
+
+    <script>
+        document.getElementById("predict-button").addEventListener("click", function () {
+            const team1 = document.getElementById("team1").value;
+            const team2 = document.getElementById("team2").value;
+            
+            // Implement your prediction logic here
+            // For a simple example, let's randomly select a winner
+            const winner = Math.random() < 0.5 ? team1 : team2;
+
+            document.getElementById("prediction-result").textContent = `Predicted Winner: ${winner}`;
+        });
+    </script>
+</body>
+</html>
