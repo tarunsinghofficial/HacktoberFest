@@ -1,0 +1,56 @@
+#include<iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+string bin(long long n,long long s){
+    string q = "";
+    for(long long i=n;i>0;i/=2){
+        long long a =  i%2;
+        q = to_string(a)+q;
+    }
+    if(q.size() != s){
+        long long w = s-q.size();
+        for(long long i=0;i<w;i++){
+            q = '0'+q;
+        }
+    }
+    return q;
+}
+
+void rec(long long* arr,string fin,int l,int h,int sum,int total,int q){
+    if(l>=h){
+        cout << fin << endl;
+        cout << total << endl;
+        return;
+    }
+    long long cs = 0;
+    string res = "";
+    string bit = bin(l,q);
+    for(long long j = 0 ; j<bit.size();j++){
+        if(bit.at(j) == '1'){
+            cs+=arr[j];
+            res += to_string(arr[j])+" ";
+        }
+    }
+    if(cs == sum){
+        fin = res + " " + fin;
+        total +=1;
+    }
+    rec(arr,fin,l+1,h,sum,total,q);
+}
+
+int main(){
+    long long q,sum,cs=0,total = 0;
+    string res="",fin = "";
+    cin >> q;
+    long long arr[q];
+    for(long long i=0;i<q;i++){
+        cin >> arr[i];
+    }
+    cin >> sum;
+    long long l = pow(2,q);
+    rec(arr,"",0,l,sum,0,q);
+	return 0;
+}
+// this code is made for hacktober only used anywhere else will work too :)
