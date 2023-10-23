@@ -2,7 +2,7 @@ public class shit{
     public static void main(String[] args) {
         // int n=0;
         // while(n<=10){
-           
+
         //     if(n%2!=0){
         //         continue;
         //     }
@@ -12,7 +12,7 @@ public class shit{
 
         for (double k=4;k<=12.5;k+=0.5){
 
-            System.out.println(k);
+            System.out.println(k + " is 💩");
         }
     }
 }
