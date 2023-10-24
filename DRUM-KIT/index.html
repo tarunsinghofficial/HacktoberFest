@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Drum-kit</title>
+</head>
+<body>
+    <div class="keys" >
+        <div data-key="65" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>A</kbd>
+            <span class="sound">Clap</span>
+        </div>
+
+        <div data-key="83" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>S</kbd>
+            <span class="sound">HitHat</span>
+        </div>
+
+
+        <div data-key="68" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>D</kbd>
+            <span class="sound">Kick</span>
+        </div>
+
+
+
+        <div data-key="70" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>F</kbd>
+            <span class="sound">
+                <pr>openHat
+                </pr></span>
+        </div>
+
+        <div data-key="71" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>G</kbd>
+            <span class="sound">Boom</span>
+        </div>
+
+        <div data-key="72" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>H</kbd>
+            <span class="sound">Ride</span>
+        </div>
+
+        <div data-key="74" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>J</kbd>
+            <span class="sound">Snare</span>
+        </div>
+        <div data-key="75" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>K</kbd>
+            <span class="sound">Tom</span>
+        </div>
+        <div data-key="76" class="key" onclick="playSoundOnClick(this)" ontouch="playSoundOnClick(this)">
+            <kbd>L</kbd>
+            <span class="sound">Tink</span>
+        </div>
+    </div>
+    <audio data-key="65" src="sounds/Clap.wav"></audio>
+    <audio data-key="83" src="sounds/HitHat.wav"></audio>
+    <audio data-key="68" src="sounds/Airkick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/Tom.wav"></audio>
+    <audio data-key="76" src="sounds/Tink.wav"></audio>
+    <SCRIPT>
+        function playsound(e) {
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  key.classList.add('playing');
+}
+
+function removeTransition(e) {
+  if (e.propertyName !== 'transform') return;
+  this.classList.remove('playing');
+}
+
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+window.addEventListener('keydown', playsound);
+
+function playSoundOnClick(element) {
+    const key = element;
+    const keyCode = key.getAttribute('data-key');
+    const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('playing');
+}
+
+    </SCRIPT>
+</body>
+</html>

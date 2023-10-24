@@ -1,0 +1,42 @@
+body{
+    background-image: url('background.jpeg');
+    background-size: 1200px 610px;
+}
+
+.keys{
+    padding: 100px;
+    
+}
+.key {
+    margin: 25px;
+    margin-top: 100px;
+
+    padding: auto;
+    
+    
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #f90909;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    background-color: #0a0a0a;
+    color: #f30707;
+    cursor: pointer;
+  }
+  
+  .key:hover {
+    background-color: #ccc;
+  }
+  
+  .key:active {
+    background-color: #999;
+  }
+  .sound{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0000;
+    text-decoration: wavy;
+  }
