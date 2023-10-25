@@ -1,0 +1,55 @@
+#this is an example of linear regression
+#we ebter small dataset values here manually
+import matplotlib.pyplot as plt
+import numpy as np
+
+x=np.array([1, 2, 3, 4, 5, 7, 10, 12, 15, 20])
+y=np.array([0, 0.5, 0.6, 1, 2, 4, 5, 5.5, 6, 7])
+plt.scatter(x, y, label="Walking and weight loss", color='c')
+
+#partitioning the data
+from sklearn.model_selection import train_test_split
+xtrain, xtest, ytrain, ytest=train_test_split(x, y, test_size=0.3)
+print(xtrain)
+print(xtest)
+print(ytrain)
+print(ytest)
+
+#creating model parameters using formulas
+x_mean=np.mean(x)
+y_mean=np.mean(y)
+xysum=np.sum(x*y)
+ysum=np.sum(y)
+xsum=np.sum(x)
+xsqSum=np.sum(x*x)
+n=np.size(x)
+
+num=n*xysum-xsum*ysum
+den=n*xsqSum-xsum*xsum
+beta1=num/den
+
+beta0=y_mean-beta1*x_mean
+print(beta0)
+print(beta1)
+
+#adding constants and verifying values
+import statsmodels.api as sm
+xnew=sm.add_constant(x)
+print(x)
+print(xnew)
+regress=sm.OLS(y, xnew).fit()
+print(regress.params)
+
+#giving unseen data and predicting the target
+xtest=np.array([11, 12, 13])
+xtestnew=sm.add_constant(xtest)
+y_predic=regress.predict(xtestnew)
+print(y_predic)
+
+#compare obtained values with ground truth using RMSE and R2 methods
+from sklearn.metrics import r2_score, mean_squared_error
+R2=np.abs(r2_score(ytest, y_predic)) 
+#abs is absolute value
+print("R2=",R2)
+RMSE=np.sqrt(mean_squared_error(ytest, y_predic))
+print("RMSE=",RMSE)
