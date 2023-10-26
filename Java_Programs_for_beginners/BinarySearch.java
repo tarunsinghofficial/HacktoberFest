@@ -1,44 +1,43 @@
-import java.util.Scanner;
-class BinarySearchExample
-{
-   public static void main(String args[])
-   {
-      int counter, num, item, array[], first, last, middle;
-      //To capture user input
-      Scanner input = new Scanner(System.in);
-      System.out.println("Enter number of elements:");
-      num = input.nextInt(); 
+// Java implementation of recursive Binary Search 
+class BinarySearch { 
+	// Returns index of x if it is present in arr[l.. 
+	// r], else return -1 
+	int binarySearch(int arr[], int l, int r, int x) 
+	{ 
+		if (r >= l) { 
+			int mid = l + (r - l) / 2; 
 
-      //Creating array to store the all the numbers
-      array = new int[num];
+			// If the element is present at the 
+			// middle itself 
+			if (arr[mid] == x) 
+				return mid; 
 
-      System.out.println("Enter " + num + " integers");
-      //Loop to store each numbers in array
-      for (counter = 0; counter < num; counter++)
-          array[counter] = input.nextInt();
+			// If element is smaller than mid, then 
+			// it can only be present in left subarray 
+			if (arr[mid] > x) 
+				return binarySearch(arr, l, mid - 1, x); 
 
-      System.out.println("Enter the search value:");
-      item = input.nextInt();
-      first = 0;
-      last = num - 1;
-      middle = (first + last)/2;
+			// Else the element can only be present 
+			// in right subarray 
+			return binarySearch(arr, mid + 1, r, x); 
+		} 
 
-      while( first <= last )
-      {
-         if ( array[middle] < item )
-           first = middle + 1;
-         else if ( array[middle] == item )
-         {
-           System.out.println(item + " found at location " + (middle + 1) + ".");
-           break;
-         }
-         else
-         {
-             last = middle - 1;
-         }
-         middle = (first + last)/2;
-      }
-      if ( first > last )
-          System.out.println(item + " is not found.\n");
-   }
-}
+		// We reach here when element is not present 
+		// in array 
+		return -1; 
+	} 
+
+	public static void main(String args[]) 
+	{ 
+		BinarySearch ob = new BinarySearch(); 
+		int arr[] = { 2, 3, 4, 10, 40 }; 
+		int n = arr.length; 
+		int x = 10; 
+		int result = ob.binarySearch(arr, 0, n - 1, x); 
+		if (result == -1) 
+			System.out.println("Element not present"); 
+		else
+			System.out.println("Element found at index " + result); 
+	} 
+} 
+
