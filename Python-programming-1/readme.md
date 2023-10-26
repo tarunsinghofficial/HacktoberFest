@@ -1,11 +1,10 @@
-## Print the number of  nondivisible subsets
+## Printing the validity of a string
+A string to be valid if all characters of the string appear the same number of times.<br/>
 
 Input:<br/>
-n (No. of elements in array). <br/>
-k (An input number).<br/>
-s (Array).<br/><br/>
+A string.<br/>
 
-Output:<br/>
-Number of the nonDivisible subsets.<br/>
+Output:</br>
+YES if valid, otherwise NO
 
-# Author: Anirban Bal (Github ID- anirbanrkmission)
+# Author: Anirban Bal
