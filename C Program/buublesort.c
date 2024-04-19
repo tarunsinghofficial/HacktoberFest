@@ -25,8 +25,12 @@ int main(){
    }
 
    printf("Sorted elements: ");
-   for(i=0;i<count;i++)
-      printf(" %d",number[i]);
+   for(i=0;i<count;i++){
+        printf(" %d",number[i]);
+      }
+
+   printf("this is bibble sort");
+
 
    return 0;
 }
