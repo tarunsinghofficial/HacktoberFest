@@ -28,18 +28,16 @@ int main() {
 
 	    int w;
 
-	   for (i = 0; i <= N; i++) {
-         for (w = 0; w <= W; w++) {
-             if (i == 0 || w == 0)
-                 wvt[i][w] = 0;
-             else if (wt[i - 1] <= w)
-                 wvt[i][w] = max(
-                     v[i - 1] + wvt[i - 1][w - wt[i - 1]],
-                     wvt[i - 1][w]);
-             else
-                 wvt[i][w] = wvt[i - 1][w];
-           }
-       }
+	 for (i = 0; i <= N; i++) {
+             for (w = 0; w <= W; w++) {
+                  if (i == 0 || w == 0)
+                      wvt[i][w] = 0;
+                  else if (wt[i - 1] <= w)
+                       wvt[i][w] = max(v[i - 1] + wvt[i - 1][w - wt[i - 1]],wvt[i - 1][w]);
+                  else
+                       wvt[i][w] = wvt[i - 1][w];
+	     }
+             }
 	   cout<<wvt[N][W]<<endl;
 	   wt.clear();
 	   v.clear();
