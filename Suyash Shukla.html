@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="/CSS/style1.css">
+
+
+<body style="background-color:rgb(49, 47, 47)">
+    
+    <h2>
+        <center>
+           <u> Portfolio</u>
+        </center>
+        <img src="https://cdn.pixabay.com/photo/2021/09/20/21/32/lake-6641880_1280.jpg"
+        alt="Avatar"
+        width="37px";
+        height="40px";
+        align="right";
+      > 
+
+ 
+     <span style="font-size:25px;cursor:pointer;color: rgb(209, 208, 224);text-align: right;"
+    
+     onclick ="openNav()">☰</span>
+      
+    </h2>
+    <style>
+        h2{
+    color:rgb(209, 204, 204);
+    font-family: monospace;
+    font-size:30px;
+}
+body{
+    font-family:"Lato", monospace;
+
+}
+.sidenav{
+    height:100%;
+    width: 0;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    background-color:rgb(252, 135, 89);
+    overflow-x: hidden;
+    transition:0.5s;
+    padding-top: 50px;
+}
+.sidenav a{
+    padding:10px;
+    text-decoration:rgb(215, 226, 225);
+    font-family:monospace;
+    font: size 20px;
+    color:rgb(37, 1, 1);
+    display:block;
+    transition:0.5s;
+}
+.sidenav a:hover, .offcanvas a:focus{
+    color:rgb(235, 220, 220);
+}
+.sidenav .closebtn{
+    position:absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+@media screen and(max-height:450px){
+    .sidenav{padding-top:15px;}
+    .sidenav a{font-size:18px;}
+    
+}
+    </style>
+<hr
+style="height:3px";
+color= "gray";/>
+<style>
+    img{
+       
+        border-radius: 50%;
+    }
+</style>
+
+    <div id="mySidenav" class ="sidenav">
+        <a href="javascript:void(0)"
+        class="closebtn"
+        onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="mailto:shuklasuyash52@gmail.com">Contact</a>
+    </div>
+   
+ 
+    <div class="cardgoals">
+        <img src="https://cdn.pixabay.com/photo/2021/09/20/21/32/lake-6641880_1280.jpg"
+        style="width: 50px";>
+    </div>
+
+
+    <script>
+        function openNav(){
+            document.getElementById("mySidenav").style.width="250px";
+
+        }
+        function closeNav(){
+            document.getElementById("mySidenav").style.width="0";
+        }
+    </script>
+    
+</body>
+</html>
