@@ -1,0 +1,79 @@
+1. Atta
+a.Aashirvaad Atta           (1kg),060,49.|
+b.Fortune Atta              (1kg),064,51.|
+c.Annapurna Atta            (1kg),070,52.|
+d.Annapurna Atta            (1kg),068,53.|
+e.Shakti Atta               (1kg),063,54.|
+f.NatureFresh Atta          (1kg),070,55.|
+g.Patanjali Atta            (1kg),074,55.|
+2. Dal
+a.B&B Toor Dal              (1kg),073,56.|
+b.ELWORLD Toor Dal          (1kg),060,58.|
+c.Health Toor Dal           (1kg),070,59.|
+d.Prasastha Toor Dal        (1kg),034,60.|
+e.QZINE Toor Dal            (1kg),044,61.|
+f.Tata Toor Dal             (1kg),048,62.|
+g.Village Toor Dal          (1kg),035,63.|
+h.Udhaiyam Toor Dal         (1kg),080,64.|
+3. Rice
+a.India Gate                (1kg),040,65.|
+b.Daawat Rice               (1kg),060,66.|
+c.Kohinoor Rice             (10kg),40,67.|
+d.LalQilla Rice             (1kg),030,68.|
+e.Shrilalmahal Rice         (1kg),008,69.|
+f.AeroplaneRice             (1kg),000,70.|
+g.Fortune Rice              (1kg),040,71.|
+h.TataSampann Rice          (1kg),000,72.|
+4. Cooking Oils
+a.Fortune Premium Oil       (1Lt),090,73.|
+b.Saffola Cooking Oil       (1Lt),080,74.|
+c.Figaro Olive Oil          (1Lt),040,75.|
+d.FortuneRiceBran Oil       (1Lt),008,76.|
+e.KLF PureCoconut Oil       (1Lt),000,77.|
+5. Snacks
+a.Makhana                   (500g),040,78.|
+b.Beaten Moong              (500g),064,79.|
+c.Dry Fruits                (500g),834,80.|
+d.Protein Bars              (500g),044,81.|
+e.Oats                      (500g),000,82.|
+f.Gur Chana                 (500g),070,83.|
+g.Chivda/Poha               (500g),040,84.|
+h.Murmure/Puffed Rice       (500g),010,85.|
+6. Packed Food
+a.Maggi noodles             (1),044,86.|
+b.Top ramen                 (1),040,87.|
+c.Maggi masala pasta        (1),084,89.|
+d.Dukes chocolate           (1),000,90.|
+e.Knorr corn soup           (1),044,91.|
+f.MTR vegetable upma        (1),070,92.|
+7. Beverages
+a.Nescafe Intense           (080ml),60,93.|
+b.Nescafe Latte             (080ml),80,20.|
+c.Nescafe Hazelnu           (080ml),90,25.|
+d.Sprite                    (080ml),70,95.|
+e.Coca-cola                 (080ml),60,97.|
+f.Pepsi                     (080ml),70,41.|
+g.Thumps-up                 (080ml),60,40.|
+8. Personal Care
+a.Dettol                    (200ml),40,39.|
+b.Dettol hand wash          (200ml),95,38.|
+c.Pears shower gel          (200ml),45,37.|
+d.Cinthol  soap             (200ml),55,36.|
+e.Dove body wash            (200ml),65,35.|
+f.Vaseline lotion           (200ml),90,34.|
+g.Nivea body lotion         (200ml),80,33.|
+9. Baby care
+a.Johnson baby powder       (1),80,29.|
+b.Pampers Diaper Pants      (1),80,29.|
+c.Amulspray infant food     (1),60,29.|
+d.Nesle infant formulaStage (1),40,29.|
+10.Household and cleaning
+a.Tide washing powder       (1),40,28.|
+b.Surf excel                (1),80,27.|
+c.Rin washing bar           (1),00,26.|
+d.Vim bar                   (1),04,25.|
+e.Exo bar                   (1),08,24.|
+f.Colin                     (1),80,23.|
+g.Odonil Room freshner      (1),00,22.|
+h.Origami Tissue paper      (1),90,20.|
+end
