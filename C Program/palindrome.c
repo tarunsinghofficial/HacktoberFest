@@ -2,7 +2,6 @@
 
 // declaring the recursive function
 int isPal(int );
-
 /*
     global declaration to use the same value 
     in both the functions
