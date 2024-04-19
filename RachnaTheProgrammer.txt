@@ -1,0 +1,3 @@
+Image : https://images.pexels.com/photos/4068013/pexels-photo-4068013.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
+Location : India
+GitHub : https://github.com/TheBlackMiracle
