@@ -1,35 +1,26 @@
-/***Insertion Sort Algorithm***/
-
-//@Author : SoumyadipGhosh23 (GitHub: https://github.com/SoumyadipGhosh23)
-
 #include<stdio.h>
-#include<stdlib.h>
-
-void printArr(int* a, int n){
-    for(int i=0; i<n; i++){
-        printf("%d ",a[i]);
+int main()
+{
+    int arr[100],n,temp,i,j;
+    printf("enter total number of element ");
+    scanf("%d",&n);
+    printf("enter the array element ");
+    for(i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+    for(i=0;i<=n;i++)
+    {
+        for(j=i;j>0 && arr[j-1]>arr[j];j--)
+        {
+            temp = arr[j];
+            arr[j] = arr[j-1];
+            arr[j-1] = temp;
+        }
+    }
+    printf("Insertion Sort ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",arr[i]);
     }
     printf("\n");
-}
-
-void insertionSort(int* a, int n){
-    int temp,j;
-    for(int i =1; i<n; i++){
-        printf("working on the pass no: %d\n",i);
-        temp = a[i];
-        j= i-1;
-        while(j>=0 && a[j]>temp){
-            a[j+1]=a[j];
-            j--;
-        }
-        a[j+1]=temp;
-    }
-}
-
-int main(){
-    //int arr[] = {2,36,1,31,10,27,11,78,80,45};
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
-    printArr(arr,10);
-    insertionSort(arr,10);
-    printArr(arr,10);
+    return 0;
 }
