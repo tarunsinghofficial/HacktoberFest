@@ -22,8 +22,9 @@ int main(void)
    
     // Function call
     int result = search(arr, n, x);
-    (result == -1)
-        ? printf("Not Present")
-        : printf("Present at index %d", result);
+    if(result == -1)
+        printf("Not Present")
+    else    
+        printf("Present at index %d", result);
     return 0;
 }
