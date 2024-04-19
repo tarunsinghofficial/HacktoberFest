@@ -1,0 +1,97 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #200d33;
+    background: rgb(175, 161, 161);
+}
+img{
+    max-width: 100%;
+}
+h1,h2{
+    margin-bottom: 15px;
+}
+ul{
+    list-style-type: none;
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3px;
+}
+.logo{
+    font-size: x-large;
+    font-weight: bold;
+}
+.navbar a{
+color: rgb(104, 7, 7);
+text-decoration: none;
+font-size: 18;
+font-weight: bold;
+}
+.navbar a :hover{
+    color: rgb(35, 95, 95);
+}
+.navbar .container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 100%;
+}
+.navbar ul{
+    display: flex;
+}
+.navbar ui{
+    margin-left: 20px;
+}
+.header{
+    color: rgb(17, 17, 17);
+    background-color: rgb(14, 65, 65);
+    min-height: 400px;
+}
+.header h1{
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.header img{
+    max-width: 400px;
+}
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.boxes .container{
+    display: flex;
+    justify-content: space-between;
+}
+.box{
+    flex: 1;
+    background: #d4a99f;
+    color:rgb(34, 26, 26) ;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow: o 3px 5px rgb(88, 86, 86);
+    padding: 15px 20px;
+}
+.box i{
+    margin-right: 10px;
+}
+@media (max-width: 768px){
+    .header .container{
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+    .boxes .container{
+        display: block;
+        text-align: center;
+    }
+}
