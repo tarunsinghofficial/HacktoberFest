@@ -1,0 +1,1 @@
+fun String.toAscii() = this.map { it.toInt() }.joinToString()
