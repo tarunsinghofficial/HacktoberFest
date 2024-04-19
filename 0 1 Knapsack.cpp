@@ -3,47 +3,60 @@
 
 using namespace std;
 
+const int N=1e3+2;
+vector<int> wt(N,0), v(N,0);
+
+
+//function calculates the answer using recursion and dynamic programming(memoization)
+int knapsack(int n, int w){
+	vector<vector<int>> dp(N, vector<int>(N,-1));
+	if(w<=0){
+		return 0;
+	}
+	if(n<=0){
+		return 0;
+	}
+	if(dp[n][w]!=-1){
+		return dp[n][w];
+	}
+	if(wt[n-1]>w){
+		dp[n][w] = knapsack(n-1, w);
+	}
+	else{
+		dp[n][w] = max(knapsack(n-1, w), knapsack(n-1, w-wt[n-1]) + v[n-1] );
+	}
+
+	return dp[n][w];
+
+}
+
 int main() {
 	//code
 	int T;
 	cin>>T;
 	while(T--)
 	{
-	    int N, W;
-	    cin>>N>>W;
-	    vector<int> wt(N), v(N);
-	    vector<vector<int>> wvt(N+1, vector<int>(W+1));
-	    int i;
+	    int n,w;
+	    cin>>n>>w;
+	    
+		int i; 
 
 	    //int mx = INT_MIN;
-	    for(i=0; i<N; i++)
+	    for(i=0; i<n; i++)
 	    {
 	        cin>>v[i];
 
 	    }
-	    for(i=0; i<N; i++)
+	    for(i=0; i<n; i++)
 	    {
 	        cin>>wt[i];
 	    }
 
-	    int w;
+		cout<<knapsack(n,w)<<endl; //calling the function
 
-	   for (i = 0; i <= N; i++) {
-         for (w = 0; w <= W; w++) {
-             if (i == 0 || w == 0)
-                 wvt[i][w] = 0;
-             else if (wt[i - 1] <= w)
-                 wvt[i][w] = max(
-                     v[i - 1] + wvt[i - 1][w - wt[i - 1]],
-                     wvt[i - 1][w]);
-             else
-                 wvt[i][w] = wvt[i - 1][w];
-           }
-       }
-	   cout<<wvt[N][W]<<endl;
 	   wt.clear();
 	   v.clear();
-	   wvt.clear();
+
 	}
 	return 0;
 }
