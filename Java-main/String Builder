@@ -1,0 +1,18 @@
+
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		StringBuilder sb=new StringBuilder("abcd");
+		sb.reverse();
+		System.out.println(sb);
+		sb.append("efg");
+		System.out.println(sb);
+		sb.setCharAt(1,'d');
+		System.out.println(sb);
+		sb.delete(0,2);
+		System.out.println(sb);
+		sb.insert(0,"hello");
+		System.out.println(sb);
+	}
+}

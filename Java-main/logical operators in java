@@ -1,0 +1,18 @@
+import java.util.*;
+class test{
+    public static void main(String[]args){
+    String user="Ameesha", pass="Dabas";
+    Scanner sc=new Scanner(System.in);
+    String u_user=sc.next();
+    String u_pass=sc.next();
+    
+    if(u_user.equals(user)&& u_pass.equals(pass))
+    {
+        System.out.println("Welcome "+user);
+    }
+    else
+    {
+        System.out.println("Try again ");
+    }
+    }
+}

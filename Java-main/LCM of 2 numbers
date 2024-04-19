@@ -1,0 +1,18 @@
+import java.util.*;
+class findGreatest{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+        int ans=1;
+       for(int i=Math.max(num1,num2);i<=(num1*num2);i++)
+        {
+           if(i%num1==0 && i%num2==0)
+           {
+               ans=i;
+               break;
+           }
+        }
+        System.out.println(ans);
+    }
+}

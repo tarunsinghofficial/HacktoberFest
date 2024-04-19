@@ -1,0 +1,13 @@
+class Solution
+{
+    public void toBinary(String N)
+    {
+        int val=Integer.parseInt(N);
+        String ans="";
+        while(val>0){
+            ans=val%2+ans;
+            val/=2;
+        }
+        System.out.print(ans);
+    }
+}

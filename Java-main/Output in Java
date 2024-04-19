@@ -1,0 +1,12 @@
+class test{
+    public static void main(String[]args)
+    {
+        int x=100,y=200;
+        System.out.print(x+" ");
+        System.out.println(y);
+        float z=(float)Math.PI;
+        System.out.println(z);
+        System.out.format("Value of Z = %05.2f\n",z);
+        
+    }
+}

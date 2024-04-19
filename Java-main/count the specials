@@ -1,0 +1,28 @@
+class Geeks{
+    static void countSpecials(int arr[], int n, int k){
+        int f = (int)Math.floor(n/k);
+        int count=0;
+        boolean visited[]=new boolean[n];
+        Arrays.fill(visited,false);
+        for(int i=0;i<n;i++)
+        {
+            if(visited[i]==true){
+                continue;
+            }
+            int c=1;
+            for(int j=i+1;j<n;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    c++;
+                    visited[j]=true;
+                }
+            }
+            if(c==f)
+            {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}

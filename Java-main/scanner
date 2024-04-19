@@ -1,0 +1,14 @@
+import java.util.Scanner;
+class Test{
+    public static void main(String[]args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        System.out.println("Enter a string");
+        System.out.println("You Entered "+s);
+        int x= sc.nextInt();
+        System.out.println("You Entered "+x);
+        float f=sc.nextFloat();
+        System.out.println("You Entered "+f);
+    }
+}

@@ -1,0 +1,21 @@
+
+class Test{
+    public static void main(String [] args)
+    {
+    Integer x1=400, x2=400;
+    int x3=x2;//autounboxing
+    Integer x4=x3; // autoboxing
+    System.out.println(x1);
+    System.out.println(x2);
+    System.out.println(x3);
+    System.out.println(x4);
+    if(x1==x2)
+    {
+        System.out.println("Same");
+    }
+    else
+    {
+        System.out.println("Not Same");
+    }
+    }
+}
