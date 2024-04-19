@@ -1,0 +1,541 @@
+openapi: 3.0.3
+info:
+  version: "3.0"
+  title: CoinFun - OpenAPI 3.0
+  
+  
+  description: |-
+    This website is a trading exchange where users can trade in various crypto currencies like bitcoin and several digital assets. Also, there is a P2P portal that allows a user to have expereince of how person to person trade works.
+    This documentation consists of several API designs that we aim to use in implementation of our Coiinfun trading exchange.
+    
+ 
+#   termsOfService: http://swagger.io/terms/
+#   contact:
+#     email: apiteam@swagger.io
+#   license:
+#     name: Apache 2.0
+#     url: http://www.apache.org/licenses/LICENSE-2.0.html
+#   version: 1.0.11
+# externalDocs:
+#   description: Find out more about Swagger
+#   url: http://swagger.io
+# servers:
+#   - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: Account Management API
+    description: Abstracting and inserting user information
+    # externalDocs:
+    #   description: Find out more
+    #   url: http://swagger.io
+  - name: User Authentication API
+    description: Authenticating the user
+    externalDocs:
+      description: Find out more about our store
+      url: http://swagger.io
+  - name: Order Management API
+    description: Managing the orders of the user
+  - name: P2P Trade History API
+    description: Managing the transactions between person to person
+  - name: Chat Management API
+    description: Managing the chat of the user
+paths:
+  /accmgmt/{emailId}:
+    put:
+      tags:
+        - Account Management API
+      description: Update the existing user information
+      operationId: updateUser
+      parameters:
+        - name: emailId
+          in: path
+          description: The email ID corresponding to the user to be updated
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: User information to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userinfo'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/userinfo'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/userinfo'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/userinfo'         
+        '400':
+          description: Invalid email ID supplied
+        '404':
+          description: Page not found
+        '405':
+          description: Validation exception
+    get:
+      tags:
+        - Account Management API
+      description: Get the user information for a given email ID
+      operationId: getUserinfo
+      parameters:
+        - name: emailId
+          in: path
+          description: The email ID corresponding to the user information to be retrieved
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/userinfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/userinfo'
+        '400':
+          description: Invalid email ID supplied
+        '404':
+          description: Page not found
+        '405':
+          description: Invalid input
+      
+  /accmgmt/validation: 
+   put:
+     tags:
+       - Account Management API
+     description: Verify user using OTP
+     operationId: verifyUser
+     parameters:
+       - name: emailId
+         in: query
+         description: 'The email ID of the user to verify.'
+         required: true
+         schema:
+           type: string      
+       - name: otp
+         in: query
+         description: 'The OTP sent to the user to verify.'
+         required: true
+         schema:
+           type: string      
+     requestBody:
+       description: Update an existent user info in the Table
+       content:
+         application/json:
+           schema:
+             $ref: '#/components/schemas/EmailIdOtp'
+         application/xml:
+           schema:
+             $ref: '#/components/schemas/EmailIdOtp'
+         application/x-www-form-urlencoded:
+           schema:
+             $ref: '#/components/schemas/EmailIdOtp'
+       required: true
+     responses:
+       '200':
+         description: Successful operation
+       '400':
+         description: Invalid email ID or OTP supplied
+       '404':
+         description: Page not found
+       '405':
+         description: Validation exception
+    
+  
+          
+  /authent/validation:
+   post:
+     tags:
+       - User Authentication API
+     description: Used for user authentication by uploading a photo for verification
+     operationId: userAuthentication
+     requestBody:
+       description: User photo for verification
+       content:
+         application/json:
+           schema:
+             $ref: '#/components/schemas/UserPhoto'
+         application/xml:
+           schema:
+             $ref: '#/components/schemas/UserPhoto'
+         application/x-www-form-urlencoded:
+           schema:
+             $ref: '#/components/schemas/UserPhoto'
+       required: true
+     responses:
+       '200':
+         description: Successful operation
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/userinfo'
+           application/xml:
+             schema:
+               $ref: '#/components/schemas/userinfo'
+       '400': 
+         description: Authorization failed
+       '404':
+         description: User not found
+       '405':
+         description: Invalid input
+
+  /ordermgmt/{emailId}:
+    post:
+      tags:
+        - Order Management API
+      description: placing the order for the requested emailId
+      operationId: placeOrder
+      parameters:
+        - name: emailId
+          in: path
+          description: 'The email ID of the user placing the order.'
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Create order object
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CryptoTradingHistoryData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CryptoTradingHistoryData'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CryptoTradingHistoryData'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CryptoTradingHistoryData'
+        '400':
+          description: Invalid email ID supplied
+        '404':
+          description: Page not found
+        '405':
+          description: Invalid input
+    get:
+      tags:
+        - Order Management API
+      description: get the trading history of the requested email ID
+      operationId: getOrderinfo
+      parameters:
+        - name: emailId
+          in: path
+          description: 'The email ID corresponding to which trading history of the existing user need to be fetched. '
+          required: true
+          schema:
+            type: string      
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CryptoTradingHistoryData'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CryptoTradingHistoryData'
+        '400':
+          description: Invalid email ID supplied
+        '404':
+          description: Page not found
+        '405':
+          description: Invalid input              
+  /chatmgmt/{chatId_buyer}/{chatId_seller}:
+    put:
+      tags:
+        - Chat Management API
+      description: Post the chat history of the requested email IDs
+      operationId: postMessage
+      parameters:
+        - name: chatId_buyer
+          in: path
+          description: The email ID of the buyer
+          required: true
+          schema:
+            type: string
+        - name: chatId_seller
+          in: path
+          description: The email ID of the seller
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Create chat object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ChatData'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChatData'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatHistory'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ChatHistory'
+        '400':
+          description: Invalid email ID supplied
+        '404':
+          description: Page not found
+        '405':
+          description: Invalid input
+    get:
+      tags:
+        - Chat Management API
+      description: Get the chat corresponding to the requested email IDs
+      operationId: getChat
+      parameters:
+        - name: chatId_buyer
+          in: path
+          description: The email ID of the buyer
+          required: true
+          schema:
+            type: string
+        - name: chatId_seller
+          in: path
+          description: The email ID of the seller
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatHistory'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ChatHistory'
+        '400':
+          description: Invalid email ID supplied
+        '404':
+          description: Page not found
+        '405':
+          description: Invalid input
+  /p2p-trade-history:
+    get:
+      tags:
+        - P2P Trade History API
+      summary: Get transaction history for a specific email ID
+      operationId: getTransactionHistoryByEmail
+      parameters:
+       - name: emailId
+         in: query
+         description: Email ID for which transaction history is to be retrieved
+         required: true
+         schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/P2PTradeHistory'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/P2PTradeHistory'
+        '404':
+          description: No transaction history found for the provided email ID
+
+    post:
+      tags:
+        - P2P Trade History API
+      summary: Add a new transaction to the history
+      operationId: addTransactionToHistory
+      requestBody:
+        description: Transaction details to be added to the history
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/P2PTradeHistory'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/P2PTradeHistory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/P2PTradeHistory'
+      responses:
+        '201':
+          description: Successfully added transaction to the history
+        '400':
+          description: Invalid transaction details provided
+
+  
+components:
+  schemas:
+    
+    userinfo:
+        type: object
+        properties:
+          email_id:
+            type: string
+            format: email
+            description: The user's email ID
+          username:
+            type: string
+            description: The user's username
+          password:
+            type: string
+            description: The user's password
+          wallet:
+            type: object
+            additionalProperties:
+              type: number
+            description: A dictionary of the user's cryptocurrency wallet balances
+          favourites:
+            type: array
+            items:
+              type: string
+            description: A list of the user's favourite items
+          profile_pic:
+            type: string
+            format: binary
+            description: The user's profile picture
+          kyc:
+            type: boolean
+            description: Whether the user has completed KYC verification
+          contact:
+            type: string
+            description: The user's contact information
+    EmailIdOtp:
+      type: object
+      properties:
+        emailId:
+          type: string
+        OTP:
+          type: string
+      required:
+        - emailId
+        - OTP
+    CryptoTradingHistoryData:
+      type: object
+      properties:
+        email_id:
+          type: string
+          description: The email ID of the user.
+        crypto_name:
+          type: string
+          description: The name of the cryptocurrency.
+        crypto_price:
+          type: number
+          format: double
+          description: The price of the cryptocurrency.
+        order_type:
+          type: string
+          description: The type of the order (buy or sell).
+        crypto_amount:
+          type: number
+          format: double
+          description: The amount of the cryptocurrency.
+        timestamp:
+          type: string
+          format: date-time
+          description: The timestamp of the order.
+      required:
+        - email_id
+        - crypto_name
+        - crypto_price
+        - order_type
+        - crypto_amount
+        - timestamp
+    ChatData:
+      type: object
+      required:
+        - email_id1
+        - email_id2
+        - chat_messages
+      properties:
+        email_id1:
+          type: string
+        email_id2:
+          type: string
+        chat_messages:
+          type: array
+          items:
+            type: object
+            required:
+              - sender
+              - message
+            properties:
+              sender:
+                type: string
+              message:
+                type: string
+    ChatHistory:
+      type: array
+      items:
+        type: object
+        required:
+          - sender
+          - message
+        properties:
+          sender:
+            type: string
+          message:
+            type: string
+    UserPhoto:
+      type: object
+      required:
+        - user_pic
+      properties:
+        user_pic:
+          type: string
+          format: binary
+          description: The base64 encoded user photo.
+    P2PTradeHistory:
+      type: object
+      properties:
+        order_id:
+          type: integer
+        buyer_email_id:
+          type: string
+        seller_email_id:
+          type: string
+        transaction_usdt:
+          type: number
+        price:
+          type: number
+        time_stamp:
+          type: string
+          format: date-time
+      required:
+        - buyer_email_id
+        - seller_email_id
+        - transaction_usdt
+        - price
+        - time_stamp
+    
+
