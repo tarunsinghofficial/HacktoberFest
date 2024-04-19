@@ -1,0 +1,14 @@
+-> for in v/s for of
+-> break, continue, goto statements
+-> switch statements
+-> var v/s let
+-> 'use strict'
+-> block scope
+-> == v/s ===
+-> truthy v/s falsy ("", '', NaN, undefined, null, false)
+-> javascript execution on browser
+-> short circuiting
+-> try, catch, throw and finally
+-> error in exception handling
+-> data types (primitive, objects)
+-> determine data types (typeof, constructor, instanceof)
