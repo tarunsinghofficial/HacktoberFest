@@ -1,20 +1,20 @@
-//A c program that simply takes elements of the array from the user and finds the sum of these elements.
-
-#include<stdio.h>
-void main(void)
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int sum(int arr[], int n)
 {
-    int n,i,sum=0,arr[20];
+    int sum = 0; // initialize sum
 
-    printf("Enter the size of array: ");
-    scanf("%d",&n);
-
-    printf("\nEnter %d elements in the array: ",n);
-    for(i=0; i<n; i++)
-    {
-        scanf("%d",&arr[i]); //taking user input in the array.
-        sum=sum+arr[i];
-    }
-
-    printf("Sum of all elements of the array is %d",sum);
-
+    for (int i = 0; i < n; i++)
+    sum += arr[i];
+ 
+    return sum;
 }
+
+int main()
+{
+    int arr[] = {12, 3, 4, 15};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout << "Sum of given array is " << sum(arr, n);
+    return 0;
+
