@@ -1,0 +1,171 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  height: 100%;
+  padding-left: 5vw;
+}
+.contact_top {
+  padding-top: 3vh;
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 3vw;
+    font-size: 18px;
+  }
+}
+.contact_top p:nth-child(2) {
+  margin-left: 5vw;
+}
+//Contact mid
+.contact_mid {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+  width: 50vw;
+  padding-left: 7vw;
+
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 2vw;
+    font-size: 18px;
+  }
+  h1 {
+    color: #cd5244;
+    font-family: "Oswald", sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    margin-left: 3vw;
+  }
+  h4 {
+    color: white;
+    margin-left: 3vw;
+    font-family: "Open Sans", sans-serif;
+
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 3px;
+  }
+}
+.contactForm {
+  padding-top: 4vh;
+  width: 65vw;
+}
+.contactForm_form {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+.contactForm_input {
+  width: 100%;
+  line-height: 30px;
+  border: 1px solid #cd5244;
+  margin: 10px;
+  border-radius: 15px;
+  padding: 10px ;
+  background-color: #181A1B;
+}
+input[type="text"]::placeholder {
+  text-align: center;
+  color: #cd5244;
+  opacity: 0.45;
+}
+input[type="email"]::placeholder {
+  text-align: center;
+  color: #cd5244;
+  opacity: 0.45;
+}
+
+.contactForm_top {
+  display: flex;
+}
+
+.contactForm_button {
+  color: #ff0000;
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid #ff0000;
+  margin-top: 25px;
+  float: left;
+  background-color: transparent;
+  white-space: nowrap;
+  font-weight: 400;
+
+  margin-left: 3vw;
+}
+.contactForm_button:hover {
+  cursor: pointer;
+}
+.errorMessage {
+  color: rgb(254, 254, 254);
+}
+textarea {
+  padding: 10px 5px;
+}
+textarea::placeholder {
+  text-align: center;
+  color: #cd5244;
+  opacity: 0.45;
+}
+// Contact Bottom
+
+.contact_bottom {
+  padding-top: 5vh;
+  p {
+    font-family: "La Belle Aurore", cursive;
+    color: #515152;
+
+    margin-left: 5vw;
+    font-size: 18px;
+  }
+}
+
+.contact_bottom p:nth-child(2) {
+  margin-left: 3vw;
+}
+.failure {
+  background: #cd5244 !important;
+  .Toastify__toast-body {
+    color: white;
+  }
+}
+.Toastify__toast-body {
+  color: #cd5244;
+}
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: rgb(59, 106, 187) !important;
+  background-image: none !important;
+  color: -internal-light-dark(rgb(255, 255, 255), white);
+}
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(rgb(255, 255, 255), white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+}
