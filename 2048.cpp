@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#include<conio.h>
 using namespace std;
 
 void upmove(int a[4][4])
@@ -65,12 +64,12 @@ void downmove(int a[4][4])
 						}
 						else
 						{
-							a[--li][ri]=a[i][j];
+							a[li--][ri]=a[i][j];
 							a[i][j]=0;
 						}
 					}
 				}
-				else li--;
+				else {li--;}
 			}
 		}
 	}
@@ -160,7 +159,7 @@ void addblock(int a[4][4])
 		ri=rand()%4;
 		if(a[li][ri]==0)
 		{
-			a[li][ri]=pow(2,li%2 + 1);
+			a[li][ri]=pow(2,(li%2) + 1);
 			break;
 		}
 	}
@@ -207,7 +206,7 @@ int checkover(int a[4][4])
     		if(a[i][j]==0)
     		{
     			fl=1;
-				break;	
+		        break;	
 			}
 			
 	for(i=0;i<3;i++)
@@ -216,7 +215,7 @@ int checkover(int a[4][4])
     		{
     			gl=1;
     			break;
-			}
+		}
 			
 	if(fl || gl) return 1;
 	else return 0;
@@ -224,7 +223,7 @@ int checkover(int a[4][4])
 
 int main()
 {
-	cout<<"\n\n\n\n\t\t\t2048 GAME\n\n\n\t\tPress any key to continue";
+	cout<<"\n\n\n\n\t\t\t2048 GAME\n\n\n\t\tPress any key to continue"<<endl;
 	getch(); // It will take an input from the keyboard.
 	system("cls"); // It will clear the screen.
 	int i1,i2,i3,i4,i,j;
@@ -262,7 +261,7 @@ int main()
 			
 		if(!checkover(a))
 		{
-			cout<<"\n\n\t\t\tGAME OVER!!\n\n\n";
+			cout<<"\n\n\t\t\tGAME OVER!!\n\n\n"<<endl;
 			getch();
 			break;
 		}	
