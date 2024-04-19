@@ -1,0 +1,55 @@
+.footer {
+  width: 100%;
+  padding: 20px 40px;
+  background: var(--color-base);
+
+  flex-wrap: wrap;
+  gap: 20px;
+
+  overflow: hidden;
+}
+
+.footer__logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: var(--plus-jakarta-sans);
+  text-transform: uppercase;
+  color: var(--color-white);
+
+  cursor: pointer;
+}
+
+.footer ul {
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 64px;
+}
+
+.footer ul:last-child {
+  gap: 32px;
+}
+
+.footer__nav li {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--plus-jakarta-sans);
+  text-transform: uppercase;
+  color: var(--color-white);
+
+  cursor: pointer;
+}
+
+.footer__social li {
+  width: 42px;
+  height: 42px;
+}
+
+.footer__social li img {
+  width: 45%;
+  height: 45%;
+
+  object-fit: contain;
+}
