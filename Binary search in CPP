@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int data(vector<int>&v1, int key, int start, int end, int size)
+{
+    int mid=(start+end)/2;
+    if(v1[mid]==key)
+    {
+        return mid;
+    }
+    if(start==end)
+    {
+        return -1;
+    }
+    if(v1[mid]>key)
+    {
+        return data(v1,key,start,mid,size);
+    }
+    if(v1[mid]<key)
+    {
+        return data(v1,key,mid+1,end,size);
+    }
+}
+
+int main()
+{
+    vector<int>v1;
+    int n;
+    cout<<"Enter number of elements in araay :";
+    cin>>n;
+    cout<<"Enter elements"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        int a;
+        cin>>a;
+        v1.push_back(a);
+    }
+    sort(v1.begin(),v1.end());
+    int key;
+    cout<<"Enter an element you wants to search :";
+    cin>>key;
+    int s=data(v1,key,0,n-1,n-1);
+    if(s==-1)
+    {
+        cout<<"element not found "<<endl;
+    }
+    else 
+    {
+        cout<<"element found at index "<<s<<endl;
+    }
+}
