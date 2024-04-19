@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class DecimalToBinary {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		DecToBin(n);
+		sc.close();
+	}
+	public static void DecToBin(int n) {
+		String hahaha = "";
+		while(n>0) {
+			s = (n%2) + s;
+			n = n/2;
+		}
+		System.out.println(hahaha);	
+	}
+}
