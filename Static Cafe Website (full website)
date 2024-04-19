@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <style>
+            @import "https://fonts.googleapis.com/css?family=Josefin Sans";
+html,
+body {
+  font-family: Josefin Sans;
+  background-color: #e4e1dc;
+  color: #3e4546; /*gray*/
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+p{
+  font-size: 90%;
+  line-height: 1.7;
+}
+h3{
+  color: #99a644; /*green*/
+  text-shadow: 0 0 1px #99a644; /*green*/
+}
+
+/*-------- HEADER -----------*/
+nav {
+  background-color: #dab78d; /*beige*/
+  width: 100%;
+  margin-left: -7.px;
+  display: inline-block;
+  height: 165px;
+}
+ul {
+  list-style-type: none;
+  width: 100%;
+  padding-left: 0;
+  margin-top: 6%;
+}
+nav ul li {
+  opacity: 1;
+  padding-top: 4%;
+  width: 14%;
+  height: 0;
+  float: left;
+  color: #ffffff;
+}
+#sakat{
+  all: unset;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #491404; /*brown*/
+  font-size: 16px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+nav li a img{
+  margin-top: unset;
+  width: 200px;
+  margin-top: -128px;
+}
+/*------- //HEADER ----------*/
+
+/*-------- MAIN -------------*/
+section ul li p,
+section ul li a,
+section ul li h1 {
+  padding: 7% 0 0;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 1px 2px black;
+}
+.smain {
+  background-image: url("https://image.freepik.com/free-photo/top-view-roasted-coffee-beans-with-copy-space_23-2148251592.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: 13%;
+}
+#overmain {
+  list-style-type: none;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 9%;
+}
+.body {
+  background-image: url("https://image.freepik.com/free-photo/close-up-blank-old-concrete-wall_23-2147856094.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 139%;
+}
+/*-------- //MAIN -----------*/
+
+/* ----- SPECIAL TABLE ------*/
+.specials {
+  margin-top: -50px;
+  /* small brown line */
+  border-top: 11px solid #dab78d; /*beige*/
+  text-align: center;
+}
+.specials ul {
+  margin-top:2%;
+  list-style-type: none;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.specials-trigger {
+  /* center allign */
+  border: 1px solid #54301a; /*brown*/
+  border-radius: 50px;
+  font-size: 26px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+.specials li {
+  background-color: #54301a; /*brown*/
+  padding-top: 30px;
+  opacity: 0.5;
+  /* box */
+  display: table-cell;
+  width: 31%;
+  -moz-transition: all 0.25s, color 0s !important;
+  -o-transition: all 0.25s, color 0s !important;
+  transition: all 0.25s, color 0s !important;
+  z-index: 0;
+  border: 1px #54301a; /*brown*/
+}
+.header {
+  font-weight: 800;
+  color: #e4e1dc; /*beige*/
+}
+.specials li:hover {
+  box-shadow: 0 13px 48px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 3px;
+  opacity: 1;
+  background: #b48b66; /*beige*/
+  border-color: #54301a; /*brown*/
+}
+.specials li:hover .header {
+  text-shadow: none;
+  color: #54301a; /*brown*/
+}
+.specials ul .description {
+  text-shadow: none;
+  color: #e4e1dc; /*beige*/
+  display: block;
+  font-size: 19px;
+  line-height: 30px;
+}
+.specials ul .middescription {
+  font-size: 10px;
+  text-shadow: none;
+  color: #e4e1dc; /*beige*/
+  display: block;
+  line-height: 30px;
+}
+.specials .price {
+  font-size: 84px;
+  letter-spacing: 2px;
+  padding-top: 20px;
+  display: block;
+  font-weight: 400;
+  padding-bottom: 12px;
+}
+
+/*----- //SPECIAL TABLE -----*/
+
+/*-------- FOOTER -----------*/
+footer {
+  padding: 6%;
+  background-color: #dfddd8; /*dark gray*/
+  text-align: center;
+  color: #fff;
+}
+.footer-nav {
+  list-style: none;
+  font-size: 80%;
+}
+.footer-nav h4,
+footer a:link,
+footer a:visited {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+footer a:hover,
+footer a:active {
+  transition: 0.1s;
+  /*font-weight: 900; */
+  color: #7f5b51; /*light brown*/
+}
+#h3 {
+  font-family: "Snell Roundhand" !important;
+  font-weight: normal;
+  font-size: 29px;
+  color: #fff;
+  text-shadow: none;
+}
+#h3,
+h3 {
+  line-height: 0.5;
+}
+#flogo {
+  box-shadow: 0 0 10px 0 #4e3629;
+  border-radius: 18%;
+  width: 14%;
+}
+#fpin{
+  width:10%;
+}
+
+#rights {
+  font-size: 45%;
+  text-align: right;
+  color: #b48b66 /*light brow*/
+}
+#freepik{
+  color: #848484; /*grey*/
+  text-align: center;
+  font-size: 9px;
+}
+/*------- //FOOTER ----------*/
+
+/*-------- QUERIES ----------*/
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+  button {
+    display: none;
+  }
+  .nav li a:after {
+    display: block;
+    content: "";
+    border-bottom: solid 5px #b48b66;
+    width: 85%;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 290ms ease-in-out;
+    transform-origin: 100% 50%;
+  }
+  .nav li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0 50%;
+  }
+  nav {
+    position: absolute;
+  }
+}
+        </style>
+        <nav>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><img src="https://image.freepik.com/free-vector/coffee-shop-badge-vintage-style_1176-95.jpg"></a></li>
+              <li id="sakat"><li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Book table</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+        </nav>
+    
+        <section class="smain">
+          <ul id="overmain">
+            <li>
+              <h1>Cafe Sit Down</h1>
+            </li>
+            <li>
+              <p>
+                We're still open due to COVID-19! and we care a lot about hygiene.
+                <a href="/#">Click here</a> to see more!
+              </p>
+            </li>
+          </ul>
+        </section>
+    
+        <section>
+          <div class="body">
+            <section class="specials">
+              <div>
+                <ul>
+                  <li>
+                    <a>
+                      <span class="header">LUNCH BUFFET</span>
+                      <span class="description"><br /></span>
+                      <span class="description">12:00pm - 5:00pm</span>
+                      <span class="description">10 different sandwhiches</span>
+                      <span class="description">Everyday:</span>
+                      <big class="price">$5.99,-</big>
+                      <span class="description"><br /></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="header">EVENING BUFFET</span>
+                      <span class="description"><br /></span>
+                      <span class="description">5:00pm - 10:00pm</span>
+                      <span class="description">Sandwhich and coffee is incl.</span>
+                      <span class="description">Mon-thur:</span>
+                      <big class="price">$7.99,-</big>
+                      <span class="description">(Fri-sun: $9.99)</span>
+                      <span class="description"><br /></span>
+                    </a>
+                  </li>
+                </ul>
+                <p>
+                  Children under age 4 are eating of free cost<br>
+                        Children at age 4 to 12 are eating of half price.<br>
+                        Everyday!
+                </p>
+              </div>
+            </section>
+          </div>
+        </section>
+    
+        <footer>
+          <div class="row">
+            <div class="col-sm-4">
+              <ul class="footer-nav">
+                <br />
+                <img src="https://image.freepik.com/free-vector/coffee-shop-badge-vintage-style_1176-95.jpg" id="flogo" /><br />
+                <br />
+                <h3>Cafe</h3>
+                <h3 id="h3">Sit Down</h3>
+                <br />
+                <li><a href="/#">Book a table now!</a></li>
+                <br />
+                <li><a href="/#">See menu</a></li>
+                <br />
+                <li><a href="/#">Catering</a></li>
+                <br /><br /><br />
+              </ul>
+            </div>
+            <div>
+              <ul class="footer-nav">
+                <br /><br /><br />
+                <img
+                  src="https://image.flaticon.com/icons/png/512/84/84341.png" id="fpin" />
+                <br <br />
+                <h3>Contact us</h3>
+                <br />
+                <li>Mon - Sun 12:00pm - 10 pm</li>
+                <br />
+                <li>
+                  <i aria-hidden="true"></i
+                  ><a
+                    href="http://maps.google.com/?q=478 Carriage Lane Charlotte, NC">478 Carriage Lane<br>
+                      Charlotte, NC
+                    </a
+                  >
+                </li>
+                <br />
+                <li>
+                  <i aria-hidden="true"></i><a href="tel:704-497-3773">(704)497-3773</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+    
+        <p id="rights">
+          Cafe Sit Down<br />EIN/VAT/CVR number<br />deyan aaliyah
+          2020&copy
+        </p>
+      
+      <div id="freepik">
+        <p>
+        <br>
+        All images are imported from www.freepik.com, and they've got all kinds of vectors and icons in which I don't own. <br>These images are only used on www.codepen.io, and I do not make a profit off of this.
+      </p>
+      </div>
+      </body>
+</body>
+</html>
