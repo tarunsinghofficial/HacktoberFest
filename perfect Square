@@ -1,0 +1,26 @@
+package com.company;
+import java.util.*;
+
+class Perfect_Square
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter your no.");
+        int a=s.nextInt();
+
+        for (int i=1;i<=(a+1/2);i++)
+        {
+            if (i*i==a)
+            {
+                System.out.println("this is perfect square of :"+i);
+                break;
+            }
+
+            if(i==(a+1/2))
+            {
+                System.out.println("this is not perfect square");
+            }
+        }
+    }
+}
