@@ -1,17 +1,17 @@
 import java.util.*;
 class factorial
 {  
-  public static void main(String[] args)  
-  {  
-  int n,ans=1;
-  Scanner obj=new Scanner(System.in);
-  System.out.println("Enter Number: ");
-  n=obj.nextInt();
-  
-  for(int i=n; i>=1; i--)
-  {
-	 ans=ans*i; 
-  }
-  System.out.println(" "+ans);
-  }
+	static int factorial(int n){    
+	if (n == 0)    
+		return 1;    
+	else    
+		return(n * factorial(n-1));    
+	}    
+	public static void main(String args[]){  
+	Scanner sc = new Scanner(System.in);
+	int number = sc.nextInt();
+	int i,fact=1;      
+	fact = factorial(number);   
+	System.out.println(number+" : "fact);    
+	}
 }  
