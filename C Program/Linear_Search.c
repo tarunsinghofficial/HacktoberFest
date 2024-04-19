@@ -12,6 +12,11 @@ int search(int arr[], int n, int x)
             return i;
     return -1;
 }
+int Display(int arr[], int n){
+ printf("Number are :");
+ for(int i=0; i<n;i++){
+   printf("%d",arr[i]);
+  
  
 // Driver code
 int main(void)
@@ -21,9 +26,5 @@ int main(void)
     int n = sizeof(arr) / sizeof(arr[0]);
    
     // Function call
-    int result = search(arr, n, x);
-    (result == -1)
-        ? printf("Not Present")
-        : printf("Present at index %d", result);
-    return 0;
-}
+   search(arr,5);
+   Display(arr,5);
