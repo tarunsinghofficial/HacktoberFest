@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+#define MAX 10 // Define a maximum size for the matrix
+
+void multiplyMatrices(int first[MAX][MAX], int second[MAX][MAX], int result[MAX][MAX], int rowFirst, int columnFirst, int rowSecond, int columnSecond) {
+    int i, j, k;
+
+    for(i = 0; i < rowFirst; ++i) {
+        for(j = 0; j < columnSecond; ++j) {
+            result[i][j] = 0;
+        }
+    }
+
+    for(i = 0; i < rowFirst; ++i) {
+        for(j = 0; j < columnSecond; ++j) {
+            for(k = 0; k < columnFirst; ++k) {
+                result[i][j] += first[i][k] * second[k][j];
+            }
+        }
+    }
+}
+
+void printMatrix(int matrix[MAX][MAX], int row, int column) {
+    int i, j;
+    printf("Resultant Matrix:\n");
+    for(i = 0; i < row; ++i) {
+        for(j = 0; j < column; ++j) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int first[MAX][MAX], second[MAX][MAX], result[MAX][MAX];
+    int rowFirst, columnFirst, rowSecond, columnSecond;
+    int i, j;
+
+    printf("Enter rows and columns for first matrix: ");
+    scanf("%d %d", &rowFirst, &columnFirst);
+
+    printf("Enter rows and columns for second matrix: ");
+    scanf("%d %d", &rowSecond, &columnSecond);
+
+    while (columnFirst != rowSecond) {
+        printf("Error! column of first matrix should be equal to row of second.\n");
+        printf("Enter rows and columns for first matrix: ");
+        scanf("%d %d", &rowFirst, &columnFirst);
+
+        printf("Enter rows and columns for second matrix: ");
+        scanf("%d %d", &rowSecond, &columnSecond);
+    }
+
+    printf("\nEnter elements of matrix 1:\n");
+    for(i = 0; i < rowFirst; ++i) {
+        for(j = 0; j < columnFirst; ++j) {
+            printf("Enter element a%d%d: ", i+1, j+1);
+            scanf("%d", &first[i][j]);
+        }
+    }
+
+    printf("\nEnter elements of matrix 2:\n");
+    for(i = 0; i < rowSecond; ++i) {
+        for(j = 0; j < columnSecond; ++j) {
+            printf("Enter element b%d%d: ", i+1, j+1);
+            scanf("%d", &second[i][j]);
+        }
+    }
+
+    multiplyMatrices(first, second, result, rowFirst, columnFirst, rowSecond, columnSecond);
+    printMatrix(result, rowFirst, columnSecond);
+
+    return 0;
+}
