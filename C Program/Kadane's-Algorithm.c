@@ -1,47 +1,49 @@
 #include<stdio.h>
-//Function to calculate the maximum sum of a sub-array of a given array.
-int maxSumarray(int a[], int size){
-        int i;
-        int max_sum_so_far=0;
-        int max_ending_here = 0;
-        
-        for(i=0;i<size;i++){
-        	max_ending_here = max_ending_here + a[i];
-        	
-        	if(max_ending_here < 0){
-        		max_ending_here =0;
-			}
-		    if(max_sum_so_far < max_ending_here){
-			  
-			  max_sum_so_far = max_ending_here;
-			
-			}
-			
-		}
 
-return max_sum_so_far;
+// Function to calculate the maximum sum of a sub-array of a given array using Kadane's Algorithm.
+int findMaxSubArraySum(int arr[], int size) {
+    int i;
+    int maxSumSoFar = 0;       // Variable to store the maximum sum encountered so far
+    int currentSubArraySum = 0; // Variable to store the current sub-array sum
+
+    // Iterate through the array to calculate maximum sub-array sum
+    for(i = 0; i < size; i++) {
+        currentSubArraySum += arr[i]; // Add the current element to the sub-array sum
+
+        // If the current sub-array sum is negative, reset it to zero (i.e., ignore the sub-array)
+        if(currentSubArraySum < 0) {
+            currentSubArraySum = 0;
+        }
+
+        // Update maxSumSoFar if the current sub-array sum is larger
+        if(maxSumSoFar < currentSubArraySum) {
+            maxSumSoFar = currentSubArraySum;
+        }
+    }
+
+    return maxSumSoFar;
 }
 
+int main() {
+    int i, arraySize;
 
-int main(){
-	
-	int i,size;
-	
-	printf("Enter the size of the array ");
-	scanf("%d",&size);
-	
-	int a[size];
-	printf("\n Enter the elements of the array");
-	for(i=0; i<size; i++){
-		
-		scanf("%d",&a[i]);		
-	}
-	 
-	
-	int max_sum = maxSumarray(a,size); //function call.
-	
-    printf("\n\n The Maximum Sum of the Sub Array is : %d",max_sum);
-	
-	
-	return 0;
+    // Input: Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &arraySize);
+
+    int arr[arraySize];
+
+    // Input: Get the elements of the array from the user
+    printf("\nEnter the elements of the array:\n");
+    for(i = 0; i < arraySize; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Function call to find the maximum sum of a sub-array
+    int maxSum = findMaxSubArraySum(arr, arraySize);
+
+    // Output the result
+    printf("\nThe Maximum Sum of the Sub-Array is: %d\n", maxSum);
+
+    return 0;
 }
