@@ -1,0 +1,86 @@
+packagePBL_Lab;
+importjava.util.*;
+publicclass exp_4 {
+	
+	exp_4()
+	{
+		HashSet hs=newHashSet();
+		hs.add("amrit");
+		hs.add("pal");
+		hs.add("singh");
+		hs.add("Sandhu");
+		System.out.print("elemenst in set\n"+hs);
+		//remove specific element from hashset
+		hs.remove("Sandhu");
+		System.out.print("\nAfter removing Sandhu from set\n"+hs);
+		
+		//another set
+		HashSet hs1=newHashSet();
+		hs1.add("Sandhu");
+		hs1.add("CSE");
+		hs1.add("Chandigarh");
+		hs1.add("University");
+		System.out.print("\nset item\n"+hs1);
+		//cancatenate two sets
+		hs.addAll(hs1);
+		System.out.print("\nAftercancatenate two sets"+hs);
+		//use of iterator
+		System.out.print("\nTraversing item using iterator\n");
+		Iterator it=hs.iterator();
+		while(it.hasNext())
+		{
+			System.out.print(it.next()+" ");
+		}
+		//remove set 2 from set 1
+		hs.removeAll(hs1);
+		System.out.print("\nafter remove second set\n"+hs);
+		//clear complete set
+		hs.clear();
+		System.out.print("\nafter clear set"+hs);
+		
+		System.out.print("\n------------------------------------------------------methods of tree set------------------------------------------------------\n");
+		
+		//use of tree set
+		TreeSetts=newTreeSet();
+		ts.add("amrit");
+		ts.add("pal");
+		ts.add("singh");
+		ts.add("Sandhu");
+		System.out.print("elemenst in set\n"+hs);
+		//remove specific element from treeset
+		hs.remove("Sandhu");
+		System.out.print("\nAfter removing Sandhu from set\n"+ts);
+		
+		//another set
+		TreeSetts1=newTreeSet();
+		ts1.add("Sandhu");
+		ts1.add("CSE");
+		ts1.add("Chandigarh");
+		ts1.add("University");
+		System.out.print("\nset item\n"+ts1);
+		//cancatenate two sets
+		ts.addAll(ts1);
+		System.out.print("\nAftercancatenate two sets"+ts);
+		//use of iterator
+		System.out.print("\nTraversing item using iterator\n");
+		Iterator it1=ts.iterator();
+		while(it1.hasNext())
+		{
+			System.out.print(it1.next()+" ");
+		}
+		//remove set 2 from set 1
+		ts.removeAll(ts1);
+		System.out.print("\nafter remove second set\n"+ts);
+		//clear complete set
+		ts.clear();
+		System.out.print("\nafter clear set"+ts);
+		
+		
+	}
+	publicstaticvoidmain(String agrs[]) {
+		
+		new exp_4();
+	}
+	
+}
+

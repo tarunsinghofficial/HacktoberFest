@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student registration</title>
+    <link rel="stylesheet" href="register.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <h2>LogIn</h2>
+    </div>
+
+    <form method="post" action="login.html">
+
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="Username" required>
+      </div>
+
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password" required>
+      </div>
+
+
+      <div class="input-group">
+        <button id="number" onclick="random()" type="submit" name="login" class="btn">LogIn</button>
+      </div>
+
+      <p>
+        Don't have an account? <a href="register.html">Register</a>
+      </p>
+
+    </form>
+  </body>
+
+  <script>
+    function random(){
+      document.getElementById('number').innerHTML = Math.floor(Math.random() * 1000000);
+    }
+  </script>
+
+</html>

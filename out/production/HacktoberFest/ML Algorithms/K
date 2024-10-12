@@ -1,0 +1,32 @@
+import pandas as pd
+import os
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
+from matplotlib import pyplot as plt
+from sklearn.neighbors import KNeighborsClassifier
+
+print(os.getcwd())
+
+#Importing the file
+rd = pd.read_csv("data.csv")
+pd = rd.dropna()
+
+feature1 = pd.iloc[:, [0, 2, 3, 4, 8, 9]]
+X = feature1
+feature2 = pd.iloc[:, 11]
+y = feature2
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.35)
+K_range = range(1, 30)
+score = {}
+score_list = []
+for k in K_range:
+    Knn = KNeighborsClassifier(n_neighbors=k)
+    Knn.fit(X_train, y_train)
+    Pred = Knn.predict(X_test)
+    score_list.append(metrics.accuracy_score(y_test, Pred))
+
+plt.plot(K_range, score_list)
+plt.xlabel("value of k for KNN")
+plt.ylabel("Testing Accuracy")
+plt.show()

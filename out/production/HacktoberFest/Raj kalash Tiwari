@@ -1,0 +1,14 @@
+#Please accept this requst
+# Raj Kalash Tiwari
+#i joined you from your youtube account
+# profile :https://github.com/rjkalash
+# Location: India
+
+
+#This is awesome....>>> Created by Raj <<....
+#input ==>  4  rajkalash
+#output==> <class str> rjaah
+x=input("Enter the value \n")
+print(type(x))
+ch=input("Enter any thing\n")[0:9:2]
+print(ch);

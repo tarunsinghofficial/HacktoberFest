@@ -1,0 +1,28 @@
+import pickle
+Dict=[]
+
+while True:
+    print("\n1 . SHOW BIRTHDAY")
+    print("2. ADD TO YOUR BIRTHDAY-LIST\n")
+    choice = int(input("enter YOUR CHOICE :\n"))
+    if choice==1:
+        if len(Dict)==0:
+            file=open(r"D:\New folder\res.txt","r")
+            print (file.read())
+            #print("!! THERE IS NOTHNG TO SHOW IN BIRTHDAY-LIST !!")
+        else :
+            name=input("enter NAME to look for birthday:\n")
+            birthday=Dict.get(name,'NO DATA FOUND')
+            print(birthday)
+    elif choice==2:
+        name=input("ENTER YOUR NAME TO ADD TO BIRTHDAY DICTIONARY:\n")
+        date=input("ENTER BIRTH-DATE FOR ")
+        Dict[name]=date
+        pickle.dump(Dict,open(r"D:\New folder\res.txt","wb"))
+        print("!!  BIRTHDATE OF ",name,end=' IS ADDED SUCESSFULLY  !!')
+    elif choice==3:
+        print("====ok, we have done sucessfully .....")
+        print(" !! see you soon again !!")
+        break
+    else:
+        print("please , select a valid option")

@@ -1,0 +1,54 @@
+An analog watch using react and javascript #2631
+<br>
+Create a basic analog clock with three clock hands (hour, minute, and second).
+
+Code :
+import React, { Component } from 'react';
+import './App.css';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: new Date()
+    };
+  }
+
+  componentDidMount() {
+    this.intervalID = setInterval(
+      () => this.tick(),
+      1000 // Update the clock every second
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
+  }
+
+  tick() {
+    this.setState({
+      time: new Date()
+    });
+  }
+
+  render() {
+    const { time } = this.state;
+
+    const secondDeg = ((time.getSeconds() / 60) * 360) - 90;
+    const minuteDeg = ((time.getMinutes() / 60) * 360) - 90;
+    const hourDeg = ((time.getHours() % 12) / 12 * 360) + ((time.getMinutes() / 60) * 30) - 90;
+
+    return (
+      <div className="clock">
+        <div className="hand second-hand" style={{ transform: `rotate(${secondDeg}deg)` }}></div>
+        <div className="hand minute-hand" style={{ transform: `rotate(${minuteDeg}deg)` }}></div>
+        <div className="hand hour-hand" style={{ transform: `rotate(${hourDeg}deg)` }}></div>
+        <div className="center-circle"></div>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+

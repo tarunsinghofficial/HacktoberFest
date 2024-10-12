@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Hcf {
+
+	public static void main(String[] args) {
+		
+		long n1,n2;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter number: ");
+	     n1=sc.nextLong();
+	     System.out.println("enter number: ");
+	     n2=sc.nextLong();
+	     long result=hcfCal(n1,n2);
+	     System.out.println("hcf of two numbers: "+result);
+	}
+	    
+	static long hcfCal(long a,long b)
+	     {
+	    	 long temp;
+	    	 while (b>0)
+	    	 {
+	    		 temp=b;
+	    		 b=a%b;
+	    		 a=temp;
+	    	 }
+	    	 return a;
+	     }
+
+	}

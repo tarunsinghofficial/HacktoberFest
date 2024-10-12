@@ -1,0 +1,6 @@
+#include<stdio.h>  
+int main()    
+{     
+  printf("I love Tarun Singh YT channel");    
+return 0;  
+}   
