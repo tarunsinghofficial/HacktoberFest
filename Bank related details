@@ -7,7 +7,7 @@ class Bank {
 
     Scanner KB = new Scanner(System.in);
 
-    //method to open an account
+    // method to open an account
     void openAccount() {
         System.out.print("Enter Account No: ");
         accno = KB.next();
@@ -17,118 +17,123 @@ class Bank {
         balance = KB.nextLong();
     }
 
-    //method to display account details
+    // method to display account details
     void showAccount() {
-        System.out.println(accno + "," + name + "," + balance);
+        System.out.println(accno + ", " + name + ", " + balance);
     }
 
-    //method to deposit money
+    // method to deposit money
     void deposit() {
         long amt;
-        System.out.println("Enter Amount U Want to Deposit : ");
+        System.out.print("Enter Amount You Want to Deposit: ");
         amt = KB.nextLong();
-        balance = balance + amt;
+        balance += amt; // simplified
+        System.out.println("Deposit Successful. New Balance: " + balance);
     }
 
-    //method to withdraw money
+    // method to withdraw money
     void withdrawal() {
         long amt;
-        System.out.println("Enter Amount U Want to withdraw : ");
+        System.out.print("Enter Amount You Want to Withdraw: ");
         amt = KB.nextLong();
         if (balance >= amt) {
-            balance = balance - amt;
+            balance -= amt; // simplified
+            System.out.println("Withdrawal Successful. New Balance: " + balance);
         } else {
-            System.out.println("Less Balance..Transaction Failed..");
+            System.out.println("Insufficient Balance. Transaction Failed.");
         }
     }
 
-    //method to search an account number
+    // method to search an account number
     boolean search(String acn) {
         if (accno.equals(acn)) {
             showAccount();
-            return (true);
+            return true;
         }
-        return (false);
+        return false;
     }
 }
 
 public class ExBank {
-    public static void main(String arg[]) {
+    public static void main(String[] args) {
         Scanner KB = new Scanner(System.in);
 
-        //create initial accounts
-        System.out.print("How Many Customer U Want to Input : ");
+        // create initial accounts
+        System.out.print("How Many Customers Do You Want to Input: ");
         int n = KB.nextInt();
-        Bank C[] = new Bank[n];
+        Bank[] C = new Bank[n];
         for (int i = 0; i < C.length; i++) {
             C[i] = new Bank();
             C[i].openAccount();
         }
 
-        //run loop until menu 5 is not pressed
+        // run loop until menu 5 is not pressed
         int ch;
         do {
-            System.out.println("Main Menu\n1. Display All\n 2. Search By Account\n 3. Deposit\n 4. Withdrawal\n 5.E xit ");
-                System.out.println("Ur Choice :"); ch = KB.nextInt();
-                switch (ch) {
-                    case 1:
-                        for (int i = 0; i < C.length; i++) {
-                            C[i].showAccount();
-                        }
-                        break;
+            System.out.println("Main Menu\n1. Display All\n2. Search By Account\n3. Deposit\n4. Withdrawal\n5. Exit");
+            System.out.print("Your Choice: ");
+            ch = KB.nextInt();
+            switch (ch) {
+                case 1:
+                    for (int i = 0; i < C.length; i++) {
+                        C[i].showAccount();
+                    }
+                    break;
 
-                    case 2:
-                        System.out.print("Enter Account No U Want to Search...: ");
-                        String acn = KB.next();
-                        boolean found = false;
-                        for (int i = 0; i < C.length; i++) {
-                            found = C[i].search(acn);
-                            if (found) {
-                                break;
-                            }
+                case 2:
+                    System.out.print("Enter Account No You Want to Search: ");
+                    String acn = KB.next();
+                    boolean found = false;
+                    for (int i = 0; i < C.length; i++) {
+                        found = C[i].search(acn);
+                        if (found) {
+                            break;
                         }
-                        if (!found) {
-                            System.out.println("Search Failed..Account Not Exist..");
-                        }
-                        break;
+                    }
+                    if (!found) {
+                        System.out.println("Search Failed. Account Does Not Exist.");
+                    }
+                    break;
 
-                    case 3:
-                        System.out.print("Enter Account No : ");
-                        acn = KB.next();
-                        found = false;
-                        for (int i = 0; i < C.length; i++) {
-                            found = C[i].search(acn);
-                            if (found) {
-                                C[i].deposit();
-                                break;
-                            }
+                case 3:
+                    System.out.print("Enter Account No: ");
+                    acn = KB.next();
+                    found = false;
+                    for (int i = 0; i < C.length; i++) {
+                        found = C[i].search(acn);
+                        if (found) {
+                            C[i].deposit();
+                            break;
                         }
-                        if (!found) {
-                            System.out.println("Search Failed..Account Not Exist..");
-                        }
-                        break;
+                    }
+                    if (!found) {
+                        System.out.println("Search Failed. Account Does Not Exist.");
+                    }
+                    break;
 
-                    case 4:
-                        System.out.print("Enter Account No : ");
-                        acn = KB.next();
-                        found = false;
-                        for (int i = 0; i < C.length; i++) {
-                            found = C[i].search(acn);
-                            if (found) {
-                                C[i].withdrawal();
-                                break;
-                            }
+                case 4:
+                    System.out.print("Enter Account No: ");
+                    acn = KB.next();
+                    found = false;
+                    for (int i = 0; i < C.length; i++) {
+                        found = C[i].search(acn);
+                        if (found) {
+                            C[i].withdrawal();
+                            break;
                         }
-                        if (!found) {
-                            System.out.println("Search Failed..Account Not Exist..");
-                        }
-                        break;
+                    }
+                    if (!found) {
+                        System.out.println("Search Failed. Account Does Not Exist.");
+                    }
+                    break;
 
-                    case 5:
-                        System.out.println("Good Bye..");
-                        break;
-                }
+                case 5:
+                    System.out.println("Goodbye!");
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice. Please Try Again.");
             }
-            while (ch != 5);
-        }
+        } while (ch != 5);
     }
+}
