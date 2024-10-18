@@ -1,41 +1,64 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import math 
-f=[[10,5],[40,7],[3,2],[5,3]]
-l=['good','good','bad','bad']
-x=[]
-y=[]
-s=len(set(l)) #shows all categories present
+import math
+
+# Data points
+f = [[10, 5], [40, 7], [3, 2], [5, 3]]
+l = ['good', 'good', 'bad', 'bad']  # Labels for each point
+
+x = np.array([point[0] for point in f])  # Extracting x-coordinates
+y = np.array([point[1] for point in f])  # Extracting y-coordinates
+
+# Display the data points
+print("x-coordinates:", x)
+print("y-coordinates:", y)
+
+# Initialize lists to store labels only once for legend
+plotted_good = False
+plotted_bad = False
+
+# Plot the data points with different markers for 'good' and 'bad'
 for i in range(len(f)):
-    f1=f[i][0]
-    x=np.append(x,f1)
-    f2=f[i][1]
-    y=np.append(y,f2)
-print(x," ",y)
-for i in range(len(f)):
-    if (l[i]== 'good'):
-        plt.plot(x[i],y[i],'r*')
+    if l[i] == 'good':
+        if not plotted_good:
+            plt.plot(x[i], y[i], 'r*', label='Good')  # Red stars for 'good'
+            plotted_good = True
+        else:
+            plt.plot(x[i], y[i], 'r*')  # No label to avoid duplicate in legend
     else:
-        plt.plot(x[i],y[i],"y^")
-p = int(input("Enter saving%"))
-q = int(input("Enter no. of good habit"))
-k=int(input("Enter k"))
-plt.plot(p,q,'b*')
-disx=[]
-disy=[]
-dis=[]
-if (k>len(f)):
-    k=len(f)
-for i in range(len(x)):
-    dis=np.append(dis,math.sqrt(((p-x[i])**2)+((q-y[i])**2)))
-print(dis)
-dis.sort()
-min1=[]
-for i in range(k):
-    min1=np.append(min1,dis[i])
-print(min1)
-sum1=0
-for i in range(len(min1)):
-    sum1=sum1+min1[i]
-print(sum1/len(min1)) #avgmin = sum1/len(min1)
+        if not plotted_bad:
+            plt.plot(x[i], y[i], 'y^', label='Bad')  # Yellow triangles for 'bad'
+            plotted_bad = True
+        else:
+            plt.plot(x[i], y[i], 'y^')  # No label to avoid duplicate in legend
+
+# Get new input point
+p = int(input("Enter saving%: "))  # Input saving percentage
+q = int(input("Enter number of good habits: "))  # Input number of good habits
+k = int(input("Enter k (number of nearest neighbors): "))  # Input the value of k
+
+plt.plot(p, q, 'b*', label='New Point')  # Plot the new point with a blue star
+
+# Calculate distances between the new point and existing points
+distances = np.sqrt((x - p) ** 2 + (y - q) ** 2)
+print("Distances:", distances)
+
+# Sort the distances and get the k smallest ones
+sorted_indices = np.argsort(distances)  # Sort distances and get indices
+nearest_distances = distances[sorted_indices[:min(k, len(f))]]  # Handle case when k > len(f)
+print("Nearest Distances:", nearest_distances)
+
+# Compute the average of the k nearest distances
+if len(nearest_distances) > 0:
+    avg_min_distance = np.mean(nearest_distances)
+    print("Average of nearest distances:", avg_min_distance)
+else:
+    print("No nearest distances to compute.")
+
+# Display plot
+plt.legend()  # Show legend for the different categories
+plt.xlabel('Saving %')
+plt.ylabel('Number of Good Habits')
+plt.title(f'KNN with k = {k}')
+plt.grid(True)
 plt.show()
