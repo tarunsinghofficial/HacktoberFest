@@ -1,40 +1,34 @@
- 
-public class Pallindrome { 
-  
-    // Function that returns true if 
-    // str is a palindrome 
-    static boolean isPalindrome(String str) 
-    { 
-  
-        // Pointers pointing to the beginning 
-        // and the end of the string 
-        int i = 0, j = str.length() - 1; 
-  
-        // While there are characters toc compare 
-        while (i < j) { 
-  
-            // If there is a mismatch 
-            if (str.charAt(i) != str.charAt(j)) 
-                return false; 
-  
-            // Increment first pointer and 
-            // decrement the other 
-            i++; 
-            j--; 
-        } 
-  
-        // Given string is a palindrome 
-        return true; 
-    } 
-  
-    // Driver code 
-    public static void main(String[] args) 
-    { 
-        String str = "TATA"; 
-  
-        if (isPalindrome(str)) 
-            System.out.print("Yes"); 
-        else
-            System.out.print("No"); 
-    } 
-} 
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    
+    public static boolean isPalindrome(String str) {
+        // Base case: If the string is empty or has one character
+        if (str.length() <= 1) {
+            return true;
+        }
+        
+        // Check the first and last characters
+        if (str.charAt(0) != str.charAt(str.length() - 1)) {
+            return false;
+        }
+        
+        // Recursive call with the substring that excludes the first and last characters
+        return isPalindrome(str.substring(1, str.length() - 1));
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        String input = scanner.nextLine();
+        
+        // Check if the input string represents a palindrome
+        if (isPalindrome(input)) {
+            System.out.println(input + " is a palindrome.");
+        } else {
+            System.out.println(input + " is not a palindrome.");
+        }
+        
+        scanner.close();
+    }
+}
