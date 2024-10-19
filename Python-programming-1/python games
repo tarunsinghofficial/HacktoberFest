@@ -1,0 +1,73 @@
+import tkinter as tk
+from tkinter import messagebox
+
+# Quiz data (questions, options, correct answers)
+quiz_data = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["Berlin", "Madrid", "Paris", "Rome"],
+        "answer": "Paris"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+        "answer": "Mars"
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        "answer": "Pacific Ocean"
+    },
+    {
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "options": ["William Shakespeare", "Charles Dickens", "Mark Twain", "Homer"],
+        "answer": "William Shakespeare"
+    },
+    {
+        "question": "What is the smallest prime number?",
+        "options": ["1", "2", "3", "5"],
+        "answer": "2"
+    }
+]
+
+class QuizGame:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Quiz Game")
+        self.root.geometry("500x400")
+
+        self.question_index = 0
+        self.score = 0
+        self.selected_option = tk.StringVar()
+
+        # Question Label
+        self.question_label = tk.Label(self.root, text="", font=("Arial", 16), wraplength=400, justify="left")
+        self.question_label.pack(pady=20)
+
+        # Options (Radio Buttons)
+        self.option_buttons = []
+        for i in range(4):
+            option = tk.Radiobutton(self.root, text="", variable=self.selected_option, value="", font=("Arial", 12), anchor="w")
+            option.pack(pady=5, anchor="w")
+            self.option_buttons.append(option)
+
+        # Submit Button
+        self.submit_button = tk.Button(self.root, text="Submit", command=self.submit_answer, font=("Arial", 14), bg="lightblue")
+        self.submit_button.pack(pady=20)
+
+        # Next Question Button (disabled initially)
+        self.next_button = tk.Button(self.root, text="Next Question", command=self.next_question, font=("Arial", 14), bg="lightgreen")
+        self.next_button.pack(pady=10)
+        self.next_button.config(state="disabled")
+
+        # Load the first question
+        self.load_question()
+
+    def load_question(self):
+        """Load the current question and options."""
+        current_question = quiz_data[self.question_index]
+        self.question_label.config(text=current_question["question"])
+
+        self.selected_option.set("")  # Reset the selected option
+
+        for i, option in e
