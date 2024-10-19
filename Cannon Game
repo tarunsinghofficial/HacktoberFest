@@ -1,4 +1,4 @@
-from random import *
+from random import randrange
 from turtle import *
 from freegames import vector
 
@@ -19,11 +19,7 @@ def draw(alive):
     clear()
 
     goto(bird.x, bird.y)
-
-    if alive:
-        dot(10, 'green')
-    else:
-        dot(10, 'red')
+    dot(10, 'green' if alive else 'red')  # Change dot color based on alive status
 
     for ball in balls:
         goto(ball.x, ball.y)
@@ -33,35 +29,40 @@ def draw(alive):
 
 def move():
     "Update object positions."
-    bird.y -= 5
+    bird.y -= 5  # Move bird down by 5 pixels
 
     for ball in balls:
-        ball.x -= 3
+        ball.x -= 3  # Move balls left by 3 pixels
 
+    # Randomly generate a new ball
     if randrange(10) == 0:
         y = randrange(-199, 199)
         ball = vector(199, y)
         balls.append(ball)
 
+    # Remove balls that are outside the screen
     while len(balls) > 0 and not inside(balls[0]):
         balls.pop(0)
 
+    # Check if the bird is out of bounds
     if not inside(bird):
         draw(False)
         return
 
+    # Check for collisions between bird and balls
     for ball in balls:
-        if abs(ball - bird) < 15:
+        if (ball - bird).get_length() < 15:  # Use vector length for collision detection
             draw(False)
             return
 
-    draw(True)
-    ontimer(move, 50)
+    draw(True)  # Draw the game screen if alive
+    ontimer(move, 50)  # Continue moving
 
+# Game setup
 setup(420, 420, 370, 0)
 hideturtle()
 up()
 tracer(False)
-onscreenclick(tap)
-move()
-done()
+onscreenclick(tap)  # Set up the click event to move the bird
+move()  # Start the move loop
+done()  # Finish the setup
