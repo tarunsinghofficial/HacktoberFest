@@ -1,40 +1,30 @@
- 
-public class Pallindrome { 
-  
-    // Function that returns true if 
-    // str is a palindrome 
-    static boolean isPalindrome(String str) 
-    { 
-  
-        // Pointers pointing to the beginning 
-        // and the end of the string 
-        int i = 0, j = str.length() - 1; 
-  
-        // While there are characters toc compare 
-        while (i < j) { 
-  
-            // If there is a mismatch 
-            if (str.charAt(i) != str.charAt(j)) 
-                return false; 
-  
-            // Increment first pointer and 
-            // decrement the other 
-            i++; 
-            j--; 
-        } 
-  
-        // Given string is a palindrome 
-        return true; 
-    } 
-  
-    // Driver code 
-    public static void main(String[] args) 
-    { 
-        String str = "TATA"; 
-  
-        if (isPalindrome(str)) 
-            System.out.print("Yes"); 
-        else
-            System.out.print("No"); 
-    } 
-} 
+public class PalindromeChecker {
+
+    // Main method to test the palindrome function
+    public static void main(String[] args) {
+        int number = 121; // Example number
+        boolean result = isPalindrome(number);
+        System.out.println(number + " is a palindrome: " + result);
+    }
+
+    // Function to check if a number is a palindrome
+    public static boolean isPalindrome(int number) {
+        // Convert the number to string
+        String str = Integer.toString(number);
+        return isPalindromeHelper(str, 0, str.length() - 1);
+    }
+
+    // Recursive helper function to check palindrome
+    private static boolean isPalindromeHelper(String str, int left, int right) {
+        // Base case: if left index is greater than or equal to right index
+        if (left >= right) {
+            return true;
+        }
+        // Check if characters at left and right indices are the same
+        if (str.charAt(left) != str.charAt(right)) {
+            return false;
+        }
+        // Recursive call with narrowed indices
+        return isPalindromeHelper(str, left + 1, right - 1);
+    }
+}
