@@ -1,24 +1,30 @@
 import java.util.Scanner;
+
 class Main {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Enter the starting number");
-    int s = sc.nextInt();
-    System.out.println("Enter the starting number");
-    int e = sc.nextInt();
-    int i=0,j=0,flag=0;;
-    System.out.println("prime number between"+' '+s+' '+e);
-    for(i=s;i<=e;i++)
-    {flag=1;
-      if(i==1||i==0)
-      {continue;}
-      for(j=2;j<=i/2;j++)
-      {
-        if(i%j==0)
-        {flag=0;}
-      }
-    if(flag==1)
-    {System.out.println(i);}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the starting number:");
+        int s = sc.nextInt();
+        System.out.println("Enter the ending number:");
+        int e = sc.nextInt();
+
+        System.out.println("Prime numbers between " + s + " and " + e + ":");
+        
+        for (int i = s; i <= e; i++) {
+            int flag = 1; // Assume the number is prime
+            if (i <= 1) {
+                continue; // Skip 0 and 1 as they are not prime numbers
+            }
+            for (int j = 2; j <= Math.sqrt(i); j++) { // Check divisibility up to the square root of i
+                if (i % j == 0) {
+                    flag = 0; // Not a prime number
+                    break; // No need to check further
+                }
+            }
+            if (flag == 1) {
+                System.out.println(i); // Print the prime number
+            }
+        }
+        sc.close(); // Close the scanner to prevent resource leaks
     }
-  }
 }
