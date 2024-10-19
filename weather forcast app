@@ -1,374 +1,264 @@
-<div class="home-screen">
-		<div class="status-bar">
-			<i class="fas fa-circle"></i>
-			<i class="fas fa-circle"></i>
-			<i class="fas fa-circle"></i>
-			<i class="far fa-circle"></i>
-			<i class="far fa-circle"></i>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Weather App</title>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 900px;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
 
-			<h3>Bell</h3>
+        .weather-app {
+            width: 400px;
+            height: 700px;
+            background: #00e1ff;
+            box-shadow: 0 0 11px rgba(112, 112, 112, 1);
+            padding: 10px;
+            position: relative;
+        }
 
-			<i class="fas fa-wifi"></i>
+        .status-bar {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
 
-			<h3 class="time">8:43 PM</h3>
-			<h3>50%</h3>
+        .status-indicators {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
 
-			<i class="fas fa-battery-half"></i>
-		</div>
+        .time {
+            margin: 0 10px;
+        }
 
-		<div class="block">
-			<div class="day">now</div>
+        .main-block {
+            margin-top: 15px;
+        }
 
-			<div class="burger">
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-			</div>
-		</div>
+        .current-day {
+            color: #ffffff;
+            font-size: 20px;
+            margin-left: 20px;
+        }
 
-		<div class="city-weather">
-			<img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/sun_azvdqn.png" class="sun">
+        .menu-toggle .bar {
+            width: 25px;
+            height: 2px;
+            background-color: #ffffff;
+            margin: 4px 0;
+        }
 
-			<div class="location">
-				<h4>Azerbaijan</h4>
-				<h3 class="black">Baku</h3>
-				<h4>Sunny 19°С</h4>
-			</div>
-		</div>
+        .weather-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+        }
 
-		<div class="week">
-			<div class="weekday">
-				<div class="date">
-					<p class="little">mo<br>16.02</p>
-					<img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/sunny_df52c3.png" alt="sunny">
-					<p>Sunny<br>19°C</p>
-				</div>
+        .weather-icon {
+            width: 150px;
+            height: 150px;
+        }
 
-				<div class="temp">
-					<i class="fas fa-leaf"></i>
-					<i class="fas fa-tint"></i>
-					<i class="fas fa-cloud-rain"></i>
-				</div>
+        .location-info {
+            color: #ffffff;
+            text-align: right;
+        }
 
-				<div class="temp">
-					<p>4mph</p>
-					<p>63%</p>
-					<p>14%</p>
-				</div>
-			</div>
+        .city {
+            font-size: 30px;
+        }
 
-			<div class="weekday">
-				<div class="date">
-					<p>tu<br>17.02</p>
-					<img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/rainy_yrp161.png" alt="rainy">
-					<p>Rain<br>14°C</p>
-				</div>
+        .weekly-forecast {
+            margin-top: 20px;
+            background: #1b2433;
+            padding: 10px;
+            border-radius: 5px;
+        }
 
-				<div class="temp">
-					<i class="fas fa-leaf"></i>
-					<i class="fas fa-tint"></i>
-					<i class="fas fa-cloud-rain"></i>
-				</div>
+        .forecast-day {
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
 
-				<div class="temp">
-					<p>4mph</p>
-					<p>63%</p>
-					<p>14%</p>
-				</div>
-			</div>
+        .date-info {
+            display: flex;
+            align-items: center;
+        }
 
-			<div class="weekday">
-				<div class="date">
-					<p>we<br>18.02</p>
-					<img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/cloudy_atzegr.png" alt="cloudy">
-					<p>Cloudy<br>17°C</p>
-				</div>
+        .weather-conditions {
+            display: flex;
+        }
 
-				<div class="temp">
-					<i class="fas fa-leaf"></i>
-					<i class="fas fa-tint"></i>
-					<i class="fas fa-cloud-rain"></i>
-				</div>
+        .weather-stats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-				<div class="temp">
-					<p>4mph</p>
-					<p>63%</p>
-					<p>14%</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        .expanded-view {
+            width: 400px;
+            height: 700px;
+            background: #192330;
+            box-shadow: 0 0 11px rgba(112, 112, 112, 1);
+            padding: 10px;
+            margin-top: 20px;
+        }
 
-	<div class="expand-screen">
-		<div class="status-bar">
-			<i class="fas fa-circle"></i>
-			<i class="fas fa-circle"></i>
-			<i class="fas fa-circle"></i>
-			<i class="far fa-circle"></i>
-			<i class="far fa-circle"></i>
+        .expanded-weather-info {
+            display: flex;
+            align-items: center;
+        }
 
-			<h3>Bell</h3>
-			<i class="fas fa-wifi"></i>
+        .expanded-icon {
+            width: 120px;
+            height: 120px;
+        }
 
-			<h3 class="time">8:43 PM</h3>
-			<h3>50%</h3>
+        .weather-graph img {
+            width: 100%;
+            height: auto;
+        }
 
-			<i class="fas fa-battery-half"></i>
-		</div>
+        .footer-info {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+            border-top: 1px solid #2f3942;
+            margin-top: 20px;
+        }
 
-		<div class="city-weather">
-			<img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/cloud_xbpslx.png" class="cloud">
+        .footer-icon {
+            text-align: center;
+            color: #00c6f4;
+        }
 
-			<div class="location">
-				<h4>Azerbaijan</h4>
-				<h3>Baku</h3>
-				<h4>Rain 17°С</h4>
-			</div>
-		</div>
+        .footer-icon p {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
 
-		<div class="graph">
-			<img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/graph_rvaceg.png" alt="graph">
-		</div>
+<div class="weather-app">
+    <header class="status-bar">
+        <div class="status-indicators">
+            <i class="fas fa-circle"></i>
+            <i class="fas fa-circle"></i>
+            <i class="fas fa-circle"></i>
+            <i class="far fa-circle"></i>
+            <i class="far fa-circle"></i>
+            <h3>Bell</h3>
+            <i class="fas fa-wifi"></i>
+            <h3 class="time">8:43 PM</h3>
+            <h3>50%</h3>
+            <i class="fas fa-battery-half"></i>
+        </div>
+    </header>
 
-		<div class="footer">
-			<div class="icon">
-				<i class="fas fa-leaf fa-2x"></i>
-				<p>4mph</p>
-			</div>
+    <div class="main-block">
+        <div class="current-day">Now</div>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
 
-			<div class="icon">
-				<i class="fas fa-tint fa-2x"></i>
-				<p>73%</p>
-			</div>
+        <div class="weather-info">
+            <img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/sun_azvdqn.png" class="weather-icon" alt="Sunny">
+            <div class="location-info">
+                <h4>Azerbaijan</h4>
+                <h3 class="city">Baku</h3>
+                <h4 class="temperature">Sunny 19°С</h4>
+            </div>
+        </div>
 
-			<div class="icon">
-				<i class="fas fa-cloud-rain fa-2x"></i>
-				<p>94%</p>
-			</div>
-		</div>
-	</div>
-  
-  css-code
-------------
-body {
-  background-color: #ccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width 900px;
-  width: 100%;
-  height: 100%;
-  margin: 10px 0 auto;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 100;
-}
+        <div class="weekly-forecast">
+            <div class="forecast-day">
+                <div class="date-info">
+                    <p class="day-label">mo<br>16.02</p>
+                    <img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/sunny_df52c3.png" alt="Sunny">
+                    <p>Sunny<br>19°C</p>
+                </div>
+                <div class="weather-conditions">
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-tint"></i>
+                    <i class="fas fa-cloud-rain"></i>
+                </div>
+                <div class="weather-stats">
+                    <p>4mph</p>
+                    <p>63%</p>
+                    <p>14%</p>
+                </div>
+            </div>
+            <!-- Repeat for other days (tu, we, etc.) -->
+        </div>
+    </div>
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+    <div class="expanded-view">
+        <header class="status-bar">
+            <div class="status-indicators">
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="far fa-circle"></i>
+                <i class="far fa-circle"></i>
+                <h3>Bell</h3>
+                <i class="fas fa-wifi"></i>
+                <h3 class="time">8:43 PM</h3>
+                <h3>50%</h3>
+                <i class="fas fa-battery-half"></i>
+            </div>
+        </header>
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
+        <div class="expanded-weather-info">
+            <img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/cloud_xbpslx.png" class="expanded-icon" alt="Cloudy">
+            <div class="expanded-location">
+                <h4>Azerbaijan</h4>
+                <h3>Baku</h3>
+                <h4>Rain 17°С</h4>
+            </div>
+        </div>
 
-.home-screen {
-  width: 400px;
-  height: 700px;
-  background: #00E1FF;
-  box-shadow: 0px 0px 11px -2px rgba(112,112,112,1);
-	padding-left: 7px;
-	position: relative;
-}
+        <div class="weather-graph">
+            <img src="https://res.cloudinary.com/hetfy/image/upload/v1603284679/graph_rvaceg.png" alt="Weather Graph">
+        </div>
 
-.status-bar {
-  display: inline-flex;
-  align-items: center;
-	color: #ffffff;
-	font-size: 14px;
-	font-weight: 300;
-	text-transform: uppercase;
-}
+        <footer class="footer-info">
+            <div class="footer-icon">
+                <i class="fas fa-leaf fa-2x"></i>
+                <p>4mph</p>
+            </div>
+            <div class="footer-icon">
+                <i class="fas fa-tint fa-2x"></i>
+                <p>73%</p>
+            </div>
+            <div class="footer-icon">
+                <i class="fas fa-cloud-rain fa-2x"></i>
+                <p>94%</p>
+            </div>
+        </footer>
+    </div>
+</div>
 
-.time {
-	margin-left: 70px;
-  margin-right: 83px;
-}
-
-.fa-circle {
-  font-size: 7px;
-	padding-left: 1px;
-}
-
-.fa-circle:nth-child(5) {
-	margin-right: 5px;
-}
-
-.fa-battery-half {
-	font-size: 24px;
-	margin-left: 10px;
-	margin-top: 3px;
-}
-
-.fa-wifi {
-	margin-left: 5px;
-	margin-top: 4px;
-}
-
-.block {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 15px;
-}
-
-.day {
-	color: #ffffff;
-	font-size: 20px;
-	margin-left: 20px;
-}
-
-.bar {
-  width: 21px;
-  height: 2px;
-  background-color: #ffffff;
-  margin: 4px 0;
-  margin-right: 36px;
-}
-
-.city-weather {
-	display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding-top: 50px;
-}
-
-.location .black {
-	color: #000000;
-}
-
-.location {
-	color: #ffffff;
-	font-size: 20px;
-	text-align: right;
-	margin-right: 20px;
-}
-
-.location h3 {
-	font-size: 30px;
-	color: #ffffff;
-	margin-top: 8px;
-	margin-bottom: 8px;
-}
-
-.sun {
-	width: 150px;
-	height: 150px;
-	margin-right: 72px;
-}
-
-.cloud {
-	width: 120px;
-	height: 120px;
-}
-
-.week {
-	width: 400px;
-	height: 400px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background: #1B2433;
-	border-top: 4px solid #ffffff;
-}
-
-.weekday {
-	color: #ffffff;
-	margin-left: 20px;
-}
-
-.weekday img {
-	width: 40px;
-	height: 40px;
-	margin-left: 10px;
-	margin-right: 10px;
-	z-index: 10;
-}
-
-.little:after {
-	content: "";
-	position: absolute;
-	top: -13%;
-	left: 23%;
-	height: 448px;
-	width: 3px;
-	background: #ffffff;
-	opacity: .2;
-}
-
-.date {
-	display: flex;
-	text-align: right;
-	font-size: 17px;
-	align-items: center;
-}
-
-.date p {
-	text-align: left;
-}
-
-.temp {
-	display: flex;
-  justify-content: space-between;
-  width: 250px;
-  margin: 0 auto;
-  font-size: 14px;
-  padding-left: 40px;
-}
-
-.temp i {
-	color: #00C6F4;
-}
-
-.expand-screen {
-	width: 400px;
-	height: 700px;
-	background: #192330;
-	box-shadow: 0px 0px 11px -2px rgba(112,112,112,1);
-	padding-left: 7px;
-}
-
-.graph img {
-	width: 382px;
-	height: 300px;
-	margin-top: 20px;
-}
-
-.footer {
-	color: #00C6F4;
-	display: flex;
-	justify-content: center;
-	border-bottom: 1px solid #2F3942;
-	padding-top: 50px;
-	margin: 0 auto;
-	width: 350px;
-	text-align: center;
-}
-
-.icon {
-	border-right: 1px solid #2F3942;
-}
-
-.icon  {
-	padding-right: 45px;
-	padding-left: 45px;
-}
-
-.icon:nth-child(3) {
-	border: none;
-}
-
-.icon p {
-	color: #ffffff;
-}
+</body>
+</html>
