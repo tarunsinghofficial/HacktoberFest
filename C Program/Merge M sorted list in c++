@@ -1,0 +1,66 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+// A structure to hold the element and the index of the list it comes from
+struct Element {
+    int value; // The value of the element
+    int listIndex; // The index of the list from which the element comes
+    int elementIndex; // The index of the element in that list
+
+    // Custom comparator for the priority queue
+    bool operator>(const Element& other) const {
+        return value > other.value; // For min-heap
+    }
+};
+
+// Function to merge M sorted lists
+vector<int> mergeSortedLists(const vector<vector<int>>& lists) {
+    priority_queue<Element, vector<Element>, greater<Element>> minHeap;
+    vector<int> result;
+
+    // Initialize the min-heap with the first element of each list
+    for (int i = 0; i < lists.size(); ++i) {
+        if (!lists[i].empty()) {
+            minHeap.push({lists[i][0], i, 0});
+        }
+    }
+
+    // Process the min-heap until it's empty
+    while (!minHeap.empty()) {
+        Element current = minHeap.top();
+        minHeap.pop();
+        
+        // Add the smallest element to the result
+        result.push_back(current.value);
+
+        // If there's a next element in the same list, push it to the heap
+        if (current.elementIndex + 1 < lists[current.listIndex].size()) {
+            minHeap.push({lists[current.listIndex][current.elementIndex + 1], current.listIndex, current.elementIndex + 1});
+        }
+    }
+
+    return result;
+}
+
+int main() {
+    // Example input: 3 sorted lists
+    vector<vector<int>> lists = {
+        {1, 4, 7},
+        {2, 5, 8},
+        {3, 6, 9}
+    };
+
+    vector<int> mergedList = mergeSortedLists(lists);
+
+    // Print the merged sorted list
+    cout << "Merged Sorted List: ";
+    for (int num : mergedList) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
