@@ -1,0 +1,83 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+
+public class StringGuessingGame {
+    private String wordToGuess;
+    private ArrayList<Character> guessedLetters;
+    private int attemptsLeft;
+
+    public StringGuessingGame(String wordToGuess, int maxAttempts) {
+        this.wordToGuess = wordToGuess.toLowerCase();
+        this.attemptsLeft = maxAttempts;
+        this.guessedLetters = new ArrayList<>();
+    }
+
+    public void play() {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (attemptsLeft > 0) {
+            System.out.println("\nWord to guess: " + displayWord());
+            System.out.println("Attempts left: " + attemptsLeft);
+            System.out.print("Enter a letter: ");
+            char guess = scanner.nextLine().toLowerCase().charAt(0);
+            
+            if (guessedLetters.contains(guess)) {
+                System.out.println("You've already guessed that letter. Try again!");
+                continue;
+            }
+
+            guessedLetters.add(guess);
+
+            if (wordToGuess.indexOf(guess) >= 0) {
+                System.out.println("Good guess!");
+            } else {
+                System.out.println("Wrong guess!");
+                attemptsLeft--;
+            }
+
+            if (isWordGuessed()) {
+                System.out.println("Congratulations! You've guessed the word: " + wordToGuess);
+                return;
+            }
+        }
+
+        System.out.println("Sorry, you've run out of attempts! The word was: " + wordToGuess);
+    }
+
+    private String displayWord() {
+        StringBuilder display = new StringBuilder();
+        for (char letter : wordToGuess.toCharArray()) {
+            if (guessedLetters.contains(letter)) {
+                display.append(letter).append(" ");
+            } else {
+                display.append("_ ");
+            }
+        }
+        return display.toString().trim();
+    }
+
+    private boolean isWordGuessed() {
+        for (char letter : wordToGuess.toCharArray()) {
+            if (!guessedLetters.contains(letter)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static String getRandomWord() {
+        String[] words = {"java", "python", "javascript", "ruby", "kotlin", "swift", "go", "csharp"};
+        Random random = new Random();
+        return words[random.nextInt(words.length)];
+    }
+
+    public static void main(String[] args) {
+        String wordToGuess = getRandomWord(); // Randomly select a word
+        int maxAttempts = 5;
+        
+        StringGuessingGame game = new StringGuessingGame(wordToGuess, maxAttempts);
+        game.play();
+    }
+}
