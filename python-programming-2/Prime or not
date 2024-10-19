@@ -1,22 +1,23 @@
-# Program to check if a number is prime or not
+import math
 
-num = 407
+# Function to check if a number is prime
+def is_prime(num):
+    # Prime numbers are greater than 1
+    if num <= 1:
+        print(num, "is not a prime number")
+        return False
+    
+    # Check for factors only up to the square root of num
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            print(num, "is not a prime number")
+            print(i, "times", num // i, "is", num)
+            return False
+    
+    print(num, "is a prime number")
+    return True
 
 # To take input from the user
-#num = int(input("Enter a number: "))
+num = int(input("Enter a number: "))
+is_prime(num)
 
-# prime numbers are greater than 1
-if num > 1:
-   # check for factors
-   for i in range(2,num):
-       if (num % i) == 0:
-           print(num,"is not a prime number")
-           print(i,"times",num//i,"is",num)
-           break
-   else:
-       print(num,"is a prime number")
-       
-# if input number is less than
-# or equal to 1, it is not prime
-else:
-   print(num,"is not a prime number")
