@@ -1,5 +1,4 @@
 // Binary Search Tree operations in Java
-
 class BinarySearchTree {
   class Node {
     int key;
@@ -83,7 +82,7 @@ class BinarySearchTree {
     return root;
   }
 
-  // Find the inorder successor
+  // Find the inorder successor (smallest in the right subtree)
   int minValue(Node root) {
     int minv = root.key;
     while (root.left != null) {
@@ -97,6 +96,7 @@ class BinarySearchTree {
   public static void main(String[] args) {
     BinarySearchTree tree = new BinarySearchTree();
 
+    // Insert nodes
     tree.insert(8);
     tree.insert(3);
     tree.insert(1);
@@ -106,9 +106,11 @@ class BinarySearchTree {
     tree.insert(14);
     tree.insert(4);
 
+    // Print in-order traversal of the BST
     System.out.print("Inorder traversal: ");
     tree.inorder();
 
+    // Delete node with key 10 and print in-order again
     System.out.println("\n\nAfter deleting 10");
     tree.deleteKey(10);
     System.out.print("Inorder traversal: ");
