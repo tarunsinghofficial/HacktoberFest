@@ -1,0 +1,69 @@
+body{   
+width: 100%;  
+height: 100vh;  
+display: flex;  
+flex-direction: column; 
+justify-content: center;  
+align-items: center;  
+}
+
+.drapeauTogolais {
+  display: grid;
+  grid-template:  repeat( 5, 1fr) / 30% 70%;
+  width: 300px;
+  height: 150px;
+  
+  }
+  
+  
+  .bande {
+  
+    width: 210px;
+  }
+  
+  
+  .verte {
+    background-color: green;
+  }
+  
+  
+  .jaune {
+    background-color: yellow;
+  }
+  
+  
+  .rouge { 
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    width:90px;
+    height:90px;
+    position: relative;
+  }
+  
+  
+  .un {
+    grid-row: span 3 ;
+  }
+  
+  
+  .cinq {
+    grid-column: span 2 ;
+    width: 300px;
+  }
+  
+  
+  .six {
+    grid-column: span 2;  
+    width: 300px;
+  }
+  
+  
+  .etoile {
+  background-color: white;
+    width: 70px;
+    height: 70px; 
+    clip-path: polygon(25% 65%, 50% 0%, 75% 65%,12% 25%,88% 25%);
+    position : absolute;
+    top:23px;
+  }
