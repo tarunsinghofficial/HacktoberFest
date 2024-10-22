@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    color: green;
+}
