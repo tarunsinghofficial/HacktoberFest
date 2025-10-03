@@ -1,0 +1,78 @@
+#heading {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-right: 67px;
+}
+
+#ratingIcons {
+  background: #3d8000;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bolder;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 8px 0;
+}
+#rating {
+  font-size: 12px;
+  padding: 4px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  white-space: nowrap;
+  background: #f4f4f4;
+}
+#subHeading {
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  color: #222;
+  opacity: 0.54;
+  font-weight: 400;
+}
+#badgeBox {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+#badgeLeft {
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 4px 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #000000;
+  color: #fff;
+  font-size: 9px;
+}
+#operate {
+  border-radius: 2px;
+  background-color: #fff;
+  border: solid 1px #cecece;
+  padding: 6px 8px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 600;
+  text-transform: none;
+  margin-left: 8px;
+}
+#Des {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+#DesDetail {
+  line-height: 1.5;
+  word-spacing: 2px;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+}
+#hotelDetail {
+  line-height: 1.5;
+  word-spacing: 2px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+}

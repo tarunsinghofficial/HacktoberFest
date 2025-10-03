@@ -1,0 +1,30 @@
+#wrapper {
+  width: 7%;
+  opacity: 1;
+}
+#ArrowContainer {
+  cursor: pointer;
+  outline: none;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.35);
+  background-color: #fff;
+  border: none;
+  z-index: 2;
+  border-radius: 50%;
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+#ArrowContainer:hover {
+  opacity: 1;
+  color: red;
+}
+
+#carouselArrow {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDEzIDI0Ij4KICAgIDxwYXRoIGZpbGw9IiNFRTJBMjQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIuNzc3LjQ5N0wuMzYgMi45MzEgOS40MjkgMTIgLjM2IDIxLjA2OWwyLjQxNyAyLjQzNCA5LjA2OS05LjA4NmEzLjQyOSAzLjQyOSAwIDAgMCAwLTQuODM0TDIuNzc3LjQ5N3oiLz4KPC9zdmc+");
+  transform: rotate(180deg);
+}
+#carouselArrowRight {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDEzIDI0Ij4KICAgIDxwYXRoIGZpbGw9IiNFRTJBMjQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIuNzc3LjQ5N0wuMzYgMi45MzEgOS40MjkgMTIgLjM2IDIxLjA2OWwyLjQxNyAyLjQzNCA5LjA2OS05LjA4NmEzLjQyOSAzLjQyOSAwIDAgMCAwLTQuODM0TDIuNzc3LjQ5N3oiLz4KPC9zdmc+");
+}

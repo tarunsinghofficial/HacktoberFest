@@ -1,0 +1,42 @@
+#heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+#subHeading {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 80px;
+}
+#mealImage {
+  height: 75px;
+  width: 80px;
+}
+#menu {
+  font-size: 12px;
+  min-width: 105px;
+  text-align: left;
+  color: #6d787d;
+  line-height: 1.2;
+}
+#mealPrice {
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 5px;
+}
+#selectButton {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 0px 8px 0px;
+  border-radius: 4px;
+  border: solid 1px #d7d7d7;
+  outline: none;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  height: 34px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ee2e24;
+  line-height: 16px;
+}

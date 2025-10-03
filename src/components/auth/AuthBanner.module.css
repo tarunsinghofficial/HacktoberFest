@@ -1,0 +1,52 @@
+#overview {
+  background-image: url(/images/background_img.webp);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+#navContainer {
+  padding: 30px 80px;
+}
+#subNav {
+  font-weight: 600;
+  padding-left: 16px;
+  line-height: 30px;
+}
+
+#headerContainer {
+  padding: 0px 88px 160px 95px;
+}
+
+#Heading {
+  font-size: 48px;
+  font-weight: 700;
+  padding: 0 0 17px;
+  line-height: 1.04;
+  margin: 0;
+  color: #ffffff;
+}
+
+#subHeading {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0;
+  line-height: 1.56;
+  margin: 0;
+  color: #ffffff;
+}
+
+#parentHeaderContainer {
+  padding: 0px 40px 45px 40px;
+}
+#formHeader {
+  font-size: 14px;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  background-image: linear-gradient(270deg, #d11450, #ee2a24);
+  height: 36px;
+  padding-left: 35px !important;
+}

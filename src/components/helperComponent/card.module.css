@@ -1,0 +1,118 @@
+#imgContainer {
+  height: 276px;
+  padding: 0px 0px 23px 0px;
+}
+#imageFit {
+  height: 100%;
+}
+#cardBody {
+  padding: 0px 0px 23px 15px;
+}
+#cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #222;
+}
+#cardTitle a {
+  text-decoration: none;
+  color: #000;
+}
+#location {
+  color: #222;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  padding-top: 1px;
+}
+#rating {
+  background-color: #1ab64f;
+  /* padding: 2px; */
+}
+#border {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+#ratingContainer > span {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 4px;
+}
+#amenity > div {
+  font-size: 14px;
+  line-height: 28px;
+  color: #222;
+  font-weight: 400;
+  margin: 5px;
+}
+#amenityWrapper > span {
+  margin: 3px;
+}
+#amenityWrapper > a {
+  text-decoration: none;
+  color: #000;
+}
+#facility > span {
+  margin: 3px;
+  font-weight: 600;
+  display: inline-flex;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  text-transform: none !important;
+  line-height: inherit !important;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(206, 206, 206);
+  border-image: initial;
+  padding: 2px 5px;
+}
+
+#whilteButton {
+  background-color: #fff;
+  color: #222;
+  border-radius: 2px !important;
+  border: 1px solid #222;
+  padding: 9px;
+  text-decoration: none;
+}
+#greenButton {
+  background-color: #1ab64f;
+  color: #fff;
+  border-radius: 2px !important;
+  border: 1px solid #1ab64f;
+  /* padding: 9px; */
+  padding: 9px 4px 9px 4px;
+}
+
+#price {
+  margin-right: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ee2a24;
+}
+#pernight {
+  font-weight: 400;
+  line-height: 1em;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #6d787d;
+}
+#slashPrice {
+  text-decoration: line-through;
+  font-size: 16px;
+  color: #6d787d;
+  margin-right: 8px;
+}
+#percentage {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f5a623;
+  line-height: 25px;
+}

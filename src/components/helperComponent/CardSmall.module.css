@@ -1,0 +1,87 @@
+#imgContainer {
+  height: 145px;
+  padding: 0px 0px 23px 0px;
+}
+#imageFit {
+  height: 100%;
+}
+#cardBody {
+  padding: 0px 0px 23px 15px;
+}
+#cardTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+#cardTitle a {
+  text-decoration: none;
+  color: #222;
+}
+#location {
+  font-size: 12px;
+  color: #222;
+}
+#rating {
+  background-color: #8fc400;
+
+  border-radius: 2px;
+  margin-right: 9px;
+  font-size: 12px;
+  color: #ffffff;
+}
+#border {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+#ratingContainer {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 1px 4px;
+}
+
+#ratingContainer > span {
+  margin: 1px;
+}
+#amenity {
+  display: none !important;
+}
+
+#facility {
+  display: none !important;
+}
+
+#whilteButton {
+  display: none !important;
+}
+#greenButton {
+  display: none !important;
+}
+
+#price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ee2a24;
+}
+#pernight {
+  font-weight: 400;
+  line-height: 1em;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #6d787d;
+}
+#slashPrice {
+  text-decoration: line-through;
+  font-size: 16px;
+  color: #6d787d;
+}
+#percentage {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f5a623;
+  line-height: 25px;
+}
+#hide {
+  display: none !important;
+}

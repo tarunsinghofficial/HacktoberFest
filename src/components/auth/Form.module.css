@@ -1,0 +1,61 @@
+#signupform {
+  background-color: #fff;
+  padding: 20px;
+}
+
+#signupform label {
+  margin: 0 0 9px;
+  font-weight: 600;
+  font-size: 16px;
+}
+input,
+input:focus {
+  outline: none !important;
+}
+#button {
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  width: 55%;
+  padding: 9px 0;
+  border-radius: 4px;
+  background: #1ab64f;
+  font-weight: 700;
+  border: none;
+  line-height: 1.9;
+  letter-spacing: 0.4px;
+}
+#button:disabled {
+  background: #c9c9c9;
+  box-shadow: none;
+  cursor: auto;
+}
+#loginHeader {
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 0px 0 28px 9px;
+}
+#formFooter {
+  color: #222;
+  margin: 16px 0 73px;
+  font-weight: 600;
+  line-height: normal;
+}
+#codeHeader {
+  padding-bottom: 10px;
+}
+#otp {
+  width: 72px;
+  height: 72px;
+  border-radius: 2px !important;
+  background-color: #fff;
+  border: 1px solid hsla(0, 0%, 65%, 0.2);
+  margin-right: 10px;
+  text-align: center;
+  outline: none;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  box-sizing: border-box;
+}

@@ -1,0 +1,145 @@
+#header {
+  background: linear-gradient(265deg, #ef4123, #ee3f25 48%, #d11450);
+  padding: 8px 0px;
+  border-radius: 4px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  cursor: pointer;
+}
+#cardContainer {
+  padding-right: 104px;
+}
+
+#off {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 8px;
+  max-width: 230px;
+}
+#login {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  padding: 2px 10px;
+}
+#loginButton {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.43px;
+  font-weight: bold;
+}
+#finalPrice {
+  color: #000;
+  margin-right: 8px;
+  font-size: 24px;
+  font-weight: 700;
+}
+#discount {
+  text-decoration: line-through;
+  font-size: 16px;
+  color: #6d787d;
+  margin-right: 8px;
+  font-weight: 400;
+}
+#perOff {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f5a623;
+  line-height: 25px;
+}
+#perNight {
+  font-weight: 400;
+  line-height: 1em;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6d787d;
+}
+#SecduleContainer {
+  margin-top: 16px;
+  box-shadow: 0 2px 6px 0 rgba(125, 125, 125, 0.1);
+  cursor: pointer;
+  border: solid 1px #f0f0f0;
+  border: 0;
+  width: 100%;
+  padding: 14px 12px;
+  border: solid 1px #f0f0f0;
+}
+#SecduleContainer span {
+  font-size: 14px;
+  color: #0c0a15;
+  line-height: 1.71;
+  font-weight: 600;
+}
+#divide {
+  border-right: solid 1px #f0f0f0;
+}
+#tagContainer {
+  margin: 32px 0 0;
+  padding-bottom: 16px;
+  border-bottom: dashed 1px rgba(151, 151, 151, 0.4);
+}
+#coupon {
+  color: rgb(238, 46, 36);
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+}
+#moreOffer {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: solid 1px #2ec478;
+  background-color: #effcf5;
+  color: #698e7f;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+#totalPrice {
+  font-size: 14px;
+  line-height: 1.14;
+  color: #000000;
+}
+#tax {
+  font-size: 12px;
+  color: #6d787d;
+  line-height: 1.14;
+  margin-top: 4px;
+}
+#actualPrice {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  color: #000000;
+  margin-right: 30px;
+}
+button {
+  border-radius: 4px;
+  background-color: #1ab64f;
+  border: 0px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2;
+  padding: 14px;
+  width: 100%;
+  outline: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+#Btn {
+  text-decoration: none;
+}
+#policy {
+  font-weight: 600;
+  color: rgb(238, 46, 36);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.daterangepicker.show-calendar .drp-buttons {
+  display: none;
+}

@@ -1,0 +1,52 @@
+#heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+#header {
+  background-image: linear-gradient(to right, #797f9d, #d4d1da);
+  border-radius: 4px 4px 0px 0px;
+}
+#selected {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+#subHeading {
+  font-size: 21px;
+  font-weight: 600;
+  padding: 2px 0px;
+  max-width: 85%;
+}
+#roomSize {
+  font-size: 14px;
+}
+#price {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+#slashPrice {
+  text-decoration: line-through;
+  margin-right: 8px;
+  color: #6d787d;
+}
+#discPrice {
+  margin-right: 8px;
+  color: #df2020;
+  font-weight: bold;
+}
+#whiteBtn {
+  font-size: 12px;
+  font-weight: bold;
+  width: 180px;
+  padding: 16px 0px;
+  margin-right: 4px;
+  border-radius: 4px;
+  border: solid 1px #d7d7d7;
+  cursor: pointer;
+  outline: 0;
+  background: #fff;
+  color: #222222;
+}

@@ -1,0 +1,57 @@
+#head {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin: 0px 0px 20px 0px;
+}
+#heading {
+  font-size: 20px;
+  color: #222;
+  font-weight: 700;
+  margin: 0 5px 0 0;
+}
+#subHeading {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 12px;
+  margin-top: 4px;
+}
+#icon {
+  border-radius: 2px;
+  padding: 3px 8px;
+  line-height: 1.5;
+  margin-right: 8px;
+  background-color: #52b520;
+  font-size: 12px;
+  color: #fff;
+}
+#review {
+  font-size: 14px;
+  color: #222;
+  padding-top: 2px;
+  line-height: 1.5;
+}
+#price {
+  font-size: 24px;
+  margin-right: 8px;
+  color: #ee2e24;
+  font-weight: 700;
+}
+#slashed {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #6d787d;
+  margin-right: 8px;
+}
+#off {
+  color: #ed9a00;
+  font-size: 14px;
+  margin-right: 8px;
+  font-weight: 600;
+}
+#perNight {
+  font-size: 12px;
+  color: #6d787d;
+  padding-bottom: 4px;
+  text-transform: lowercase;
+}

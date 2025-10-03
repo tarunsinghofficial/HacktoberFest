@@ -1,0 +1,72 @@
+#bgColor {
+  background-color: #6d787d;
+}
+#footerHead {
+  background-color: #6d787d;
+  padding: 32px 80px 16px;
+  font-size: 14px;
+}
+#footerLeft span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+#des {
+  padding: 30px 0 !important;
+  margin: 0 80px;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.5);
+  box-sizing: border-box;
+}
+#contact {
+  border-right: 1px solid hsla(0, 0%, 100%, 0.5);
+}
+#contact span {
+  font-size: 14px;
+  text-decoration: none;
+  margin: 10px 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+#FooterDesContainer {
+  margin: 0 80px;
+  padding: 32px 0;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.5);
+  background-color: #6d787d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#FooterDesHeader {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#FooterHotelInfo {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#FooterSpan span {
+  margin: 8px 0;
+  font-size: 14px;
+  cursor: auto;
+  text-decoration: none;
+}
+#FooterSocialMedia svg {
+  height: 30px !important;
+  width: 30px !important;
+  fill: #fff;
+}
+#FooterCopyright {
+  font-size: 12px;
+  font-weight: 700;
+  color: hsla(0, 0%, 100%, 0.7);
+  text-align: right;
+  align-self: center;
+}

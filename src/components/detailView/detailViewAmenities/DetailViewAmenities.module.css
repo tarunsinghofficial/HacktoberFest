@@ -1,0 +1,21 @@
+#container div {
+  margin-top: 18px;
+}
+div span {
+  font-size: 14px;
+  line-height: 1.71;
+  margin-left: 10px;
+}
+#showMore {
+  color: #ee2e24;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+}
+#heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}

@@ -1,0 +1,44 @@
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1px solid #2196f3;
+}
+
+/* After slide changes */
+.toggle:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  top: 5px;
+  left: 5px;
+  transition: all 0.5s;
+}
+
+/* Toggle text */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* Checkbox cheked effect */
+.checkbox:checked + .toggle::after {
+  left: 38px;
+  background-color: #fff;
+}
+
+/* Checkbox cheked toggle label bg color */
+.checkbox:checked + .toggle {
+  background-color: #2196f3;
+}
+
+/* Checkbox vanished */
+.checkbox {
+  display: none;
+}
