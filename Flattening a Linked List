@@ -1,0 +1,53 @@
+Question: Given a linked list containing n head nodes where every node in the linked list contains two pointers:
+(i) next points to the next node in the list.
+(ii) bottom points to a sub-linked list where the current node is the head.
+Each of the sub-linked lists nodes and the head nodes are sorted in ascending order based on their data. Flatten the linked list such that all the nodes appear in a single level while maintaining the sorted order.
+
+Note:
+1. ↓ represents the bottom pointer and → represents the next pointer.
+2. The flattened list will be printed using the bottom pointer instead of the next pointer.
+
+// Function to merge two sorted Linked List -- {Without Using extra Space}
+Node* merge(Node* first,Node* second){
+    Node* root = new Node(-1);
+    Node* temp = root;
+    while(first && second){
+        if(first->data <= second->data){
+            temp->bottom = first;
+            first = first->bottom;
+        }
+        else{
+            temp->bottom = second;
+            second = second->bottom;
+        }
+        temp = temp->bottom;
+    }
+    
+    if(first)
+        temp->bottom = first;
+    if(second)
+        temp->bottom = second;
+        
+    return root;
+}
+
+
+class Solution {
+  public:
+
+    // At a time we merge two linked list and then take merged linked list for further merging -- at the end we will get single flatten Linked List.
+    Node *flatten(Node *root) {
+        if(root == NULL || root->next == NULL)
+            return root;
+        
+        Node* first = root;
+        Node* second = root->next;
+        while(second){
+            Node* nextNode = second->next;
+            first = merge(first,second);
+            second = nextNode;
+        }
+        
+        return root;
+    }
+};
