@@ -1,0 +1,258 @@
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 9
+#define UNASSIGNED 0
+
+/* Utility: print board */
+void print_board(int board[N][N]){
+    printf("\n   +-------+-------+-------+\n");
+    for(int r=0;r<N;r++){
+        printf(" %d |", r+1);
+        for(int c=0;c<N;c++){
+            if(board[r][c]==UNASSIGNED) printf(" . ");
+            else printf(" %d ", board[r][c]);
+            if((c+1)%3==0) printf("|");
+        }
+        printf("\n");
+        if((r+1)%3==0) printf("   +-------+-------+-------+\n");
+    }
+    printf("     1  2  3   4  5  6   7  8  9\n\n");
+}
+
+/* Check whether num can be placed at board[row][col] */
+int used_in_row(int board[N][N], int row, int num){
+    for(int col=0;col<N;col++) if(board[row][col]==num) return 1;
+    return 0;
+}
+int used_in_col(int board[N][N], int col, int num){
+    for(int row=0;row<N;row++) if(board[row][col]==num) return 1;
+    return 0;
+}
+int used_in_box(int board[N][N], int boxStartRow, int boxStartCol, int num){
+    for(int r=0;r<3;r++)
+        for(int c=0;c<3;c++)
+            if(board[boxStartRow + r][boxStartCol + c] == num) return 1;
+    return 0;
+}
+int is_safe(int board[N][N], int row, int col, int num){
+    return !used_in_row(board,row,num) && !used_in_col(board,col,num) &&
+           !used_in_box(board,row - row%3, col - col%3, num) && board[row][col]==UNASSIGNED;
+}
+
+/* Backtracking solver (used to create a full solution and optionally to solve) */
+int find_unassigned_location(int board[N][N], int *row, int *col){
+    for(*row=0; *row<N; (*row)++){
+        for(*col=0; *col<N; (*col)++){
+            if(board[*row][*col]==UNASSIGNED) return 1;
+        }
+    }
+    return 0;
+}
+
+int solve_sudoku(int board[N][N]){
+    int row, col;
+    if(!find_unassigned_location(board,&row,&col)) return 1; // done
+
+    for(int num=1; num<=9; num++){
+        if(is_safe(board,row,col,num)){
+            board[row][col] = num;
+            if(solve_sudoku(board)) return 1;
+            board[row][col] = UNASSIGNED;
+        }
+    }
+    return 0; // trigger backtracking
+}
+
+/* Functions to generate a full valid Sudoku grid quickly by filling diagonal boxes and then remaining */
+
+/* Fill a 3x3 box starting at (row,col) with random numbers 1..9 without repetition */
+void fill_box(int board[N][N], int row, int col){
+    int num;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            do{
+                num = rand()%9 + 1;
+            } while(used_in_box(board,row,col,num));
+            board[row+i][col+j] = num;
+        }
+    }
+}
+
+/* Fill diagonal 3x3 boxes: (0,0), (3,3), (6,6) */
+void fill_diagonal(int board[N][N]){
+    for(int i=0;i<N;i+=3) fill_box(board,i,i);
+}
+
+/* Check if safe to place num at (i,j) ignoring whether cell is unassigned (used during generation) */
+int safe_for_filling(int board[N][N], int i, int j, int num){
+    if(!used_in_row(board,i,num) && !used_in_col(board,j,num) && !used_in_box(board,i - i%3, j - j%3, num))
+        return 1;
+    return 0;
+}
+
+/* Recursive fill remaining cells after diagonal are filled. Algorithm adapted from known Sudoku generator technique. */
+int fill_remaining(int board[N][N], int i, int j){
+    if(j>=N && i<N-1){ i = i+1; j = 0; }
+    if(i>=N && j>=N) return 1;
+
+    if(i < 3){
+        if(j < 3) j = 3; // skip the diagonal box
+    } else if(i < 6){
+        if(j == (int)(i/3)*3) j = j + 3;
+    } else {
+        if(j == 6){ i = i+1; j = 0; if(i>=N) return 1; }
+    }
+
+    for(int num=1; num<=9; num++){
+        if(safe_for_filling(board,i,j,num)){
+            board[i][j] = num;
+            if(fill_remaining(board,i,j+1)) return 1;
+            board[i][j] = UNASSIGNED;
+        }
+    }
+    return 0;
+}
+
+/* Remove K digits to make puzzle. We'll remove randomly but ensure we don't remove below 17 clues (hard lower bound). */
+void remove_k_digits(int board[N][N], int K){
+    while(K>0){
+        int cellId = rand()%81;
+        int i = cellId/9;
+        int j = cellId%9;
+        if(board[i][j] != UNASSIGNED){
+            board[i][j] = UNASSIGNED;
+            K--;
+        }
+    }
+}
+
+/* Copy grid */
+void copy_grid(int src[N][N], int dest[N][N]){
+    for(int i=0;i<N;i++) for(int j=0;j<N;j++) dest[i][j] = src[i][j];
+}
+
+/* Create a puzzle: generate full board then remove digits according to difficulty */
+void generate_puzzle(int puzzle[N][N], int solution[N][N], int removed){
+    // initialize
+    for(int i=0;i<N;i++) for(int j=0;j<N;j++) puzzle[i][j] = UNASSIGNED;
+    fill_diagonal(puzzle);
+    fill_remaining(puzzle,0,0);
+    copy_grid(puzzle, solution);
+    remove_k_digits(puzzle, removed);
+}
+
+/* Quick helper to parse user input commands */
+int parse_int(const char *s){ return atoi(s); }
+
+int main(){
+    srand((unsigned int)time(NULL));
+
+    int puzzle[N][N], solution[N][N], board[N][N];
+    int removed;
+    char choice[32];
+
+    printf("Simple Sudoku Game (console)\n");
+    printf("Choose difficulty: 1) Easy 2) Medium 3) Hard : ");
+    int d=2;
+    if(scanf("%d", &d)!=1) d=2;
+    if(d<1) d=1; if(d>3) d=3;
+    if(d==1) removed = 36; // easy ~45 clues
+    else if(d==2) removed = 46; // medium ~35 clues
+    else removed = 54; // hard ~27 clues
+
+    // generate puzzle and solution
+    generate_puzzle(puzzle, solution, removed);
+    copy_grid(puzzle, board); // player's working board
+
+    // flush newline after scanf
+    getchar();
+
+    printf("\nCommands:\n");
+    printf("  set r c v   -> place value v (1..9) at row r col c (rows/cols 1..9)\n");
+    printf("  clear r c   -> clear cell r c\n");
+    printf("  hint r c    -> show solution value for that cell (one-time)\n");
+    printf("  show        -> display current board\n");
+    printf("  solve       -> reveal solution and exit\n");
+    printf("  quit        -> exit without solving\n");
+
+    print_board(board);
+
+    while(1){
+        printf("> ");
+        if(!fgets(choice, sizeof(choice), stdin)) break;
+
+        // strip newline
+        char *nl = choice; while(*nl) { if(*nl=='\n' || *nl=='\r') { *nl='\0'; break; } nl++; }
+        if(choice[0]=='\0') continue;
+
+        if(strncmp(choice,"set",3)==0){
+            int r,c,v;
+            if(sscanf(choice+3, "%d %d %d", &r,&c,&v) == 3){
+                if(r<1||r>9||c<1||c>9||v<1||v>9){ printf("Invalid indices or value. Use numbers 1..9.\n"); continue; }
+                int rr=r-1, cc=c-1;
+                if(puzzle[rr][cc] != UNASSIGNED){ printf("Cell is fixed from the puzzle and cannot be changed.\n"); continue; }
+                if(is_safe(board, rr, cc, v) || board[rr][cc]==v){
+                    // allow placing only if it doesn't conflict with current board state (row/col/box)
+                    // However to avoid blocking valid moves due to existing wrong entries we check against solution as well
+                    if(solution[rr][cc] == v){
+                        board[rr][cc] = v;
+                        print_board(board);
+                        // check if solved
+                        int complete = 1;
+                        for(int i=0;i<N;i++) for(int j=0;j<N;j++) if(board[i][j]==UNASSIGNED) complete=0;
+                        if(complete){
+                            // compare to solution
+                            int correct = 1;
+                            for(int i=0;i<N;i++) for(int j=0;j<N;j++) if(board[i][j] != solution[i][j]) correct = 0;
+                            if(correct){ printf("CONGRATULATIONS! You solved the puzzle.\n"); break; }
+                        }
+                    } else {
+                        printf("That value is not correct for this cell (according to puzzle solution).\n");
+                    }
+                } else {
+                    printf("That move conflicts with other numbers in row/col/box.\n");
+                }
+            } else {
+                printf("Usage: set r c v\n");
+            }
+        } else if(strncmp(choice,"clear",5)==0){
+            int r,c;
+            if(sscanf(choice+5, "%d %d", &r,&c) == 2){
+                if(r<1||r>9||c<1||c>9){ printf("Invalid indices. Use numbers 1..9.\n"); continue; }
+                int rr=r-1, cc=c-1;
+                if(puzzle[rr][cc] != UNASSIGNED){ printf("Cannot clear a fixed puzzle cell.\n"); continue; }
+                board[rr][cc] = UNASSIGNED;
+                print_board(board);
+            } else printf("Usage: clear r c\n");
+        } else if(strncmp(choice,"hint",4)==0){
+            int r,c;
+            if(sscanf(choice+4, "%d %d", &r,&c) == 2){
+                if(r<1||r>9||c<1||c>9){ printf("Invalid indices. Use numbers 1..9.\n"); continue; }
+                int rr=r-1, cc=c-1;
+                if(board[rr][cc] != UNASSIGNED){ printf("Cell already filled (value: %d).\n", board[rr][cc]); continue; }
+                if(puzzle[rr][cc] != UNASSIGNED){ printf("That cell is part of the original puzzle. Value: %d\n", puzzle[rr][cc]); continue; }
+                printf("Hint: cell (%d,%d) = %d\n", r, c, solution[rr][cc]);
+                board[rr][cc] = solution[rr][cc];
+                print_board(board);
+                // no limiting of hints in this simple version
+            } else printf("Usage: hint r c\n");
+        } else if(strcmp(choice,"show")==0){
+            print_board(board);
+        } else if(strcmp(choice,"solve")==0){
+            printf("Solution:\n");
+            print_board(solution);
+            break;
+        } else if(strcmp(choice,"quit")==0){
+            printf("Bye.\n");
+            break;
+        } else {
+            printf("Unknown command. Try: set, clear, hint, show, solve, quit\n");
+        }
+    }
+
+    return 0;
+}
