@@ -1,0 +1,23 @@
+#include<stdio.h>
+struct node
+{
+    int info;
+    struct node *link;
+};
+struct node *Top=NULL;
+void main(){
+    push();
+}
+void push(){
+    struct node *new;
+    new=(struct node*) malloc(sizeof (struct node));
+    if  (new==NULL){
+        print("Overflow");
+        exit(0);
+    }
+
+    scanf("%d",new->info);
+    printf("done");
+
+
+}
