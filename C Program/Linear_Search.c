@@ -2,28 +2,27 @@
 // is present then return its location, otherwise
 // return -1
  
-#include <stdio.h>
- 
-int search(int arr[], int n, int x)
-{
-    int i;
-    for (i = 0; i < n; i++)
-        if (arr[i] == x)
-            return i;
-    return -1;
-}
- 
-// Driver code
-int main(void)
-{
-    int arr[] = { 2, 3, 4, 10, 40 };
-    int x = 10;
-    int n = sizeof(arr) / sizeof(arr[0]);
-   
-    // Function call
-    int result = search(arr, n, x);
-    (result == -1)
-        ? printf("Not Present")
-        : printf("Present at index %d", result);
+#include<stdio.h>
+int main(){
+    int n,k,flag=-1;
+    printf("Enter the size of array: ");
+    scanf("%d",&n);
+    printf("\nEnter the key: ");
+    scanf("%d",&k);
+    int arr[n];
+    for(int i=0;i<n;i++){
+        printf("\nEnter array number %d: ",i+1);
+        scanf("%d",&arr[i]);
+    }
+    for(int i=0;i<n;i++){
+     if(arr[i]==k){
+        flag=i;
+        break;
+     }
+    }
+    if(flag==-1)
+    printf("Key not found\n");
+    else
+    printf("Key found at index %d\n",flag);
     return 0;
 }
