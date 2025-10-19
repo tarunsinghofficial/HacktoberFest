@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Website — DK_BOSS</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#3b82f6;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,Arial;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg,#eef2ff,white);padding:28px 20px;box-shadow:0 2px 6px rgba(16,24,40,0.04)}
+    .container{max-width:980px;margin:0 auto}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;color:var(--accent);font-size:20px}
+    nav a{margin-left:16px;color:var(--muted);text-decoration:none}
+
+    .hero{display:flex;gap:24px;align-items:center;padding:44px 20px}
+    .hero-left{flex:1}
+    h1{margin:0;font-size:32px;line-height:1.05}
+    p.lead{color:var(--muted);margin-top:12px}
+    .cta{margin-top:18px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{border:1px solid #e6e9ef;color:#111;background:white}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0}
+
+    footer{padding:24px 20px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* small form and demo area */
+    .demo{margin-top:18px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type="text"], input[type="number"]{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+    .row{display:flex;gap:10px}
+    .row > *{flex:1}
+
+    @media (max-width:640px){h1{font-size:24px};.hero{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">SimpleSite</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Minimal, clean &amp; easy-to-edit single-file website</h1>
+        <p class="lead">This template is a great starting point for a small project, portfolio, or demo. Edit the HTML, CSS and JavaScript all in one file.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#demo">Try demo</a>
+          <a class="btn btn-ghost" href="#features">See features</a>
+        </div>
+
+        <div class="card demo" id="demo">
+          <h3 style="margin-top:0">Small interactive demo</h3>
+          <p style="margin:6px 0;color:var(--muted)">Enter two numbers and click <strong>Add</strong> to see the result (done with plain JavaScript).</p>
+          <div style="margin-top:10px">
+            <label for="a">Number A</label>
+            <input id="a" type="number" value="2">
+            <label for="b">Number B</label>
+            <input id="b" type="number" value="5">
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button id="addBtn" class="btn btn-primary">Add</button>
+              <button id="clearBtn" class="btn btn-ghost">Clear</button>
+            </div>
+            <div id="result" style="margin-top:12px;font-weight:600"></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width:340px">
+        <div class="card">
+          <h3 style="margin-top:0">Why this template?</h3>
+          <ul style="padding-left:18px;color:var(--muted)">
+            <li>Single HTML file — easy to host and share</li>
+            <li>Clean design with lightweight CSS</li>
+            <li>Small interactive example using vanilla JS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 style="margin-bottom:8px">Features</h2>
+      <div class="features">
+        <div class="card"><strong>Responsive</strong><p style="color:var(--muted)">Works on mobile and desktop.</p></div>
+        <div class="card"><strong>Customizable</strong><p style="color:var(--muted)">Swap colors, fonts, and content quickly.</p></div>
+        <div class="card"><strong>No dependencies</strong><p style="color:var(--muted)">No frameworks required — pure HTML/CSS/JS.</p></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Built with ❤️ — edit this file to make it yours.
+  </footer>
+
+  <script>
+    // Simple add demo logic
+    document.getElementById('addBtn').addEventListener('click', function(){
+      const a = Number(document.getElementById('a').value) || 0;
+      const b = Number(document.getElementById('b').value) || 0;
+      const sum = a + b;
+      const resultEl = document.getElementById('result');
+      resultEl.textContent = `Result: ${sum}`;
+    });
+    document.getElementById('clearBtn').addEventListener('click', function(){
+      document.getElementById('a').value = '';
+      document.getElementById('b').value = '';
+      document.getElementById('result').textContent = '';
+    });
+  </script>
+</body>
+</html>
