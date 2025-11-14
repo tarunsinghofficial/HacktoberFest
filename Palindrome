@@ -1,0 +1,22 @@
+public class PalindromeRecursion {
+
+    static int reverseNumber(int n, int rev) {
+        if (n == 0) return rev;
+        return reverseNumber(n / 10, rev * 10 + n % 10);
+    }
+
+    static boolean isPalindrome(int n) {
+        int reversed = reverseNumber(n, 0);
+        return n == reversed;
+    }
+
+    public static void main(String[] args) {
+        int num = 12321;
+
+        if (isPalindrome(num)) {
+            System.out.println(num + " is a Palindrome");
+        } else {
+            System.out.println(num + " is not a Palindrome");
+        }
+    }
+}
